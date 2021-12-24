@@ -1,10 +1,41 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    data: { preload: true },
+    loadChildren: () =>
+      import('./accueil/accueil.module').then((m) => m.AccueilModule),
+  },
+  {
+    path: 'anciens-examens',
+    loadChildren: () =>
+      import('./anciens-examens/anciens-examens.module').then(
+        (m) => m.AnciensExamensModule
+      ),
+  },
+  {
+    path: 'charte',
+    loadChildren: () =>
+      import('./charte/charte.module').then((m) => m.CharteModule),
+  },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./contact/contact.module').then((m) => m.ContactModule),
+  },
+  { path: '**', pathMatch: 'full', redirectTo: '' }, // catch any unfound routes and redirect to home page
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+      relativeLinkResolution: 'legacy',
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
