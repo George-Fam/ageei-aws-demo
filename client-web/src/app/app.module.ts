@@ -7,10 +7,11 @@ import { HeaderComponent } from './shared/layout/header/header.component';
 import { SharedModule } from './shared/shared.module';
 import { AnciensExamensModule } from './anciens-examens/anciens-examens.module';
 import { AccueilModule } from './accueil/accueil.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
-  imports: [AppRoutingModule, BrowserModule, SharedModule, AnciensExamensModule, AccueilModule, CharteModule],
+  imports: [AppRoutingModule, BrowserModule, SharedModule, AnciensExamensModule, AccueilModule, CharteModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
