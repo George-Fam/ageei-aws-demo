@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  charteUrl: "https://gitlab.com/api/v4/projects/8011854/repository/files/charte.md?ref=master"
 };
 
 /*
