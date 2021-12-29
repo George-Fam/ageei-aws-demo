@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
+import { NgxTypedJsModule } from 'ngx-typed-js';
+import { FunnyWindowComponent } from './layout/funny-window/funny-window.component';
 
 @NgModule({
   imports: [
@@ -25,6 +27,7 @@ import { MatCardModule } from '@angular/material/card';
     MatSelectModule,
     ReactiveFormsModule,
     MatCardModule,
+    NgxTypedJsModule,
   ],
   exports: [
     CommonModule,
@@ -38,6 +41,11 @@ import { MatCardModule } from '@angular/material/card';
     MatSelectModule,
     ReactiveFormsModule,
     MatCardModule,
+    NgxTypedJsModule,
+    FunnyWindowComponent
+  ],
+  declarations: [
+    FunnyWindowComponent
   ],
 })
 export class SharedModule {}

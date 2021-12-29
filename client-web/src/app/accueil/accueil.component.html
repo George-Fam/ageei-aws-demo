@@ -1,1 +1,44 @@
-<div class="container"></div>
+<div class="container">
+  <div
+    class="main-title-container"
+    fxLayout="column"
+    fxLayoutAlign="space-around center"
+  >
+    <div class="main-title">
+      <ngx-typed-js
+        [strings]="[
+          'Association Générale des Étudiants et Étudiantes en Informatique 💻',
+          'Association Générale des Étudiants et Étudiantes en Informatique 🎉',
+          'Association Générale des Étudiants et Étudiantes en Informatique 🚩',
+          'Association Générale des Étudiants et Étudiantes en Informatique 👨‍💻',
+          'Association Générale des Étudiants et Étudiantes en Informatique 💽',
+          'Association Générale des Étudiants et Étudiantes en Informatique 👩‍💻',
+          'Association Générale des Étudiants et Étudiantes en Informatique 🥳'
+        ]"
+        [backDelay]="5000"
+        [smartBackspace]="true"
+        [typeSpeed]="50"
+      >
+        <h1 class="typing"></h1>
+      </ngx-typed-js>
+    </div>
+  </div>
+  <div class="mission-container">
+    <app-funny-window class="mission-header" [content]="'NOTRE MISSION'" [isImage]="false" [width]="'300px'"></app-funny-window>
+    <div class="fifty-split" fxLayout="row" fxLayoutAlign="space-evenly center" >
+      <app-funny-window
+      fxLayout="row" fxLayoutAlign="center center" 
+        [content]="'assets/accueil/accueil-1.jpg'"
+        [isImage]="true"
+        [width]="'80%'"
+      ></app-funny-window>
+      <div class="mission-text">
+        L’association générale des étudiantes et étudiants en informatique a
+        pour but de regrouper les étudiants en informatique de l’Université du
+        Québec à Montréal et d’assurer, dans le cadre des affaires
+        universitaires, leur bienêtre physique, moral, intellectuel, social et
+        économique.
+      </div>
+    </div>
+  </div>
+</div>

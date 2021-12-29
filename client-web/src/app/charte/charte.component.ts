@@ -18,7 +18,6 @@ export class CharteComponent implements OnInit {
 
   getCharte() {
     this.charteService.getCharte().subscribe((data: GitlabFileResponse) => {
-      console.log(atob(data.content));
       this.charte = this.b64DecodeUnicode(data.content);
     });
   }

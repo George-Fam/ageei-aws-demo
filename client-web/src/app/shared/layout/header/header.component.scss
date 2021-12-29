@@ -1,13 +1,27 @@
-.logo {
-  width: 200px;
-}
+#nav-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.8s;
+  background-color: #fff8f2;
+  z-index: 999;
+  box-sizing: border-box;
+  .nav {
+    padding-bottom: 1em;
 
-.nav {
-  padding-bottom: 1em;
-  .nav-menu {
-    width: 45%;
-    .link {
-      font-size: 1vw;
+    .logo {
+      width: 200px;
+    }
+
+    .nav-menu {
+      width: 45%;
+      .link {
+        font-size: 1.5vw;
+      }
     }
   }
+}
+
+.height-keeper {
+  height: 130px;
 }

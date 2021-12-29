@@ -1,0 +1,44 @@
+.main-title-container {
+  height: 300px;
+  margin-bottom: 8vw;
+  .main-title {
+    font-size: 5.5vw;
+    line-height: 5.5vw;
+    font-family: "Inconsolata", monospace;
+    height: 18vw;
+    .typing {
+      display: inline;
+      font-family: inherit;
+      font-size: inherit;
+    }
+  }
+}
+
+.mission-container {
+  margin-bottom: 500px;
+  .mission-header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    margin-top: -67px;
+  }
+}
+
+.fifty-split {
+  * {
+    width: 50%;
+    display: inline-block;
+  }
+
+  .mission-text {
+    font-size: 1.5vw;
+    line-height: 2.5vw;
+    padding-top: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: justify;
+  }
+}
