@@ -1,1 +1,79 @@
-<div class="container"></div>
+<div class="container">
+  <div class="fifty-split" fxLayout="row wrap" fxLayoutGap="0px grid">
+    <div fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
+      <ngx-typed-js
+        fxLayout="column"
+        fxLayoutAlign="center stretch"
+        class="left-section"
+        [strings]="['Une question?', 'Un commentaire?', 'Une insulte?']"
+        [backDelay]="3000"
+        [smartBackspace]="true"
+        [typeSpeed]="50"
+        [loop]="true"
+        [loopCount]="3"
+      >
+        <h1 class="typing"></h1>
+      </ngx-typed-js>
+    </div>
+    <div class="divider" fxFlex="1px" fxHide.sm fxHide.xs></div>
+    <div fxFlex="49%" fxFlex.sm="100%" fxFlex.xs="100%">
+      <div
+        class="right-section"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+      >
+        <div class="icons" fxLayout="row" fxLayoutAlign="space-evenly center">
+          <a href="https://ageei-uqam.slack.com/"
+            ><img class="slack" src="assets/contact/slack.png"
+          /></a>
+          <a href="https://www.facebook.com/ageei"
+            ><img class="facebook" src="assets/contact/facebook.png"
+          /></a>
+          <a href="mailto:executif@ageei.org"
+            ><mat-icon class="mail">mail_outline </mat-icon></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="blank-separator"></div> <!-- Necessary because fxFlex dynamically assign a margin of 0 for fifty-split and execs-container-->
+  <div class="execs-container" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <app-funny-window
+      *ngFor="let exec of execs"
+      fxFlex="33%"
+      fxFlex.md="50%"
+      fxFlex.sm="100%"
+      fxFlex.xs="100%"
+      [windowTitle]="exec.position + '.txt'"
+      class="exec-container"
+    >
+      <div class="exec" fxLayout="row" fxLayoutAlign="space-between center">
+        <img [src]="exec.picture" />
+        <div class="exec-presentation">
+          <div fxLayout="column" fxLayoutAlign="center start">
+            <div class="exec-name">{{ exec.fullname }}</div>
+            <div class="exec-icons">
+              <div fxLayout="row" fxLayoutAlign="space-evenly center">
+                <a [href]="'mailto:' + exec.email"
+                  ><mat-icon class="mail">mail</mat-icon></a
+                >
+                <a
+                  *ngIf="exec.github"
+                  [href]="'https://github.com/' + exec.github"
+                >
+                  <img src="assets/contact/github.png" />
+                </a>
+                <a
+                  *ngIf="exec.linkedin"
+                  [href]="'https://www.linkedin.com/in/' + exec.linkedin"
+                >
+                  <img src="assets/contact/linkedin.png" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </app-funny-window>
+  </div>
+</div>

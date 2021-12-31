@@ -1,11 +1,15 @@
-<div class="main-window" [style]="'width: ' + width">
-  <div class="top-bar">
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
+<div class="main-window">
+  <div class="top-bar" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="window-title">
+      {{ windowTitle }}
+    </div>
   </div>
   <div class="content">
-    <img *ngIf="isImage" class="image" [src]="content" />
-    <div *ngIf="!isImage" class="text">{{ content }}</div>
+    <ng-content></ng-content>
   </div>
 </div>

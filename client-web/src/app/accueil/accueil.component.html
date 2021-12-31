@@ -24,14 +24,13 @@
     </div>
   </div>
   <div class="mission-container">
-    <app-funny-window class="mission-header" [content]="'NOTRE MISSION'" [isImage]="false" [width]="'300px'"></app-funny-window>
-    <div class="fifty-split" fxLayout="row" fxLayoutAlign="space-evenly center" >
-      <app-funny-window
-      fxLayout="row" fxLayoutAlign="center center" 
-        [content]="'assets/accueil/accueil-1.jpg'"
-        [isImage]="true"
-        [width]="'80%'"
-      ></app-funny-window>
+    <app-funny-window class="mission-header">
+      <div class="mission-header-text">NOTRE MISSION</div>
+    </app-funny-window>
+    <div class="fifty-split" fxLayout="row" fxLayoutAlign="space-evenly center">
+      <app-funny-window fxLayout="row" fxLayoutAlign="center center">
+        <img class="mission-image-content" src="assets/accueil/accueil-1.jpg" />
+      </app-funny-window>
       <div class="mission-text">
         L’association générale des étudiantes et étudiants en informatique a
         pour but de regrouper les étudiants en informatique de l’Université du

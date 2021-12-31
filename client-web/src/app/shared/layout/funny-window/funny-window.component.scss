@@ -6,14 +6,16 @@
     padding: 12px 20px;
     border-bottom: 2px solid #131312;
     display: block;
-    .dot {
-      background-color: #131312;
-      height: 10px;
-      width: 10px;
-      border-radius: 50%;
-      display: inline-block;
-      margin-right: 6px;
-      position: relative;
+    .dots {
+      .dot {
+        background-color: #131312;
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 6px;
+        position: relative;
+      }
     }
   }
   .content {
@@ -22,11 +24,11 @@
       display: block;
     }
     .text {
-        font-family: 'Libre Baskerville';
-        padding: 2vw 4.167vw;
-        text-align: center;
-        font-size: 2vw;
-        line-height: 2vw;
+      font-family: "Libre Baskerville";
+      padding: 2vw 4.167vw;
+      text-align: center;
+      font-size: 2vw;
+      line-height: 2vw;
     }
   }
 }

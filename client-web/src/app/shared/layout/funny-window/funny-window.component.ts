@@ -7,21 +7,24 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FunnyWindowComponent implements OnInit {
 
-  @Input()
-  content: string;
+  // @Input()
+  // content: string;
+
+  // @Input()
+  // isImage: boolean;
+
+  // @Input()
+  // width: string;
 
   @Input()
-  isImage: boolean;
-
-  @Input()
-  width: string;
+  windowTitle: string;
   
   constructor() { }
 
   ngOnInit(): void {
-    if(this.content == null) {
-      throw new Error("Content not defined");
-    }
+    // if(this.content == null) {
+    //   throw new Error("Content not defined");
+    // }
   }
 
 }

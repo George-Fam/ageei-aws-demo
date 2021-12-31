@@ -24,21 +24,31 @@
     margin-right: auto;
     width: 300px;
     margin-top: -67px;
+    .mission-header-text {
+      font-family: "Libre Baskerville";
+      padding: 2vw 4.167vw;
+      text-align: center;
+      font-size: 2vw;
+      line-height: 2vw;
+    }
   }
-}
+  .fifty-split {
+    * {
+      width: 50%;
+      display: inline-block;
+    }
 
-.fifty-split {
-  * {
-    width: 50%;
-    display: inline-block;
-  }
-
-  .mission-text {
-    font-size: 1.5vw;
-    line-height: 2.5vw;
-    padding-top: 60px;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: justify;
+    .mission-text {
+      font-size: 1.5vw;
+      line-height: 2.5vw;
+      padding-top: 60px;
+      padding-left: 30px;
+      padding-right: 30px;
+      text-align: justify;
+    }
+    .mission-image-content {
+      width: 100%;
+      display: block;
+    }
   }
 }

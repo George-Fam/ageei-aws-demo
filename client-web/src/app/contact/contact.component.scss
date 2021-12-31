@@ -1,0 +1,65 @@
+.container {
+  .fifty-split {
+    height: 130px;
+    .divider {
+      background-color: #131312;
+      width: 1px;
+      height: 90%;
+    }
+    .left-section {
+      text-align: center;
+      height: 100%;
+      .typing {
+        display: inline;
+        font-size: 4vw;
+      }
+    }
+    .right-section {
+      height: 100%;
+      .icons {
+        width: 100%;
+        img {
+          width: 6vw;
+        }
+        .mail {
+          font-size: 6vw;
+          width: 6vw;
+          height: 6vw;
+        }
+      }
+    }
+  }
+  .blank-separator {
+    height: 28px;
+  }
+  .execs-container {
+    .exec-container {
+      .exec {
+        .exec-presentation {
+          font-size: 1.5vw;
+          line-height: 2vw;
+          .exec-name {
+            text-align: center;
+            width: 100%;
+          }
+          .exec-icons {
+            width: 100%;
+            margin-top: 20px;
+            img {
+              width: 3vw;
+            }
+            .mail {
+              font-size: 3vw;
+              width: 3vw;
+              height: 3vw;
+            }
+          }
+        }
+        img,
+        .exec-presentation {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
