@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { CharteService } from './charte.service';
 import { GitlabFileResponse } from './gitlab-file-response';
 
@@ -10,7 +11,9 @@ import { GitlabFileResponse } from './gitlab-file-response';
 export class CharteComponent implements OnInit {
   charte: string;
 
-  constructor(private charteService: CharteService) {}
+  constructor(titleService: Title, private charteService: CharteService) {
+    titleService.setTitle('AGEEI - Charte');
+  }
 
   ngOnInit(): void {
     this.getCharte();

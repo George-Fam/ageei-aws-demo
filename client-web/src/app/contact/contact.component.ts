@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Exec } from './exec';
 
 @Component({
@@ -9,7 +10,8 @@ import { Exec } from './exec';
 export class ContactComponent implements OnInit {
   execs: Exec[];
 
-  constructor() {
+  constructor(titleService: Title) {
+    titleService.setTitle('AGEEI - Contact');
   }
 
   ngOnInit(): void {
@@ -20,7 +22,7 @@ export class ContactComponent implements OnInit {
         email: 'president@ageei.org',
         picture: 'assets/contact/execs/president.jpg',
         github: 'PierreOlivierBrillant',
-        linkedin: 'pierreolivier-brillant'
+        linkedin: 'pierreolivier-brillant',
       },
       {
         position: 'secrétaire',
@@ -28,7 +30,7 @@ export class ContactComponent implements OnInit {
         email: 'secretaire@ageei.org',
         picture: 'assets/contact/execs/secretaire.jpg',
         github: 'ZacharyPeloquin',
-        linkedin: 'zachary-peloquin-b3994b1ba'
+        linkedin: 'zachary-peloquin-b3994b1ba',
       },
       {
         position: 'trésorier',
@@ -36,7 +38,7 @@ export class ContactComponent implements OnInit {
         email: 'tresorier@ageei.org',
         picture: 'assets/contact/execs/tresorier.jpg',
         github: 'ArmandBriere',
-        linkedin: 'armand-briere'
+        linkedin: 'armand-briere',
       },
       {
         position: 'vp-interne',
@@ -44,7 +46,7 @@ export class ContactComponent implements OnInit {
         email: 'interne@ageei.org',
         picture: 'assets/contact/execs/interne.jpg',
         github: 'lesGrandsBras',
-        linkedin: 'fanny-lavergne-aa79442a'
+        linkedin: 'fanny-lavergne-aa79442a',
       },
       {
         position: 'vp-loisirs',
@@ -52,7 +54,7 @@ export class ContactComponent implements OnInit {
         email: 'loisirs@ageei.org',
         picture: 'assets/contact/execs/loisirs.jpg',
         github: 'sdxsofteng',
-        linkedin: 'simon-désormeaux-9326221b6'
+        linkedin: 'simon-désormeaux-9326221b6',
       },
       {
         position: 'vp-techno',
@@ -60,8 +62,8 @@ export class ContactComponent implements OnInit {
         email: 'techno@ageei.org',
         picture: 'assets/contact/execs/techo.jpg',
         github: 'lancelotnd',
-        linkedin: 'lancelot-normand-456120122'
+        linkedin: 'lancelot-normand-456120122',
       },
-    ]
+    ];
   }
 }
