@@ -1,0 +1,38 @@
+<div class="container">
+  <app-funny-window windowTitle="faq.txt">
+    <div class="main-container">
+      <div
+        class="side-bar"
+        fxFlex="25%"
+        fxLayout="column"
+        fxLayoutAlign="start start"
+      >
+        <div
+          *ngFor="let category of faqCategories"
+          class="category-item-container"
+          (click)="selectCategory(category)"
+        >
+          <div
+            class="category-item"
+            [class.selected-category-item]="category === selectedCategory"
+          >
+            {{ category.categoryName }}
+          </div>
+        </div>
+      </div>
+      <div class="question-container" fxFlex="75%">
+        <mat-accordion>
+          <mat-expansion-panel
+            hideToggle
+            *ngFor="let faq of selectedCategory.faqs"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> {{ faq.question }} </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{ faq.answer }}</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </app-funny-window>
+</div>

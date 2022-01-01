@@ -8,10 +8,11 @@ import { SharedModule } from './shared/shared.module';
 import { AnciensExamensModule } from './anciens-examens/anciens-examens.module';
 import { AccueilModule } from './accueil/accueil.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FaqModule } from './faq/faq.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
-  imports: [AppRoutingModule, BrowserModule, SharedModule, AnciensExamensModule, AccueilModule, CharteModule, BrowserAnimationsModule],
+  imports: [AppRoutingModule, BrowserModule, SharedModule, AnciensExamensModule, AccueilModule, CharteModule, FaqModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

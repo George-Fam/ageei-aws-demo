@@ -12,6 +12,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { FunnyWindowComponent } from './layout/funny-window/funny-window.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { FunnyWindowComponent } from './layout/funny-window/funny-window.compone
     MatSelectModule,
     ReactiveFormsModule,
     MatCardModule,
+    MatExpansionModule,
     NgxTypedJsModule,
   ],
   exports: [
@@ -41,11 +43,10 @@ import { FunnyWindowComponent } from './layout/funny-window/funny-window.compone
     MatSelectModule,
     ReactiveFormsModule,
     MatCardModule,
+    MatExpansionModule,
     NgxTypedJsModule,
-    FunnyWindowComponent
+    FunnyWindowComponent,
   ],
-  declarations: [
-    FunnyWindowComponent
-  ],
+  declarations: [FunnyWindowComponent],
 })
 export class SharedModule {}

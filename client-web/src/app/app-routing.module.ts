@@ -26,6 +26,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./contact/contact.module').then((m) => m.ContactModule),
   },
+  {
+    path: 'faq',
+    loadChildren: () => import('./faq/faq.module').then((m) => m.FaqModule),
+  },
   { path: '**', pathMatch: 'full', redirectTo: '' }, // catch any unfound routes and redirect to home page
 ];
 
