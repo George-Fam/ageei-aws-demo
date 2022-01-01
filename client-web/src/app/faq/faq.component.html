@@ -27,9 +27,11 @@
             *ngFor="let faq of selectedCategory.faqs"
           >
             <mat-expansion-panel-header>
-              <mat-panel-title> {{ faq.question }} </mat-panel-title>
+              <mat-panel-title>
+                <markdown>{{ faq.question }} </markdown></mat-panel-title
+              >
             </mat-expansion-panel-header>
-            <p>{{ faq.answer }}</p>
+            <markdown> {{ faq.answer }} </markdown>
           </mat-expansion-panel>
         </mat-accordion>
       </div>
