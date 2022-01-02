@@ -30,7 +30,7 @@ lint:
       files:
         - client-web/package-lock.json
     paths:
-      - client-web/node_modules
+      - client-web/node_modules/
     policy: pull
 
 pages:
@@ -43,7 +43,7 @@ pages:
     - cd client-web
     - npm install -g @angular/cli@13.1.2
     - npm install
-    - npm run build-prod
+    - ng build
   artifacts:
     paths:
       - client-web/public
