@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './anciens-examens.component.html',
   styleUrls: ['./anciens-examens.component.scss'],
 })
-export class AnciensExamensComponent implements OnInit {
+export class AnciensExamensComponent {
 
   searchValue: string;
   courseForm = new FormControl();
@@ -36,5 +36,4 @@ export class AnciensExamensComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
 }

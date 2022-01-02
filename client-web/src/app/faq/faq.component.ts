@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { FAQCategory } from './faq-category';
 import { faqs } from './faqs';
@@ -8,7 +8,7 @@ import { faqs } from './faqs';
   templateUrl: './faq.component.html',
   styleUrls: ['./faq.component.scss'],
 })
-export class FaqComponent implements OnInit {
+export class FaqComponent {
   faqCategories: FAQCategory[];
   selectedCategory: FAQCategory;
 
@@ -17,8 +17,6 @@ export class FaqComponent implements OnInit {
     this.faqCategories = faqs;
     this.selectedCategory = this.faqCategories[0];
   }
-
-  ngOnInit(): void {}
 
   selectCategory(category: FAQCategory): void {
     this.selectedCategory = category;

@@ -1,16 +1,15 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
+export class HeaderComponent implements AfterViewInit {
   constructor() {}
 
-  ngOnInit(): void {}
-
   ngAfterViewInit(): void {
+    // Hide menu on scroll
     let prevScrollpos = window.pageYOffset;
     window.onscroll = () => {
       const currentScrollPos = window.pageYOffset;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -6,10 +6,8 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.scss'],
 })
-export class AccueilComponent implements OnInit {
+export class AccueilComponent {
   constructor(titleService: Title) {
     titleService.setTitle('AGEEI - Accueil');
   }
-
-  ngOnInit(): void {}
 }

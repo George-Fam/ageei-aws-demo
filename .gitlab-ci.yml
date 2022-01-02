@@ -1,0 +1,47 @@
+stages:
+  - dependencies
+  - test
+  - pages
+install_dependencies:
+  image: node:16-alpine
+  stage: dependencies
+  script:
+    - cd client-web
+    - npm install
+  only:
+    - main
+  cache:
+    key:
+      files:
+        - client-web/package-lock.json
+    paths:
+      - client-web/node_modules
+lint:
+  image: node:16-alpine
+  stage: test
+  script:
+    - cd client-web
+    - npm link @angular/cli@13.1.2
+    - ng lint
+  cache:
+    key:
+      files:
+        - client-web/package-lock.json
+    paths:
+      - client-web/node_modules
+    policy: pull
+pages:
+  cache:
+    paths:
+      - client-web/node_modules/
+  script:
+    - cd client-web
+    - npm install -g @angular/cli@13.1.2
+    - npm install
+    - npm run buildProd
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+    - pages
