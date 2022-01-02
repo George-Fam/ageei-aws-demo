@@ -46,6 +46,6 @@ pages:
     - npm run build-prod
   artifacts:
     paths:
-      - public
+      - client-web/public
   only:
     - main
