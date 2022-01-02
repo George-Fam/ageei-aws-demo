@@ -1,39 +1,22 @@
 <div class="container">
   <app-funny-window windowTitle="faq.txt">
     <div class="main-container" fxLayout.lt-md="column" fxLayout.gt-sm="row">
-      <div
-        class="side-bar"
-        fxFlex.gt-sm="25%"
-        fxFlex.lt-md="100%"
-        fxLayout.lt-md="row"
-        fxLayout.gt-sm="column"
-        fxLayoutAlign.gt-sm="start start"
-        fxLayoutAlign.lt-md="space-between start"
-      >
-        <div
-          *ngFor="let category of faqCategories"
-          class="category-item-container"
-          (click)="selectCategory(category)"
-        >
-          <div
-            class="category-item"
-            [class.selected-category-item]="category === selectedCategory"
-            [ngClass.lt-md]="'mobile-category-item'"
-          >
+      <div class="side-bar" fxFlex.gt-sm="25%" fxFlex.lt-md="100%" fxLayout.lt-md="row" fxLayout.gt-sm="column"
+        fxLayoutAlign.gt-sm="start start" fxLayoutAlign.lt-md="space-between start">
+        <div *ngFor="let category of faqCategories" class="category-item-container" (click)="selectCategory(category)">
+          <div class="category-item" [class.selected-category-item]="category === selectedCategory"
+            [ngClass.lt-md]="'mobile-category-item'">
             {{ category.categoryName }}
           </div>
         </div>
       </div>
       <div class="question-container" fxFlex.gt-sm="75%" fxFlex.lt-md="100%">
         <mat-accordion>
-          <mat-expansion-panel
-            hideToggle
-            *ngFor="let faq of selectedCategory.faqs"
-          >
+          <mat-expansion-panel hideToggle *ngFor="let faq of selectedCategory.faqs">
             <mat-expansion-panel-header>
               <mat-panel-title>
-                <b
-                  ><markdown>{{ faq.question }} </markdown>
+                <b>
+                  <markdown>{{ faq.question }} </markdown>
                 </b>
               </mat-panel-title>
             </mat-expansion-panel-header>

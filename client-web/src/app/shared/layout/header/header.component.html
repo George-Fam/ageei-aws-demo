@@ -4,10 +4,9 @@
       <img src="/assets/logo.png" class="logo" />
     </a>
     <div class="nav-menu" fxLayout="row" fxLayoutAlign="space-between center">
-      <a class="link hover-underline-animation" routerLink="/">Accueil</a>
-      <a class="link hover-underline-animation" routerLink="/faq">FAQ</a>
-      <a class="link hover-underline-animation" routerLink="/charte">Charte</a>
-      <a class="link hover-underline-animation" routerLink="/contact">Contact</a>
+      <a class="link hover-underline-animation" *ngFor="let link of router_links" [routerLink]="link.url">
+        {{ link.name }}
+      </a>
     </div>
     <div>
       <!-- Spacer -->

@@ -1,4 +1,4 @@
-import { FAQCategory } from './faq-category';
+import { FAQCategoryInterface } from './faq-category.interface';
 
 export const faqs = [
   {
@@ -120,4 +120,4 @@ export const faqs = [
       },
     ],
   },
-] as FAQCategory[];
+] as FAQCategoryInterface[];

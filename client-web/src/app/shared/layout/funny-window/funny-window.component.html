@@ -1,9 +1,7 @@
 <div class="main-window">
   <div class="top-bar" fxLayout="row" fxLayoutAlign="space-between center">
     <div class="dots">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
+      <div class="dot" *ngFor="let dot of dot_count_array"></div>
     </div>
     <div class="window-title">
       {{ windowTitle }}

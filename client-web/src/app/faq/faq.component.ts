@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { FAQCategory } from './faq-category';
+import { FAQCategoryInterface } from './faq-category.interface';
 import { faqs } from './faqs';
 
 @Component({
@@ -9,8 +9,8 @@ import { faqs } from './faqs';
   styleUrls: ['./faq.component.scss'],
 })
 export class FaqComponent {
-  faqCategories: FAQCategory[];
-  selectedCategory: FAQCategory;
+  faqCategories: FAQCategoryInterface[];
+  selectedCategory: FAQCategoryInterface;
 
   constructor(titleService: Title) {
     titleService.setTitle('AGEEI - FAQ');
@@ -18,7 +18,7 @@ export class FaqComponent {
     this.selectedCategory = this.faqCategories[0];
   }
 
-  selectCategory(category: FAQCategory): void {
+  selectCategory(category: FAQCategoryInterface): void {
     this.selectedCategory = category;
   }
 }
