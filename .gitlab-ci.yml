@@ -1,7 +1,8 @@
 stages:
   - dependencies
-  - test
+  - lint
   - deploy
+
 install_dependencies:
   image: node:16-alpine
   stage: dependencies
@@ -16,9 +17,10 @@ install_dependencies:
         - client-web/package-lock.json
     paths:
       - client-web/node_modules
+
 lint:
   image: node:16-alpine
-  stage: test
+  stage: lint
   script:
     - cd client-web
     - npm link @angular/cli@13.1.2
@@ -30,6 +32,7 @@ lint:
     paths:
       - client-web/node_modules
     policy: pull
+
 pages:
   image: node:16-alpine
   stage: deploy
@@ -46,4 +49,3 @@ pages:
       - public
   only:
     - main
-    - pages
