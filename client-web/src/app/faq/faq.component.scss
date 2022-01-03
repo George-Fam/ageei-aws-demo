@@ -31,6 +31,11 @@
       .mobile-category-item {
         font-size: 1.8vw;
       }
+      @media screen and (max-width: 599px) {
+        .mobile-category-item {
+          font-size: 18px;
+        }
+      }
     }
   }
   .question-container {
@@ -41,6 +46,9 @@
       border-bottom: 1px solid #131312;
       border-radius: 0;
       box-shadow: none;
+      mat-expansion-panel-header {
+        height: 100%;
+      }
     }
   }
 }

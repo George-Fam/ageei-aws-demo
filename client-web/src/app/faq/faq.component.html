@@ -1,7 +1,7 @@
 <div class="container">
   <app-funny-window windowTitle="faq.txt">
     <div class="main-container" fxLayout.lt-md="column" fxLayout.gt-sm="row">
-      <div class="side-bar" fxFlex.gt-sm="25%" fxFlex.lt-md="100%" fxLayout.lt-md="row" fxLayout.gt-sm="column"
+      <div class="side-bar" fxFlex.gt-sm="25%" fxFlex.lt-md="100%" fxLayout.lt-md="row" fxLayout.gt-sm="column" fxLayout.xs="column"
         fxLayoutAlign.gt-sm="start start" fxLayoutAlign.lt-md="space-between start">
         <div *ngFor="let category of faqCategories" class="category-item-container" (click)="selectCategory(category)">
           <div class="category-item" [class.selected-category-item]="category === selectedCategory"
