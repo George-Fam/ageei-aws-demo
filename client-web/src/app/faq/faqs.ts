@@ -1,4 +1,4 @@
-import { FAQCategory } from './faq-category';
+import { FAQCategoryInterface } from './faq-category.interface';
 
 export const faqs = [
   {
@@ -53,8 +53,7 @@ export const faqs = [
       },
       {
         question: 'Combien est-ce que ça coûte ?',
-        answer:
-          'Rien! Nous finançons les conférences avec les cotisations de nos membres.',
+        answer: 'Rien! Nous finançons les conférences avec les cotisations de nos membres.',
       },
     ],
   },
@@ -107,17 +106,15 @@ export const faqs = [
           'Nous vous recommandons d’aller trouver ces informations sur le site de l’assureur : [aseq.ca](https://aseq.ca), en sélectionnant AESS comme association étudiante. Il existe une couverture de base et une couverture bonifiée.',
       },
       {
-        question:
-          'Comment puis-je me retirer des assurances fournies par l’association ?',
+        question: 'Comment puis-je me retirer des assurances fournies par l’association ?',
         answer:
           'Sur le site web de l’assureur ([aseq.ca](https://aseq.ca)), vous pouvez sélectionner AESS. Une fois sur la page d’accueil, certaines informations utiles vous sont accessibles : la période de retrait des assurances et le retrait des assurances.',
       },
       {
-        question:
-          'Quand puis-je retirer des assurances fournies par l’association ?',
+        question: 'Quand puis-je retirer des assurances fournies par l’association ?',
         answer:
           'Généralement, il est possible de se retirer des assurances entre la mi-septembre et la mi-octobre. Les périodes de retrait exact sont accessibles sur le site web de l’assureur ([aseq.ca](https://aseq.ca)), en sélectionnant AESS comme association étudiante. Même si vous avez déjà payé vos frais d’assurance après avoir demandé un remboursement, vous serez soit crédité, soit remboursé.',
       },
     ],
   },
-] as FAQCategory[];
+] as FAQCategoryInterface[];

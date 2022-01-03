@@ -6,25 +6,19 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     data: { preload: true },
-    loadChildren: () =>
-      import('./accueil/accueil.module').then((m) => m.AccueilModule),
+    loadChildren: () => import('./accueil/accueil.module').then((m) => m.AccueilModule),
   },
   {
     path: 'anciens-examens',
-    loadChildren: () =>
-      import('./anciens-examens/anciens-examens.module').then(
-        (m) => m.AnciensExamensModule
-      ),
+    loadChildren: () => import('./anciens-examens/anciens-examens.module').then((m) => m.AnciensExamensModule),
   },
   {
     path: 'charte',
-    loadChildren: () =>
-      import('./charte/charte.module').then((m) => m.CharteModule),
+    loadChildren: () => import('./charte/charte.module').then((m) => m.CharteModule),
   },
   {
     path: 'contact',
-    loadChildren: () =>
-      import('./contact/contact.module').then((m) => m.ContactModule),
+    loadChildren: () => import('./contact/contact.module').then((m) => m.ContactModule),
   },
   {
     path: 'faq',

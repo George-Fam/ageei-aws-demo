@@ -7,10 +7,6 @@ import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [CharteComponent],
-  imports: [
-    SharedModule,
-    CharteRoutingModule,
-    MarkdownModule.forRoot({ loader: HttpClient }),
-  ],
+  imports: [SharedModule, CharteRoutingModule, MarkdownModule.forRoot({ loader: HttpClient })],
 })
 export class CharteModule {}
