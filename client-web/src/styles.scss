@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding-bottom: 2em;
   background-color: #fff8f2;
   color: #131312;
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
@@ -20,7 +21,7 @@ a {
   padding-left: 7.21em;
   padding-right: 7.21em;
   padding-top: 2em;
-  padding-bottom: 2em;
+  padding-bottom: 0;
   overflow-x: auto;
 }
 
@@ -44,7 +45,7 @@ a {
 }
 
 .hover-underline-animation:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   transform: scaleX(0);

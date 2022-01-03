@@ -1,11 +1,9 @@
 .main-title-container {
   height: 19vw;
-  margin-bottom: 9vw;
   .main-title {
     font-size: 5.5vw;
     line-height: 5.5vw;
     font-family: 'Inconsolata', monospace;
-    height: 18vw;
     .typing {
       display: inline;
       font-family: inherit;
@@ -15,7 +13,7 @@
 }
 
 .mission-container {
-  margin-top: 135px;
+  margin-top: 25px;
   .mission-header {
     position: absolute;
     left: 0;
@@ -23,7 +21,6 @@
     margin-left: auto;
     margin-right: auto;
     width: 300px;
-    margin-top: -67px;
 
     @media screen and (max-width: 959px) {
       position: inherit;
@@ -45,9 +42,9 @@
     }
   }
   .fifty-split {
-    * {
-      width: 50%;
-      display: inline-block;
+    padding-top: 52px;
+    @media screen and (max-width: 959px) {
+      padding-top: 0px;
     }
 
     .mission-text {
@@ -58,6 +55,18 @@
       padding-right: 30px;
       text-align: justify;
     }
+
+    @media screen and (max-width: 959px) {
+      .mission-text {
+        font-size: 4.5vw;
+        line-height: 5.5vw;
+        padding-top: 0px;
+        padding-bottom: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
     .mission-image-content {
       width: 100%;
       display: block;

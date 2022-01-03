@@ -6,7 +6,12 @@ import { AfterViewInit, Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements AfterViewInit {
-  constructor() {}
+
+  menuOpened: boolean;
+
+  constructor() {
+    this.menuOpened = false;
+  }
 
   router_links = [
     { name: 'Accueil', url: '/' },
