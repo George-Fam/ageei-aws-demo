@@ -10,7 +10,7 @@ import { execsConst } from './execs';
 })
 export class ContactComponent implements OnInit {
   execs: ExecInterface[];
-  questions = ['Une question ?', 'Un commentaire ?', 'Une insulte ?']
+  questions = ['Une question ?', 'Un commentaire ?', 'Une insulte ?'];
 
   constructor(titleService: Title) {
     titleService.setTitle('AGEEI - Contact');

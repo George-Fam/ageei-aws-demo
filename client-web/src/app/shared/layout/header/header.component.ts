@@ -6,14 +6,14 @@ import { AfterViewInit, Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements AfterViewInit {
-  constructor() { }
+  constructor() {}
 
   router_links = [
-    { name: "Accueil", url: "/" },
-    { name: "FAQ", url: "/faq" },
-    { name: "Charte", url: "/charte" },
-    { name: "Contact", url: "/contact" }
-  ]
+    { name: 'Accueil', url: '/' },
+    { name: 'FAQ', url: '/faq' },
+    { name: 'Charte', url: '/charte' },
+    { name: 'Contact', url: '/contact' },
+  ];
 
   ngAfterViewInit(): void {
     // Hide menu on scroll

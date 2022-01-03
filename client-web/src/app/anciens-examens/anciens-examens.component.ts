@@ -7,7 +7,6 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./anciens-examens.component.scss'],
 })
 export class AnciensExamensComponent {
-
   searchValue: string;
   courseForm = new FormControl();
   yearForm = new FormControl();
@@ -35,5 +34,4 @@ export class AnciensExamensComponent {
   attributeList = ['Intra', 'Final', 'Quiz'];
 
   constructor() {}
-
 }
