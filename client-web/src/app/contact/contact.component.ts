@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Exec } from './exec';
+import { ExecInterface } from './exec.interface';
 import { execsConst } from './execs';
 
 @Component({
@@ -9,7 +9,8 @@ import { execsConst } from './execs';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-  execs: Exec[];
+  execs: ExecInterface[];
+  questions = ['Une question ?', 'Un commentaire ?', 'Une insulte ?'];
 
   constructor(titleService: Title) {
     titleService.setTitle('AGEEI - Contact');

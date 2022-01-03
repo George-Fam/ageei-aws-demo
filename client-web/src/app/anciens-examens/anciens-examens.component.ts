@@ -7,14 +7,13 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./anciens-examens.component.scss'],
 })
 export class AnciensExamensComponent {
-
   searchValue: string;
   courseForm = new FormControl();
   yearForm = new FormControl();
   teacherForm = new FormControl();
   attributeForm = new FormControl();
 
-  courseList = [
+  courses = [
     'INF1120',
     'INF1070',
     'INF2120',
@@ -28,12 +27,11 @@ export class AnciensExamensComponent {
     'INF2050',
   ];
 
-  yearList = ['2015', '2016', '2017', '2018', '2019', '2020', '2021'];
+  years = ['2015', '2016', '2017', '2018', '2019', '2020', '2021'];
 
-  teacherList = ['Jean Privat', 'Paul Vahé-Cicek', 'Mélanie Lord', 'Johnny', 'Éric Beaudry'];
+  teachers = ['Jean Privat', 'Paul Vahé-Cicek', 'Mélanie Lord', 'Johnny', 'Éric Beaudry'];
 
-  attributeList = ['Intra', 'Final', 'Quiz'];
+  attributes = ['Intra', 'Final', 'Quiz'];
 
   constructor() {}
-
 }

@@ -7,10 +7,6 @@ import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [FaqComponent],
-  imports: [
-    SharedModule,
-    FaqRoutingModule,
-    MarkdownModule.forRoot({ loader: HttpClient }),
-  ],
+  imports: [SharedModule, FaqRoutingModule, MarkdownModule.forRoot({ loader: HttpClient })],
 })
 export class FaqModule {}

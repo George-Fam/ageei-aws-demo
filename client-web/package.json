@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "build-prod": "ng build",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "prettier-check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
+    "prettier-fix": "prettier --config ./.prettierrc -w \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\""
   },
   "private": true,
   "dependencies": {
@@ -41,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "5.3.0",
     "@typescript-eslint/parser": "5.3.0",
     "eslint": "^8.2.0",
+    "prettier": "^2.5.1",
     "typescript": "~4.5.2"
   }
 }

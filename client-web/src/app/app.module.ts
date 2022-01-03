@@ -12,7 +12,16 @@ import { FaqModule } from './faq/faq.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
-  imports: [AppRoutingModule, BrowserModule, SharedModule, AnciensExamensModule, AccueilModule, CharteModule, FaqModule, BrowserAnimationsModule],
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    SharedModule,
+    AnciensExamensModule,
+    AccueilModule,
+    CharteModule,
+    FaqModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

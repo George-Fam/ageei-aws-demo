@@ -1,4 +1,4 @@
-export class Exec {
+export class ExecInterface {
   position: string;
   fullname: string;
   picture: string;

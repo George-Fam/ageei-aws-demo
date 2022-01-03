@@ -8,6 +8,13 @@ import { AfterViewInit, Component } from '@angular/core';
 export class HeaderComponent implements AfterViewInit {
   constructor() {}
 
+  router_links = [
+    { name: 'Accueil', url: '/' },
+    { name: 'FAQ', url: '/faq' },
+    { name: 'Charte', url: '/charte' },
+    { name: 'Contact', url: '/contact' },
+  ];
+
   ngAfterViewInit(): void {
     // Hide menu on scroll
     let prevScrollpos = window.pageYOffset;

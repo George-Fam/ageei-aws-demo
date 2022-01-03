@@ -1,4 +1,4 @@
-import { Exec } from './exec';
+import { ExecInterface } from './exec.interface';
 
 export const execsConst = [
   {
@@ -49,4 +49,4 @@ export const execsConst = [
     github: 'lancelotnd',
     linkedin: 'lancelot-normand-456120122',
   },
-] as Exec[];
+] as ExecInterface[];
