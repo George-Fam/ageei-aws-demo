@@ -23,5 +23,11 @@
 }
 
 .height-keeper {
-  height: 130px;
+  height: 13vw;
+}
+
+@media screen and (max-width: 959px) {
+  .height-keeper {
+    height: 19vw;
+  }
 }
