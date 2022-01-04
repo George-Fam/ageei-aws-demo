@@ -11,7 +11,7 @@
       height: 100%;
       .typing {
         display: inline;
-        font-size: 4vw;
+        font-size: 40px;
       }
     }
     .right-section {
@@ -19,14 +19,19 @@
       .icons {
         width: 100%;
         img {
-          width: 6vw;
+          width: 75px;
         }
         .mail {
-          font-size: 6vw;
-          width: 6vw;
-          height: 6vw;
+          font-size: 75px;
+          width: 75px;
+          height: 75px;
         }
       }
+    }
+  }
+  @media screen and (max-width: 959px) {
+    .fifty-split {
+      height: 175px;
     }
   }
   .blank-separator {
@@ -36,8 +41,7 @@
     .exec-container {
       .exec {
         .exec-presentation {
-          font-size: 1.5vw;
-          line-height: 2vw;
+          font-size: 15px;
           .exec-name {
             text-align: center;
             width: 100%;
@@ -46,12 +50,12 @@
             width: 100%;
             margin-top: 20px;
             img {
-              width: 3vw;
+              width: 35px;
             }
             .mail {
-              font-size: 3vw;
-              width: 3vw;
-              height: 3vw;
+              font-size: 35px;
+              width: 35px;
+              height: 35px;
             }
           }
         }

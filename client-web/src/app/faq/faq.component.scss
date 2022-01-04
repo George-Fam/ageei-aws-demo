@@ -48,6 +48,9 @@
       box-shadow: none;
       mat-expansion-panel-header {
         height: 100%;
+        mat-panel-title {
+          margin-top: 10px;
+        }
       }
     }
   }
