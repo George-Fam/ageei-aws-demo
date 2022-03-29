@@ -11,7 +11,7 @@ export const execsConst = [
   },
   {
     position: 'secrétaire',
-    fullname: 'Zachary Péloquin',
+    fullname: 'Zachary Peloquin',
     email: 'secretaire@ageei.org',
     picture: 'assets/contact/execs/secretaire.jpg',
     github: 'ZacharyPeloquin',
