@@ -48,7 +48,7 @@ export const execsConst = [
     position: 'vp-externe',
     fullname: 'Yonis Axmed',
     email: 'externe@ageei.org',
-    picture: 'externe.jpg',
+    picture: 'assets/contact/execs/externe.jpg',
     github: 'Yonaxm',
     linkedin: 'yonis-axmed-230784224'
   },
@@ -56,13 +56,13 @@ export const execsConst = [
     position: 'vp-competition',
     fullname: 'Alexandre Fortin',
     email: 'competition@ageei.org',
-    picture: 'competition.jpg'
+    picture: 'assets/contact/execs/competition.jpg'
   },
   {
     position: 'officier-de-premiere-annee',
     fullname: 'Carl-William Bilodeau-Savaria',
     email: 'premiere_annee@ageei.org',
-    picture: 'officier-premiere-annee.jpg',
+    picture: 'assets/contact/execs/officier-premiere-annee.jpg',
     linkedin: 'carl-william-bilodeau-savaria-9966a5229'
   }
 ] as ExecInterface[];
