@@ -43,6 +43,8 @@ export const execsConst = [
     fullname: 'Carl-Elliott Bilodeau-Savaria',
     email: 'techno@ageei.org',
     picture: 'assets/contact/execs/techologie.jpg',
+    github: 'normal-account',
+    linkedin: 'carl-elliott-bilodeau-savaria'
   },
   {
     position: 'vp-externe',
