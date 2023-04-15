@@ -6,16 +6,14 @@ export const execsConst = [
     fullname: 'Alexandre Fortin',
     email: 'president@ageei.org',
     picture: 'assets/contact/execs/president.jpg',
-//    github: 'lancelotnd',
-//    linkedin: 'lancelot-normand-456120122',
   },
   {
     position: 'secrétaire',
     fullname: 'Élodie Brunet',
     email: 'secretaire@ageei.org',
     picture: 'assets/contact/execs/secretaire.jpg',
-//    github: 'AlexandreLachanceGit',
-//    linkedin: 'alexandre-lachance-36b497164',
+    github: 'croquette-Elo',
+    linkedin: 'elodie-brunet-39635a204'
   },
   {
     position: 'trésorier',
@@ -24,39 +22,40 @@ export const execsConst = [
     picture: 'assets/contact/execs/tresorier.jpg',
     linkedin: 'kim-joziak-6433781a3',
   },
-/*  {
+  {
     position: 'vp-interne',
-    fullname: 'Nicolas Goulet',
+    fullname: 'Guillaume Pelletier',
     email: 'interne@ageei.org',
-    picture: 'assets/contact/execs/interne.jpg',
-  },&*/
+    picture: 'assets/contact/execs/null.jpg',
+  },
   {
     position: 'vp-techno',
     fullname: 'Carl-Elliott Bilodeau-Savaria',
     email: 'techno@ageei.org',
-    //picture: 'assets/contact/execs/techologie.jpg',
+    picture: 'assets/contact/execs/technologies.jpg',
     github: 'normal-account',
     linkedin: 'carl-elliott-bilodeau-savaria'
   },
-  /*{
+  {
     position: 'vp-externe',
-    fullname: 'Samuel',
+    fullname: 'Samuel Rochon',
     email: 'externe@ageei.org',
-    picture: 'assets/contact/execs/externe.jpg',
-    github: 'Yonaxm',
-    linkedin: 'yonis-axmed-230784224'
-  }*/
+    picture: 'assets/contact/execs/null.jpg',
+    linkedin: 'samuel-r-558878210'
+  },
   {
     position: 'vp-competition',
     fullname: 'Armand Brière',
     email: 'competition@ageei.org',
-    picture: 'assets/contact/execs/competition.jpg'
+    picture: 'assets/contact/execs/competition.jpg',
+    github: 'ArmandBriere',
+    linkedin: 'armand-briere',
   },
   {
     position: 'vp-loisirs',
     fullname: 'Carl-William Bilodeau-Savaria',
     email: 'premiere_annee@ageei.org',
-    picture: 'assets/contact/execs/officier-premiere-annee.jpg',
+    picture: 'assets/contact/execs/loisirs.jpg',
     linkedin: 'carl-william-bilodeau-savaria-9966a5229'
   }
 ] as ExecInterface[];
