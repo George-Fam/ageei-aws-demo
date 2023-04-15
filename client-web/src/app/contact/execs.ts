@@ -44,7 +44,7 @@ export const execsConst = [
     linkedin: 'samuel-r-558878210'
   },
   {
-    position: 'vp-competition',
+    position: 'vp-compétition',
     fullname: 'Armand Brière',
     email: 'competition@ageei.org',
     picture: 'assets/contact/execs/competition.png',
