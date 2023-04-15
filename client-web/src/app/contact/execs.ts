@@ -26,7 +26,7 @@ export const execsConst = [
     position: 'vp-interne',
     fullname: 'Guillaume Pelletier',
     email: 'interne@ageei.org',
-    picture: 'assets/contact/execs/null.jpg',
+    picture: 'assets/contact/execs/interne.jpg',
   },
   {
     position: 'vp-techno',
