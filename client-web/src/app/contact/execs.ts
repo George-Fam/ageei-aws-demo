@@ -31,7 +31,7 @@ export const execsConst = [
   {
     position: 'vp-techno',
     fullname: 'Carl-Elliott Bilodeau-Savaria',
-    email: 'techno@ageei.org',
+    email: 'technologie@ageei.org',
     picture: 'assets/contact/execs/technologies.jpg',
     github: 'normal-account',
     linkedin: 'carl-elliott-bilodeau-savaria'
@@ -54,7 +54,7 @@ export const execsConst = [
   {
     position: 'vp-loisirs',
     fullname: 'Carl-William Bilodeau-Savaria',
-    email: 'premiere_annee@ageei.org',
+    email: 'loisir@ageei.org',
     picture: 'assets/contact/execs/loisirs.jpg',
     linkedin: 'carl-william-bilodeau-savaria-9966a5229'
   }
