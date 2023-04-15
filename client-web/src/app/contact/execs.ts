@@ -11,7 +11,7 @@ export const execsConst = [
     position: 'secrétaire',
     fullname: 'Élodie Brunet',
     email: 'secretaire@ageei.org',
-    picture: 'assets/contact/execs/secretaire.jpg',
+    picture: 'assets/contact/execs/secretaire.jepg',
     github: 'croquette-Elo',
     linkedin: 'elodie-brunet-39635a204'
   },
@@ -47,7 +47,7 @@ export const execsConst = [
     position: 'vp-competition',
     fullname: 'Armand Brière',
     email: 'competition@ageei.org',
-    picture: 'assets/contact/execs/competition.jpg',
+    picture: 'assets/contact/execs/competition.png',
     github: 'ArmandBriere',
     linkedin: 'armand-briere',
   },
