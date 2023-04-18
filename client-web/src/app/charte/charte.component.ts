@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { CharteService } from './charte.service';
 import { GitlabFileResponse } from './gitlab-file-response';
@@ -24,6 +24,12 @@ export class CharteComponent implements OnInit {
       this.charte = this.b64DecodeUnicode(data.content);
     });
   }
+
+  @HostListener('click', ['$event'])
+  onClick(event: any): void {
+    event.preventDefault();
+  }
+
 
   /**
    * The atob function doesn't decode unicode caracters correctly.
