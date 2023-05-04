@@ -24,6 +24,7 @@
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "marked": "^5.0.0",
     "ngx-markdown": "^13.0.0",
     "ngx-typed-js": "^2.1.1",
     "rxjs": "~7.4.0",

@@ -16,6 +16,7 @@ export class HeaderComponent implements AfterViewInit {
   router_links = [
     { name: 'Accueil', url: '/' },
     { name: 'FAQ', url: '/faq' },
+    { name: 'Calendrier', url: '/calendrier' },
     { name: 'Charte', url: '/charte' },
     { name: 'Contact', url: '/contact' },
   ];
