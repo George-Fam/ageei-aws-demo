@@ -6,7 +6,6 @@ import { AfterViewInit, Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements AfterViewInit {
-
   menuOpened: boolean;
 
   constructor() {

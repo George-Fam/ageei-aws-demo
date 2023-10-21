@@ -4,7 +4,7 @@ import { TimelineComponent } from './timeline.component';
 import { TimelineRoutingModule } from './timeline-routing.module';
 
 @NgModule({
-    declarations: [TimelineComponent],
-    imports: [SharedModule, TimelineRoutingModule],
+  declarations: [TimelineComponent],
+  imports: [SharedModule, TimelineRoutingModule],
 })
-export class TimelineModule { }
+export class TimelineModule {}
