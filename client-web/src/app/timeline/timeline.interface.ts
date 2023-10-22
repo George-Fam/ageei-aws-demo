@@ -5,4 +5,8 @@ export interface Timeline {
   date?: number;
   approximateMonth?: number;
   image?: string;
+  button?: {
+    title: string;
+    link: string;
+  }
 }

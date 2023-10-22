@@ -21,6 +21,12 @@
 
         <p class="event-detail" [innerHTML]="entry.detail"></p>
         <p><em>{{entry.organizator}}</em></p>
+        <div *ngIf="entry.button">
+          <button class="event-button" color="primary" mat-raised-button (click)="goToLink(entry.button.link)">
+            {{entry.button.title}}
+            <mat-icon>open_in_new</mat-icon>
+          </button>
+        </div>
         <img class="image" *ngIf="entry.image" src="/assets/events/{{entry.image}}" />
       </div>
     </div>

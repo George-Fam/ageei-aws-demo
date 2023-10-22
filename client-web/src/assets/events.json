@@ -2,16 +2,20 @@
   {
     "title": "Soirée CTF 🚩",
     "date": "2023-10-25T18:00:00",
-    "detail": "C'est officiel, la première soirée CTF de l'été 🚩<br><br>Tu te demandes surement ce qu'est un CTF ? C'est une façon d'apprendre la sécurité en trouvant des failles de sécurité dans des systèmes. 🔒<br><br>Que tu sois expert ou novice, cet événement est une excellente occasion pour toi d'apprendre et de rencontrer d'autres personnes de ton programme qui partage les mêmes intérêts. 🏴‍☠️ <br><br>Quoi de mieux qu'une soirée où la nourriture est offerte pour se pratiquer ? 🍕 <br><br>Apporte simplement ton laptop et je m'occupe de te trouver des challenges à ton niveau. :frogesip~3:<br><br>Quand ? Mercredi 25 Octobre de 18h à 21h<br>Où ?    redacted<br>Questions ? competition@ageei.org",
+    "detail": "C'est officiel, la première soirée CTF de l'automne 🚩<br><br>Tu te demandes surement ce qu'est un CTF ? C'est une façon d'apprendre la sécurité en trouvant des failles de sécurité dans des systèmes. 🔒<br><br>Que tu sois expert ou novice, cet événement est une excellente occasion pour toi d'apprendre et de rencontrer d'autres personnes de ton programme qui partage les mêmes intérêts. 🏴‍☠️ <br><br>Quoi de mieux qu'une soirée où la nourriture est offerte pour se pratiquer ? 🍕 <br><br>Apporte simplement ton laptop et je m'occupe de te trouver des challenges à ton niveau.<br><br>Quand ? Mercredi 25 Octobre de 18h à 21h<br>Où ?    redacted<br>Questions ? competition@ageei.org",
     "organizator": "Le VP compétition de l'AGEEI",
     "image": "ctf.png"
   },
   {
     "title": "Party Halloween 👻🎃🦇",
     "date": "2023-11-02T21:00:00",
-    "detail": "L'heure de notre fameux party d'Halloween a sonné !!! 👻<br><br>Venez fêter la fin de vos examens intra avec nous !<br><br>À l'horaire :<br><br>Une tonne de bonbons pour rassasier votre bedon 🍬🍬🍬<br>Un méga concours de costume avec récompense mystère<br>Des bonnes discussions avec musique de fond 🎵 <br>Des billets pour des consommations gratuites 🍻 <br>Du gros fun ! 🙌 <br><br>Quand ? Jeudi le 2 novembre 2023 à 21h<br>Où ? Pub Le Sainte-Élisabeth, 1412 Rue Sainte-Elisabeth, Montréal, QC H2X 1L4<br><br>Pour participer veuillez acheter votre billet ici ! <br><br><a href='https://www.zeffy.com/fr-CA/ticketing/4bfc7e2a-7ffd-4384-a32d-76006d1cc94b'>https://www.zeffy.com/fr-CA/ticketing/4bfc7e2a-7ffd-4384-a32d-76006d1cc94b</a><br><br>Bonne soirée à l'avance !",
+    "detail": "L'heure de notre fameux party d'Halloween a sonné !!! 👻<br><br>Venez fêter la fin de vos examens intra avec nous !<br><br>À l'horaire :<br><br>Une tonne de bonbons pour rassasier votre bedon 🍬🍬🍬<br>Un méga concours de costume avec récompense mystère<br>Des bonnes discussions avec musique de fond 🎵 <br>Des billets pour des consommations gratuites 🍻 <br>Du gros fun ! 🙌 <br><br>Quand ? Jeudi le 2 novembre 2023 à 21h<br>Où ? Pub Le Sainte-Élisabeth, 1412 Rue Sainte-Elisabeth, Montréal, QC H2X 1L4<br><br>Pour participer veuillez acheter votre billet !<br><br>Bonne soirée à l'avance !",
     "image": "halloween.png",
-    "organizator": "Le VP loisir de l'AGEEI"
+    "organizator": "Le VP loisir de l'AGEEI",
+    "button": {
+      "title":"Acheter un billet",
+      "link": "https://www.zeffy.com/fr-CA/ticketing/4bfc7e2a-7ffd-4384-a32d-76006d1cc94b"
+    }
   },
   {
     "title": "CyberSci",
@@ -36,7 +40,8 @@
   },
   {
     "title": "Csgames 2024",
-    "approximateMonth": "2024-04",
+    "date": "2024-03-15T12:00:00",
+    "approximateMonth": "2024-03-15",
     "detail": "La plus grosse compétition interuniversitaire est de retour ! 🎉<br><br>L'AGEEI doit retourner défendre sa première place en mobile 📱 Cette année, on voit les choses en grand, on envoie 20 étudiants 💪<br>Tu vas voir comment c'est le fun de battre l'ETS…<br>",
     "organizator": "Le VP compétition de l'AGEEI",
     "image": "csgames.png"
@@ -58,7 +63,7 @@
   {
     "title": "NorthSec 🚩",
     "approximateMonth": "2024-04",
-    "detail": "Le plus gros CTF de l'année est de retour 😮<br><br>Il est temps que l'AGEEI s'impose dans le monde des CTF, Huber Hackin\" c'est le passé ! Cette année, on monte dans le top 10 😎<br>",
+    "detail": "Le plus gros CTF de l'année est de retour 😮<br><br>Il est temps que l'AGEEI s'impose dans le monde des CTF ! Cette année, on monte dans le top 10 😎<br>",
     "organizator": "Le VP compétition de l'AGEEI",
     "image": "nsec.png"
   },
