@@ -12,7 +12,7 @@ export class TimelineComponent implements OnInit {
   currentDate: Date = new Date();
   scrollToId: number | undefined;
 
-  public constructor(private timelineService: TimelineService) {}
+  public constructor(private timelineService: TimelineService) { }
 
   ngOnInit(): void {
     const url: string = '/assets/events.json';
@@ -38,5 +38,9 @@ export class TimelineComponent implements OnInit {
       let el = document.getElementById(String(this.scrollToId));
       el?.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  goToLink(url: string) {
+    window.open(url, "_blank");
   }
 }
