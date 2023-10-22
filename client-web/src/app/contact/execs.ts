@@ -29,18 +29,18 @@ export const execsConst = [
     picture: 'assets/contact/execs/interne.jpg',
   },
   {
+    position: 'vp-externe',
+    fullname: 'Sébastien Fortin',
+    email: 'externe@ageei.org',
+    picture: 'assets/contact/execs/null.jpg',
+  },
+  {
     position: 'vp-techno',
     fullname: 'Carl-Elliott Bilodeau-Savaria',
     email: 'technologie@ageei.org',
     picture: 'assets/contact/execs/technologies.jpg',
     github: 'normal-account',
     linkedin: 'carl-elliott-bilodeau-savaria',
-  },
-  {
-    position: 'vp-externe',
-    fullname: 'Sébastien Fortin',
-    email: 'externe@ageei.org',
-    picture: 'assets/contact/execs/null.jpg',
   },
   {
     position: 'vp-compétition',
