@@ -41,7 +41,6 @@ export const execsConst = [
     fullname: 'Sébastien Fortin',
     email: 'externe@ageei.org',
     picture: 'assets/contact/execs/null.jpg',
-    linkedin: 'samuel-r-558878210',
   },
   {
     position: 'vp-compétition',
