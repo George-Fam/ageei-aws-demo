@@ -32,7 +32,7 @@ export const execsConst = [
     position: 'vp-externe',
     fullname: 'Sébastien Fortin',
     email: 'externe@ageei.org',
-    picture: 'assets/contact/execs/null.jpg',
+    picture: 'assets/contact/execs/externe.jpg',
   },
   {
     position: 'vp-techno',
