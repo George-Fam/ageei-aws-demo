@@ -38,7 +38,7 @@ export const execsConst = [
   },
   {
     position: 'vp-externe',
-    fullname: 'Samuel Rochon',
+    fullname: 'Sébastien Fortin',
     email: 'externe@ageei.org',
     picture: 'assets/contact/execs/null.jpg',
     linkedin: 'samuel-r-558878210',
@@ -53,9 +53,15 @@ export const execsConst = [
   },
   {
     position: 'vp-loisirs',
-    fullname: 'Carl-William Bilodeau-Savaria',
+    fullname: 'Hugo Forest',
     email: 'loisir@ageei.org',
-    picture: 'assets/contact/execs/loisirs.jpg',
-    linkedin: 'carl-william-bilodeau-savaria-9966a5229',
+    picture: 'assets/contact/execs/null.jpg',
+  },
+  {
+    position: 'Officière de 1ère année',
+    fullname: 'Oryna Kubarieva',
+    email: 'premiere_annee@ageei.org',
+    linkedin: 'oryna-kubarieva',
+    picture: 'assets/contact/execs/officier_premier_annee.jpg',
   },
 ] as ExecInterface[];
