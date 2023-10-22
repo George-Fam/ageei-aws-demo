@@ -1,0 +1,28 @@
+<div class="description">
+  L'AGEEI vous organise de nombreux événements au fil de l'année.<br>
+  Nous ajoutons les détails ainsi que les dates des événements au plus vite.
+</div>
+<div class="button-container" *ngIf="scrollToId">
+  <button mat-flat-button class="scroll-button" (click)="scroll()">
+    Voir le prochain evenement
+  </button>
+</div>
+
+<div class="timeline">
+  <div *ngFor='let entry of timeLine;let i = index'>
+    <div class="container" [ngClass]="{ left: i%2!==0, right:i%2===0}">
+      <div class="content" [id]="i">
+
+        <div class="title-container">
+          <div class="title">{{entry.title}}</div>
+          <h3 *ngIf="entry.date;">{{entry.date | date:'long' }}</h3>
+          <h3 *ngIf="entry.approximateMonth;">{{entry.approximateMonth | date:'MMMM yyyy' }}</h3>
+        </div>
+
+        <p class="event-detail" [innerHTML]="entry.detail"></p>
+        <p><em>{{entry.organizator}}</em></p>
+        <img class="image" *ngIf="entry.image" src="/assets/events/{{entry.image}}" />
+      </div>
+    </div>
+  </div>
+</div>

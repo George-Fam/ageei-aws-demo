@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () => import('./anciens-examens/anciens-examens.module').then((m) => m.AnciensExamensModule),
   },
   {
+    path: 'calendrier',
+    loadChildren: () => import('./timeline/timeline.module').then((m) => m.TimelineModule),
+  },
+  {
     path: 'charte',
     loadChildren: () => import('./charte/charte.module').then((m) => m.CharteModule),
   },

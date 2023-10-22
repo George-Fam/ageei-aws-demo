@@ -13,7 +13,7 @@ export const execsConst = [
     email: 'secretaire@ageei.org',
     picture: 'assets/contact/execs/secretaire.jpeg',
     github: 'croquette-Elo',
-    linkedin: 'elodie-brunet-39635a204'
+    linkedin: 'elodie-brunet-39635a204',
   },
   {
     position: 'trésorier',
@@ -34,14 +34,14 @@ export const execsConst = [
     email: 'technologie@ageei.org',
     picture: 'assets/contact/execs/technologies.jpg',
     github: 'normal-account',
-    linkedin: 'carl-elliott-bilodeau-savaria'
+    linkedin: 'carl-elliott-bilodeau-savaria',
   },
   {
     position: 'vp-externe',
     fullname: 'Samuel Rochon',
     email: 'externe@ageei.org',
     picture: 'assets/contact/execs/null.jpg',
-    linkedin: 'samuel-r-558878210'
+    linkedin: 'samuel-r-558878210',
   },
   {
     position: 'vp-compétition',
@@ -56,6 +56,6 @@ export const execsConst = [
     fullname: 'Carl-William Bilodeau-Savaria',
     email: 'loisir@ageei.org',
     picture: 'assets/contact/execs/loisirs.jpg',
-    linkedin: 'carl-william-bilodeau-savaria-9966a5229'
-  }
+    linkedin: 'carl-william-bilodeau-savaria-9966a5229',
+  },
 ] as ExecInterface[];

@@ -30,7 +30,6 @@ export class CharteComponent implements OnInit {
     event.preventDefault();
   }
 
-
   /**
    * The atob function doesn't decode unicode caracters correctly.
    * This magic function seems to do the trick.
