@@ -54,7 +54,8 @@ export const execsConst = [
     position: 'vp-loisirs',
     fullname: 'Hugo Forest',
     email: 'loisir@ageei.org',
-    picture: 'assets/contact/execs/null.jpg',
+    picture: 'assets/contact/execs/loisir.jpg',
+    linkedin: 'hugo-forest-47b206132',
   },
   {
     position: 'Officière de 1ère année',
