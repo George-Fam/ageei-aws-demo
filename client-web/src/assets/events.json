@@ -18,6 +18,17 @@
     }
   },
   {
+    "title": "Soirée CTF 🚩",
+    "date": "2023-11-14T18:00:00",
+    "detail":"Encore une soirée CTF 🚩.<br><br>Viens nous rejoindre face à un nouveau challenge 🤔<br>On attaque le CTF tous ensemble et on regarde la solution en fin de séance !.<br><br>Apporte simplement ton laptop et je m'occupe de te trouver des challenges à ton niveau.<br><br>Quand ? Mardi 14 Novembre de 18h à 21h<br>Où ?   Voir Discord pour la salle<br>Questions ? competition@ageei.org",
+    "organizator": "Le VP compétition de l'AGEEI",
+    "image": "ctf.png",
+    "button": {
+      "title": "Discord de compétition",
+      "link": "https://discord.gg/nQKsQpbK7U"
+    }
+  },
+  {
     "title": "CyberSci",
     "date": "2023-11-17T12:00:00",
     "detail": "CyberSci est le défi national de cybersécurité du Canada destiné aux étudiants universitaires et collégiaux.<br><br>- Vous pensez avoir une équipe d'étudiants d'élite ? Venez le prouver. Nos gagnants affronteront ensuite les meilleurs au monde.<br>- Vous débutez ? C'est la meilleure façon d'apprendre et d'atteindre le sommet.<br>- Événements annuels en personne depuis 2016. Plus de 500 étudiants jusqu'à présent.<br><br>La finale nationale canadienne est à Ottawa cet été 😯<br>",
