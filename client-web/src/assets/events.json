@@ -47,15 +47,23 @@
     "approximateMonth": "2024-03",
     "detail": "Et si on partait en chalet cet hiver ? 🤔<br><br>On prend un bus, et on passe une bonne fin de semaine 🚌<br>",
     "organizator": "Le VP loisir de l'AGEEI",
-    "image": "chalet.png"
+    "image": "chalet.png",
+    "button": {
+      "title":"Acheter un billet",
+      "link": "https://www.zeffy.com/fr-CA/ticketing/179f9a99-c5cf-4787-b1ea-c2df8540dea5"
+    }
   },
   {
     "title": "Csgames 2024",
     "date": "2024-03-15T12:00:00",
     "approximateMonth": "2024-03-15",
-    "detail": "La plus grosse compétition interuniversitaire est de retour ! 🎉<br><br>L'AGEEI doit retourner défendre sa première place en mobile 📱 Cette année, on voit les choses en grand, on envoie 20 étudiants 💪<br>Tu vas voir comment c'est le fun de battre l'ETS…<br>",
+    "detail": "La plus grosse compétition interuniversitaire est de retour ! 🎉<br><br>L'AGEEI doit retourner défendre sa première place en mobile 📱 Cette année, on voit les choses en grand, on envoie 20 étudiants 💪<br>",
     "organizator": "Le VP compétition de l'AGEEI",
-    "image": "csgames.png"
+    "image": "csgames.png",
+    "button": {
+      "title":"Formulaire de participation",
+      "link": "https://forms.gle/XxYUppT6jRSdpi4s8"
+    }
   },
   {
     "title": "Party post intra 🍻",
