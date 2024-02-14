@@ -13,11 +13,6 @@ export const faqs = [
         answer:
           'Les étudiants et étudiantes ayant gradué au premier cycle lors de la session d’hiver ou les sessions d’automne et d’hiver précédent la session où les photos sont prises. Une preuve de votre graduation peut vous être demandée.',
       },
-      {
-        question: 'Combien est-ce que ça me coûte ?',
-        answer:
-          ' Rien ! Nous utilisons l’argent des cotisations étudiantes pour financer la séance de photos de finissants.',
-      },
     ],
   },
   {
@@ -53,7 +48,7 @@ export const faqs = [
       },
       {
         question: 'Combien est-ce que ça coûte ?',
-        answer: 'Rien! Nous finançons les conférences avec les cotisations de nos membres.',
+        answer: 'Rien ! Nous finançons les conférences avec les cotisations de nos membres.',
       },
     ],
   },
@@ -88,7 +83,7 @@ export const faqs = [
       {
         question: 'Je souhaite m’impliquer ! Comment puis-je faire ?',
         answer:
-          'Il existe plusieurs façons de vous impliquer dans votre association. La plus évidente est de vous présenter pour devenir membre du comité exécutif. Vous pouvez consulter la charte de l’AGEEI ou discuter avec un membre de l’exécutif pour connaître les positions qui sont disponibles et qui pourraient vous intéresser. Des élections ont lieu chaque année au mois de mai ou juin. Nous avons aussi souvent besoin de bénévoles pour les activités qui nécessitent davantage d’organisation, comme les initiations par exemple.',
+          'Il existe plusieurs façons de vous impliquer dans votre association. La plus évidente est de vous présenter pour devenir membre du comité exécutif. Vous pouvez consulter la charte de l’AGEEI ou discuter avec un membre de l’exécutif pour connaître les positions qui sont disponibles et qui pourraient vous intéresser. Des élections ont lieu chaque année au mois d’avril. Nous avons aussi souvent besoin de bénévoles pour les activités qui nécessitent davantage d’organisation, comme les initiations par exemple.',
       },
       {
         question: 'Qui sont les membres du comité exécutif ?',
