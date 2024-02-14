@@ -6,7 +6,7 @@ export const faqs = [
     faqs: [
       {
         question: 'Quand ont lieux les photos de finissants ?',
-        answer: 'À la fin de la session d’hiver (au mois de mai ou juin).',
+        answer: 'À la fin de la session d’hiver (au mois d’avril).',
       },
       {
         question: 'Qui peut se faire photographier ?',
