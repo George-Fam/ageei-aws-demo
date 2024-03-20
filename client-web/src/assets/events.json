@@ -79,17 +79,17 @@
     "image": "graduate.png"
   },
   {
-    "title": "NorthSec 🚩",
-    "approximateMonth": "2024-04",
-    "detail": "Le plus gros CTF de l'année est de retour 😮<br><br>Il est temps que l'AGEEI s'impose dans le monde des CTF ! Cette année, on monte dans le top 10 😎<br>",
-    "organizator": "Le VP compétition de l'AGEEI",
-    "image": "nsec.png"
-  },
-  {
     "title": "AG d'élection",
-    "approximateMonth": "2024-05",
+    "approximateMonth": "2024-04",
     "detail": "Il est temps pour votre comite exécutif de vous dire au revoir !<br><br>Venez élire votre nouveau comite pour la prochaine année.<br>",
     "organizator": "L'AGEEI",
     "image": "bye.png"
+  },
+  {
+    "title": "NorthSec 🚩",
+    "approximateMonth": "2024-05",
+    "detail": "Le plus gros CTF de l'année est de retour 😮<br><br>Il est temps que l'AGEEI s'impose dans le monde des CTF ! Cette année, on monte dans le top 10 😎<br>",
+    "organizator": "Le VP compétition de l'AGEEI",
+    "image": "nsec.png"
   }
 ]
