@@ -18,10 +18,10 @@ export const execsConst = [
   },
   {
     position: 'trésorier',
-    fullname: 'Kim Joziak',
+    fullname: 'Jean-Christophe Clouâtre',
     email: 'tresorier@ageei.org',
     picture: 'assets/contact/execs/tresorier.jpg',
-    linkedin: 'kim-joziak-6433781a3',
+    linkedin: 'jean-christophe-c-b83a40262',
   },
   {
     position: 'vp-interne',
