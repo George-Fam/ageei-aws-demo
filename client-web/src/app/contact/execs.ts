@@ -38,11 +38,11 @@ export const execsConst = [
   },
   {
     position: 'vp-techno',
-    fullname: 'Carl-Elliott Bilodeau-Savaria',
+    fullname: 'Sublime Tshimpangila',
     email: 'technologie@ageei.org',
     picture: 'assets/contact/execs/technologies.jpg',
-    github: 'normal-account',
-    linkedin: 'carl-elliott-bilodeau-savaria',
+    github: 'Sublime12',
+    linkedin: 'sublime-tshimpangila-84aa78144',
   },
   {
     position: 'vp-compétition',
