@@ -44,11 +44,11 @@ export const execsConst = [
   },
   {
     position: 'vp-compétition',
-    fullname: 'Armand Brière',
+    fullname: 'Dany Gagnon',
     email: 'competition@ageei.org',
-    picture: 'assets/contact/execs/competition.png',
-    github: 'ArmandBriere',
-    linkedin: 'armand-briere',
+    picture: 'assets/contact/execs/competition.jpg',
+    github: 'dgagn',
+    linkedin: 'dany-g-34768822b',
   },
   {
     position: 'vp-loisirs',
