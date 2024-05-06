@@ -3,9 +3,10 @@ import { ExecInterface } from './exec.interface';
 export const execsConst = [
   {
     position: 'président',
-    fullname: 'Alexandre Fortin',
+    fullname: 'Marianne Boyer',
     email: 'president@ageei.org',
     picture: 'assets/contact/execs/president.jpg',
+    linkedin: 'boyer-marianne',
   },
   {
     position: 'secrétaire',
