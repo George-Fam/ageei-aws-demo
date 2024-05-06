@@ -34,6 +34,7 @@ export const execsConst = [
     fullname: 'Émile Kolani',
     email: 'externe@ageei.org',
     picture: 'assets/contact/execs/externe.jpg',
+    linkedin: 'émile-kolani-711720233',
   },
   {
     position: 'vp-techno',
@@ -50,12 +51,5 @@ export const execsConst = [
     picture: 'assets/contact/execs/competition.jpg',
     github: 'dgagn',
     linkedin: 'dany-g-34768822b',
-  },
-  {
-    position: 'vp-loisirs',
-    fullname: 'Hugo Forest',
-    email: 'loisir@ageei.org',
-    picture: 'assets/contact/execs/loisir.jpg',
-    linkedin: 'hugo-forest-47b206132',
   },
 ] as ExecInterface[];
