@@ -31,7 +31,7 @@ export const execsConst = [
   },
   {
     position: 'vp-externe',
-    fullname: 'Sébastien Fortin',
+    fullname: 'Émile Kolani',
     email: 'externe@ageei.org',
     picture: 'assets/contact/execs/externe.jpg',
   },
