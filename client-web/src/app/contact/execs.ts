@@ -58,11 +58,4 @@ export const execsConst = [
     picture: 'assets/contact/execs/loisir.jpg',
     linkedin: 'hugo-forest-47b206132',
   },
-  {
-    position: 'Officière de 1ère année',
-    fullname: 'Oryna Kubarieva',
-    email: 'premiere_annee@ageei.org',
-    linkedin: 'oryna-kubarieva',
-    picture: 'assets/contact/execs/officier_premier_annee.jpg',
-  },
 ] as ExecInterface[];
