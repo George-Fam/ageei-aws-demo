@@ -3,9 +3,10 @@ import { ExecInterface } from './exec.interface';
 export const execsConst = [
   {
     position: 'président',
-    fullname: 'Alexandre Fortin',
+    fullname: 'Marianne Boyer',
     email: 'president@ageei.org',
     picture: 'assets/contact/execs/president.jpg',
+    linkedin: 'boyer-marianne',
   },
   {
     position: 'secrétaire',
@@ -17,10 +18,10 @@ export const execsConst = [
   },
   {
     position: 'trésorier',
-    fullname: 'Kim Joziak',
+    fullname: 'Jean-Christophe Clouâtre',
     email: 'tresorier@ageei.org',
     picture: 'assets/contact/execs/tresorier.jpg',
-    linkedin: 'kim-joziak-6433781a3',
+    linkedin: 'jean-christophe-c-b83a40262',
   },
   {
     position: 'vp-interne',
@@ -30,38 +31,25 @@ export const execsConst = [
   },
   {
     position: 'vp-externe',
-    fullname: 'Sébastien Fortin',
+    fullname: 'Émile Kolani',
     email: 'externe@ageei.org',
     picture: 'assets/contact/execs/externe.jpg',
+    linkedin: 'émile-kolani-711720233',
   },
   {
     position: 'vp-techno',
-    fullname: 'Carl-Elliott Bilodeau-Savaria',
+    fullname: 'Sublime Tshimpangila',
     email: 'technologie@ageei.org',
     picture: 'assets/contact/execs/technologies.jpg',
-    github: 'normal-account',
-    linkedin: 'carl-elliott-bilodeau-savaria',
+    github: 'Sublime12',
+    linkedin: 'sublime-tshimpangila-84aa78144',
   },
   {
     position: 'vp-compétition',
-    fullname: 'Armand Brière',
+    fullname: 'Dany Gagnon',
     email: 'competition@ageei.org',
-    picture: 'assets/contact/execs/competition.png',
-    github: 'ArmandBriere',
-    linkedin: 'armand-briere',
-  },
-  {
-    position: 'vp-loisirs',
-    fullname: 'Hugo Forest',
-    email: 'loisir@ageei.org',
-    picture: 'assets/contact/execs/loisir.jpg',
-    linkedin: 'hugo-forest-47b206132',
-  },
-  {
-    position: 'Officière de 1ère année',
-    fullname: 'Oryna Kubarieva',
-    email: 'premiere_annee@ageei.org',
-    linkedin: 'oryna-kubarieva',
-    picture: 'assets/contact/execs/officier_premier_annee.jpg',
+    picture: 'assets/contact/execs/competition.jpg',
+    github: 'dgagn',
+    linkedin: 'dany-g-34768822b',
   },
 ] as ExecInterface[];
