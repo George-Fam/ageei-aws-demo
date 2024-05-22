@@ -37,6 +37,12 @@ export const execsConst = [
     linkedin: 'émile-kolani-711720233',
   },
   {
+    position: 'vp-loisir',
+    fullname: 'Carl-William Bilodeau-Savaria',
+    email: 'loisir@ageei.org',
+    picture: 'assets/contact/execs/loisir.jpg',
+  },
+  {
     position: 'vp-techno',
     fullname: 'Sublime Tshimpangila',
     email: 'technologie@ageei.org',
