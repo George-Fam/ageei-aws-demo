@@ -98,5 +98,12 @@
     "detail": "L'AGEEI organise une balade à vélo à Montréal vers la mi-juin. On vous invite pour une boucle d'une vingtaine de kilomètres sur une piste cyclable qui longe le fleuve et fait le tour de l'Île des Sœurs et de l'Île Sainte-Hélène.",
     "organizator":"Le VP loisir de l'AGEEI",
     "image": "tour-velo.jpg"
+  },
+  {
+    "title": "BBQ",
+    "date": "2024-07-04T17:00:00",
+    "detail": "Venez profiter de l'été avec nous dans la cour de l'UQAM. Nous monterons des chapiteaux et servirons toutes sortes de bouffe BBQ et de boissons. Il y aura de la musique, des jeux, et surtout beaucoup de plaisir.",
+    "organizator":"Le VP loisir de l'AGEEI",
+    "image": "bbq-2024.jpg"
   }
 ]
