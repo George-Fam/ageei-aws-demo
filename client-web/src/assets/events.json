@@ -91,5 +91,12 @@
     "detail": "Le plus gros CTF de l'année est de retour 😮<br><br>Il est temps que l'AGEEI s'impose dans le monde des CTF ! Cette année, on monte dans le top 10 😎<br>",
     "organizator": "Le VP compétition de l'AGEEI",
     "image": "nsec.png"
+  },  
+  {
+    "title": "Tour de vélo de l'AGEEI - Édition 2024",
+    "date": "2024-06-15T09:00:00",
+    "detail": "L'AGEEI organise une balade à vélo à Montréal vers la mi-juin. On vous invite pour une boucle d'une vingtaine de kilomètres sur une piste cyclable qui longe le fleuve et fait le tour de l'Île des Sœurs et de l'Île Sainte-Hélène.",
+    "organizator":"Le VP loisir de l'AGEEI",
+    "image": "tour-velo.jpg"
   }
 ]
