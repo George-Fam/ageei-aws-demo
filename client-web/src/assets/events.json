@@ -112,5 +112,16 @@
     "detail": "Description a venir",
     "organizator":"Le VP loisir de l'AGEEI",
     "image": "bowling-2024.jpg"
+  },
+  {
+    "title": "INITIATIONS 2024",
+    "date": "2024-09-13T15:30:00",
+    "detail":"<h2>INITIATIONS VENDREDI ✨</h2> <p><strong>15h30 à 17h30 : BBQ</strong></p><p><strong>Quoi ?</strong> Venez rencontrer les autres initié.e.s lors de notre évènement de bienvenue ! Au menu, hot-dog (options porc, halal ou véganes), barbe à papa, marchandise gratuite pour nos informaticien.ne.s et tout plein d’activités. 🔥🌭</p> <p><strong>Où ?</strong> En face du pavillon Sherbrooke (SH) près du Cœur des Sciences (Station de métro Président-Kennedy)</p> <p><strong>17h30 à 20h30 : LASER TAG</strong></p> <p><strong>Quoi ?</strong> On vous invite à une méga partie de laser tag au Laser Game Evolution. On privatise les lieux juste pour vous, alors soyez au rendez-vous ! 🔫</p> <p><strong>Où ?</strong> 1226 Rue Sainte-Catherine O, Montréal QC H3G 1P1</p> <p><strong>Important !</strong> Rejoignez-nous avant 17h, en face du pavillon Sherbrooke (SH) près du Cœur des Sciences, nous partirons tous ensemble.</p> <p><strong>21h00 à 3h00 : Party à L’ABREUVOIR</strong></p> <p><strong>Quoi ?</strong> Rejoignez-nous à l'Abreuvoir Bar & Terrasse pour rencontrer les initié.e.s et les étudiant.e.s actuel.le.s dans une ambiance plus que festive. En plus, on vous offre, très cher.e.s initié.e.s, des billets qui vous donnent droit à des consommations gratuites (une coupe de bière, cocktails et mocktails à nos frais). À ne pas manquer ! 🎉🍻</p> <p><strong>Où ?</strong> 403 Rue Ontario E, Montréal, QC H2L 1N5</p> <p><strong>Qui ? 👀</strong></p> <ul>   <li><strong>Initié.e :</strong> Participe à toutes les activités gratuitement.</li>   <li><strong>Membre de l’AGEEI non-initié.e ou (+1) de l’initié.e :</strong> Achète ton billet ici pour te joindre au party ! Tu auras le vestiaire d’inclus au bar, mais tu devras payer tes propres consommations. —> <a href=\"https://www.zeffy.com/ticketing/0a62e3be-5d45-4588-a819-d8a5e10d6cd4\">LIEN VERS LE BILLET</a></li> </ul> <p><strong>Important !</strong> Ceux qui seront déjà au laser tag, nous partirons tous ensemble vers le pub.</p> <p><strong>Important !</strong> Si vous le pouvez, n’apportez pas de sac à dos au bar pour éviter de remplir le sol de leur vestiaire. 😬</p> <br> <br> On vous y attend en grand nombre ! ",
+    "organizator":"Le comité exécutif de l’AGEEI",
+    "image": "initiations_2024.jpg",
+    "button":{
+      "title":"Acheter un billet pour membre non initié ou +1",
+      "link": "https://www.zeffy.com/ticketing/0a62e3be-5d45-4588-a819-d8a5e10d6cd4"
+    }
   }
 ]
