@@ -17,6 +17,7 @@ export class TimelineComponent implements OnInit {
   ngOnInit(): void {
     const url: string = '/assets/events.json';
     this.timelineService.getTimelime().subscribe((data) => {
+      data.reverse();
       this.timeLine = data;
       let currentID = 0;
       for (let item of this.timeLine) {
