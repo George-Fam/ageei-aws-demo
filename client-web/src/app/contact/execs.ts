@@ -63,7 +63,7 @@ export const execsConst = [
     fullname: 'Badr Malouli',
     // email: '',
     picture: 'assets/contact/execs/officier_premier_annee.jpg',
-    // github
+    github: 'https://github.com/bmalouli',
     linkedin: 'https://www.linkedin.com/in/badrmalouli',
   }
 ] as ExecInterface[];
