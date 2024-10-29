@@ -58,4 +58,12 @@ export const execsConst = [
     github: 'dgagn',
     linkedin: 'dany-g-34768822b',
   },
+  {
+    position: 'officier-premiere-annee',
+    fullname: 'Badr Malouli',
+    // email: '',
+    picture: 'assets/contact/execs/officier_premier_annee.jpg',
+    // github
+    linkedin: 'https://www.linkedin.com/in/badrmalouli',
+  }
 ] as ExecInterface[];
