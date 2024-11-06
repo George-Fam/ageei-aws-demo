@@ -25,7 +25,7 @@ export const execsConst = [
   },
   {
     position: 'vp-interne',
-    fullname: 'Guillaume Pelletier',
+    fullname: 'Federico Barallobres',
     email: 'interne@ageei.org',
     picture: 'assets/contact/execs/interne.jpg',
   },
