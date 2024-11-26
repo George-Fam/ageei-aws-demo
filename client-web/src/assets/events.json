@@ -117,11 +117,22 @@
     "title": "INITIATIONS 2024",
     "date": "2024-09-13T15:30:00",
     "detail":"<h2>INITIATIONS VENDREDI ✨</h2> <p><strong>15h30 à 17h30 : BBQ</strong></p><p><strong>Quoi ?</strong> Venez rencontrer les autres initié.e.s lors de notre évènement de bienvenue ! Au menu, hot-dog (options porc, halal ou véganes), barbe à papa, marchandise gratuite pour nos informaticien.ne.s et tout plein d’activités. 🔥🌭</p> <p><strong>Où ?</strong> En face du pavillon Sherbrooke (SH) près du Cœur des Sciences (Station de métro Président-Kennedy)</p> <p><strong>17h30 à 20h30 : LASER TAG</strong></p> <p><strong>Quoi ?</strong> On vous invite à une méga partie de laser tag au Laser Game Evolution. On privatise les lieux juste pour vous, alors soyez au rendez-vous ! 🔫</p> <p><strong>Où ?</strong> 1226 Rue Sainte-Catherine O, Montréal QC H3G 1P1</p> <p><strong>Important !</strong> Rejoignez-nous avant 17h, en face du pavillon Sherbrooke (SH) près du Cœur des Sciences, nous partirons tous ensemble.</p> <p><strong>21h00 à 3h00 : Party à L’ABREUVOIR</strong></p> <p><strong>Quoi ?</strong> Rejoignez-nous à l'Abreuvoir Bar & Terrasse pour rencontrer les initié.e.s et les étudiant.e.s actuel.le.s dans une ambiance plus que festive. En plus, on vous offre, très cher.e.s initié.e.s, des billets qui vous donnent droit à des consommations gratuites (une coupe de bière, cocktails et mocktails à nos frais). À ne pas manquer ! 🎉🍻</p> <p><strong>Où ?</strong> 403 Rue Ontario E, Montréal, QC H2L 1N5</p> <p><strong>Qui ? 👀</strong></p> <ul>   <li><strong>Initié.e :</strong> Participe à toutes les activités gratuitement.</li>   <li><strong>Membre de l’AGEEI non-initié.e ou (+1) de l’initié.e :</strong> Achète ton billet ici pour te joindre au party ! Tu auras le vestiaire d’inclus au bar, mais tu devras payer tes propres consommations. —> <a href=\"https://www.zeffy.com/ticketing/0a62e3be-5d45-4588-a819-d8a5e10d6cd4\">LIEN VERS LE BILLET</a></li> </ul> <p><strong>Important !</strong> Ceux qui seront déjà au laser tag, nous partirons tous ensemble vers le pub.</p> <p><strong>Important !</strong> Si vous le pouvez, n’apportez pas de sac à dos au bar pour éviter de remplir le sol de leur vestiaire. 😬</p> <br> <br> On vous y attend en grand nombre ! ",
-    "organizator":"Le comité exécutif de l’AGEEI",
+    "organizator":"Le comité exécutif de l'AGEEI",
     "image": "initiations_2024.jpg",
     "button":{
       "title":"Acheter un billet pour membre non initié ou +1",
       "link": "https://www.zeffy.com/ticketing/0a62e3be-5d45-4588-a819-d8a5e10d6cd4"
+    }
+  },
+  {
+    "title": "Soirée d'escalade de l'AGEEI",
+    "date": "2024-11-29T17:00:00",
+    "detail": "<p>Salut à toustes!</p>\n\n<p>L'AGEEI prévoit bientôt sa toute première <strong>soirée d'escalade au Café Bloc</strong>!<br>\nSi vous n'êtes pas familiers, l'escalade de bloc se pratique à l'intérieur, sur des murs de faible hauteur, et ne nécessite aucun équipement.<br>\nOn espère rejoindre des participant.e.s de tous les niveaux!</p>\n\n<p>🗓️<strong> Quand ? </strong><br>\nLe vendredi 29 novembre de 17h00 à 19h00</p>\n\n<p>📍<strong> Où ? </strong><br>\nAu Café Bloc (juste à côté de l'UQAM): <a href=\"https://maps.app.goo.gl/vgqgp1kwB3vugeLH7\">Lien Google Maps</a></p>\n\n<p>Les places sont limitées, alors réservez votre billet 🎟️ en ligne gratuitement : <a href=\"https://www.zeffy.com/fr-CA/ticketing/soiree-descalade-de-lageei-2\">Réserver maintenant</a></p>\n\n<p>On vous fournit l'entrée et les chaussures d'escalade <strong>gratuitement aux membres de l'AGEEI</strong>, alors vous n'aurez qu'à vous présenter et grimper!<br>\nIl y aura un vestiaire avec des casiers pour ranger vos effets personnels.</p>\n\n<p>Merci et à bientôt!</p>\n\n<p><em>Le comité exécutif de l'AGEEI</em></p>",
+    "organizator": "Le comité exécutif de l'AGEEI",
+    "image": "escalade_banniere.png",
+    "button": {
+      "title": "Les places sont limitées, alors réservez votre billet 🎟️ en ligne gratuitement ",
+      "link": "https://www.zeffy.com/fr-CA/ticketing/soiree-descalade-de-lageei-2"
     }
   }
 ]
