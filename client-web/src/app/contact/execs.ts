@@ -61,10 +61,8 @@ export const execsConst = [
   },
   {
     position: 'officier-premiere-annee',
-    fullname: 'Badr Malouli',
+    fullname: 'Vacant',
     email: 'premiere_annee@ageei.org',
-    picture: 'assets/contact/execs/officier_premier_annee.jpg',
-    github: 'bmalouli',
-    linkedin: 'badrmalouli',
+    picture: 'assets/contact/execs/null.jpg',
   }
 ] as ExecInterface[];
