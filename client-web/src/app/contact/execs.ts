@@ -31,10 +31,11 @@ export const execsConst = [
   },
   {
     position: 'vp-externe',
-    fullname: 'Émile Kolani',
+    fullname: 'Badr Malouli',
     email: 'externe@ageei.org',
-    picture: 'assets/contact/execs/externe.jpg',
-    linkedin: 'émile-kolani-711720233',
+    picture: 'assets/contact/execs/null.jpg',
+    github: 'bmalouli',
+    linkedin: 'badrmalouli',
   },
   {
     position: 'vp-loisir',
