@@ -20,7 +20,7 @@ export const execsConst = [
     position: 'trésorier',
     fullname: 'Émile Kolani',
     email: 'tresorier@ageei.org',
-    picture: 'assets/contact/execs/null.jpg',
+    picture: 'assets/contact/execs/tresorier.jpg',
     linkedin: 'émile-kolani-711720233',
   },
   {
@@ -35,7 +35,7 @@ export const execsConst = [
     position: 'vp-externe',
     fullname: 'Badr Malouli',
     email: 'externe@ageei.org',
-    picture: 'assets/contact/execs/null.jpg',
+    picture: 'assets/contact/execs/externe.jpg',
     github: 'bmalouli',
     linkedin: 'badrmalouli',
   },
