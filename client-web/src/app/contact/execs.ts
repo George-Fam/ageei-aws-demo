@@ -44,11 +44,11 @@ export const execsConst = [
   },
   {
     position: 'vp-techno',
-    fullname: 'Sublime Tshimpangila',
+    fullname: 'Kevin Da Silva',
     email: 'technologie@ageei.org',
-    picture: 'assets/contact/execs/technologies.jpg',
-    github: 'Sublime12',
-    linkedin: 'sublime-tshimpangila-84aa78144',
+    picture: 'assets/contact/execs/null.jpg',
+    github: 'KevinDaSilva01',
+    linkedin: 'kevin-da-silva-dev',
   },
   {
     position: 'vp-compétition',
