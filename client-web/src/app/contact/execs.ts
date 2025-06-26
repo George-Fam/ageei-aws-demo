@@ -11,11 +11,10 @@ export const execsConst = [
   },
   {
     position: 'secrétaire',
-    fullname: 'Élodie Brunet',
+    fullname: 'Bouchra Boumedien',
     email: 'secretaire@ageei.org',
-    picture: 'assets/contact/execs/secretaire.jpeg',
-    github: 'croquette-Elo',
-    linkedin: 'elodie-brunet-39635a204',
+    picture: 'assets/contact/execs/null.jpeg',
+    linkedin: 'bouchra-boumedien',
   },
   {
     position: 'trésorier',
