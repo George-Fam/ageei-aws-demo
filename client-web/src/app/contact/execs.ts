@@ -39,9 +39,9 @@ export const execsConst = [
   },
   {
     position: 'vp-loisir',
-    fullname: 'Carl-William Bilodeau-Savaria',
+    fullname: 'Vacant',
     email: 'loisir@ageei.org',
-    picture: 'assets/contact/execs/loisir.jpg',
+    picture: 'assets/contact/execs/null.jpg',
   },
   {
     position: 'vp-techno',
