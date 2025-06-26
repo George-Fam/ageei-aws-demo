@@ -13,7 +13,7 @@ export const execsConst = [
     position: 'secrétaire',
     fullname: 'Bouchra Boumedien',
     email: 'secretaire@ageei.org',
-    picture: 'assets/contact/execs/secretaire.jpeg',
+    picture: 'assets/contact/execs/secretaire.jpg',
     linkedin: 'bouchra-boumedien',
   },
   {
