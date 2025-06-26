@@ -18,10 +18,10 @@ export const execsConst = [
   },
   {
     position: 'trésorier',
-    fullname: 'Jean-Christophe Clouâtre',
+    fullname: 'Émile Kolani',
     email: 'tresorier@ageei.org',
-    picture: 'assets/contact/execs/tresorier.jpg',
-    linkedin: 'jean-christophe-c-b83a40262',
+    picture: 'assets/contact/execs/null.jpg',
+    linkedin: 'émile-kolani-711720233',
   },
   {
     position: 'vp-interne',
