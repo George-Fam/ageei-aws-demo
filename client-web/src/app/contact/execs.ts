@@ -52,11 +52,11 @@ export const execsConst = [
   },
   {
     position: 'vp-compétition',
-    fullname: 'Dany Gagnon',
+    fullname: 'Elouan Hildgen-Poirier',
     email: 'competition@ageei.org',
-    picture: 'assets/contact/execs/competition.jpg',
-    github: 'dgagn',
-    linkedin: 'dany-g-34768822b',
+    picture: 'assets/contact/execs/null.jpg',
+    github: 'CmD0',
+    linkedin: 'elouan-hildgen-poirier-2625ba20b',
   },
   {
     position: 'officier-premiere-annee',
