@@ -26,9 +26,11 @@ export const execsConst = [
   },
   {
     position: 'vp-interne',
-    fullname: 'Federico Barallobres',
+    fullname: 'Olivier Provost',
     email: 'interne@ageei.org',
-    picture: 'assets/contact/execs/interne.jpg',
+    picture: 'assets/contact/execs/null.jpg',
+    github: 'FouDuRoy',
+    linkedin: 'olivierprovost1',
   },
   {
     position: 'vp-externe',
