@@ -5,13 +5,13 @@ export const faqs = [
     categoryName: 'Photo de finissants',
     faqs: [
       {
-        question: 'Quand ont lieux les photos de finissants ?',
+        question: 'Quand ont lieu les photos de finissants ?',
         answer: 'À la fin de la session d’hiver (au mois d’avril).',
       },
       {
         question: 'Qui peut se faire photographier ?',
         answer:
-          'Les étudiants et étudiantes ayant gradué au premier cycle lors de la session d’hiver ou les sessions d’automne et d’hiver précédent la session où les photos sont prises. Une preuve de votre graduation peut vous être demandée.',
+          'Les étudiants et étudiantes ayant gradué au premier cycle lors de la session d’hiver ou les sessions d’automne et d’hiver précédant la session où les photos sont prises. Une preuve de votre graduation peut vous être demandée.',
       },
     ],
   },
@@ -21,7 +21,7 @@ export const faqs = [
       {
         question: 'Comment savoir quand et où ont lieu les party ?',
         answer:
-          'Nous produisons généralement des affiches une semaine ou deux avant les partys, et faisons des annonces sur nos canaux officiels. Vous pouvez vous référer à la section Contacts.',
+          'Nous produisons généralement des affiches une semaine ou deux avant les partys, et faisons des annonces sur nos canaux officiels. Vous pouvez vous référer à la section Contact.',
       },
       {
         question: 'Combien est-ce que ça coûte ?',
@@ -35,7 +35,7 @@ export const faqs = [
       {
         question: 'Quand ont lieu les conférences organisées par l’AGEEI ?',
         answer:
-          'Nous annoncerons les conférences environ une semaine avant qu’elles aient lieu sur nos plateformes officielles (vous pouvez vous référer à la section Contacts). Habituellement, les conférences que nous organisons sont le mercredi midi, pendant la pause commune.',
+          'Nous annoncerons les conférences environ une semaine avant qu’elles aient lieu sur nos plateformes officielles (vous pouvez vous référer à la section Contact). Habituellement, les conférences que nous organisons sont le mercredi midi, pendant la pause commune.',
       },
       {
         question: 'Sur quels sujets portent les conférences ?',
@@ -78,7 +78,7 @@ export const faqs = [
       {
         question: 'Comment puis-je me retirer de l’AGEEI ?',
         answer:
-          'Vous pouvez contacter l’AGEEI à l’adresse courriel suivante : [executif@ageei.org](mailto:executif@ageei.org). Un membre du comité exécutif devrait être en mesure d’effectuer votre remboursement. Notez qu’en étant plus membre de l’AGEEI, vous perdez vos privilèges liés à l’association pour la durée de la session pour laquelle vous demandez un remboursement. Notez que vous avez jusqu’à la deuxième semaine d’une session pour vous révoquer votre adhésion à l’AGEEI.',
+          'Vous pouvez contacter l’AGEEI à l’adresse courriel suivante : [executif@ageei.org](mailto:executif@ageei.org). Un membre du comité exécutif devrait être en mesure d’effectuer votre remboursement. Notez qu’en n’étant plus membre de l’AGEEI, vous perdez vos privilèges liés à l’association pour la durée de la session pour laquelle vous demandez un remboursement. Notez que vous avez jusqu’à la deuxième semaine d’une session pour révoquer votre adhésion à l’AGEEI.',
       },
       {
         question: 'Je souhaite m’impliquer ! Comment puis-je faire ?',
@@ -96,7 +96,7 @@ export const faqs = [
     categoryName: 'Assurances',
     faqs: [
       {
-        question: 'Qu’est-ce que l’assurance inclue ?',
+        question: 'Qu’est-ce que l’assurance inclut ?',
         answer:
           'Nous vous recommandons d’aller trouver ces informations sur le site de l’assureur : [aseq.ca](https://aseq.ca), en sélectionnant AESS comme association étudiante. Il existe une couverture de base et une couverture bonifiée.',
       },
@@ -108,7 +108,7 @@ export const faqs = [
       {
         question: 'Quand puis-je retirer des assurances fournies par l’association ?',
         answer:
-          'Généralement, il est possible de se retirer des assurances entre la mi-septembre et la mi-octobre. Les périodes de retrait exact sont accessibles sur le site web de l’assureur ([aseq.ca](https://aseq.ca)), en sélectionnant AESS comme association étudiante. Même si vous avez déjà payé vos frais d’assurance après avoir demandé un remboursement, vous serez soit crédité, soit remboursé.',
+          'Généralement, il est possible de se retirer des assurances entre la mi-septembre et la mi-octobre. Les périodes de retrait exactes sont accessibles sur le site web de l’assureur ([aseq.ca](https://aseq.ca)), en sélectionnant AESS comme association étudiante. Même si vous avez déjà payé vos frais d’assurance après avoir demandé un remboursement, vous serez soit crédité, soit remboursé.',
       },
     ],
   },
