@@ -1,157 +1,57 @@
 [
   {
-    "title": "Soirée CTF 🚩",
-    "date": "2023-10-25T18:00:00",
-    "detail": "C'est officiel, la première soirée CTF de l'automne 🚩<br><br>Tu te demandes sûrement ce qu'est un CTF ? C'est une façon d'apprendre la sécurité en trouvant des failles de sécurité dans des systèmes. 🔒<br><br>Que tu sois expert ou novice, cet événement est une excellente occasion pour toi d'apprendre et de rencontrer d'autres personnes de ton programme qui partage les mêmes intérêts. 🏴‍☠️ <br><br>Quoi de mieux qu'une soirée où la nourriture est offerte pour se pratiquer ? 🍕 <br><br>Apporte simplement ton laptop et je m'occupe de te trouver des challenges à ton niveau.<br><br>Quand ? Mercredi 25 Octobre de 18h à 21h<br>Où ?    SH-3340<br>Questions ? competition@ageei.org",
-    "organizator": "Le VP compétition de l'AGEEI",
-    "image": "ctf.png"
+    "title": "Sortie Escalade",
+    "date": "2026-04-03T18:00:00",
+    "detail": "<strong>Détails à venir.</strong><br>Reste à l’affût pour plus d’informations très bientôt",
+    "organizator": "Le VP loisir de l'AGEEI"
   },
   {
-    "title": "Party Halloween 👻🎃🦇",
-    "date": "2023-11-02T21:00:00",
-    "detail": "L'heure de notre fameux party d'Halloween a sonné !!! 👻<br><br>Venez fêter la fin de vos examens intra avec nous !<br><br>À l'horaire :<br><br>Une tonne de bonbons pour rassasier votre bedon 🍬🍬🍬<br>Un méga concours de costume avec récompense mystère<br>De bonnes discussions avec musique de fond 🎵 <br>Des billets pour des consommations gratuites 🍻 <br>Du gros fun ! 🙌 <br><br>Quand ? Jeudi le 2 novembre 2023 à 21h<br>Où ? Pub Le Sainte-Élisabeth, 1412 Rue Sainte-Elisabeth, Montréal, QC H2X 1L4<br><br>Pour participer veuillez acheter votre billet !<br><br>Bonne soirée à l'avance !",
-    "image": "halloween.png",
+    "title": "Escape Room",
+    "date": "2026-04-01T17:00:00",
+    "detail": "<strong>Détails à venir.</strong><br>Reste à l’affût pour plus d’informations très bientôt",
+    "organizator": "Le VP loisir de l'AGEEI"
+  },
+  {
+    "title": "Designathon – Événement Design",
+    "date": "2026-03-21T09:00:00",
+    "detail": "<strong>Détails à venir.</strong><br>Reste à l’affût pour plus d’informations très bientôt",
+    "organizator": "UQAM - AGEEI"
+  },
+  {
+    "title": "Atelier UX/UI",
+    "date": "2026-03-20T17:00:00",
+    "detail": "<strong>Détails à venir.</strong><br>Reste à l’affût pour plus d’informations très bientôt",
+    "organizator": "UQAM - AGEEI"
+  },
+  {
+    "title": "Cabane à Sucre",
+    "date": "2026-03-13T12:00:00",
+    "detail": "<strong>Détails à venir.</strong><br>Reste à l’affût pour plus d’informations très bientôt",
+    "organizator": "Le VP loisir de l'AGEEI"
+  },
+  {
+    "title": "CS Games",
+    "date": "2026-03-06T09:00:00",
+    "detail": "<strong>Détails à venir.</strong><br>Reste à l’affût pour plus d’informations très bientôt",
+    "organizator": "Le VP Compétition de l'AGEEI"
+  },
+  {
+    "title": "Séance d’étude",
+    "date": "2026-02-09T14:00:00",
+    "detail": "<strong>Détails à venir.</strong><br>Reste à l’affût pour plus d’informations très bientôt",
+    "organizator": "UQAM - AGEEI"
+  },
+  {
+    "title": "Soirée Jeux de Société 🐺♕🎴",
+    "date": "2026-02-04T16:30:00",
+    "detail": "Rejoins-nous pour une soirée décontractée de jeux de société ! 🎲 <br><br> Quand : Mardi 4 février 2026, de 16h30 à 19h30<br>Où : Local PK-1140, UQAM<br>Ce qui t'attend :<br>🎮 Une variété de jeux : Codenames, Loup-Garou, UNO, échecs, cartes et plus encore !<br>🍕 Pizza, collations et boissons gratuites<br>🎁 Bingo avec 3 cartes-cadeaux de 20 $ à gagner !<br><br>Au plaisir de te voir ! 😊<br>Questions ? loisirs@ageei.org",
     "organizator": "Le VP loisir de l'AGEEI",
-    "button": {
-      "title":"Acheter un billet",
-      "link": "https://www.zeffy.com/fr-CA/ticketing/4bfc7e2a-7ffd-4384-a32d-76006d1cc94b"
-    }
+    "image": "jeux_soc.png"
   },
   {
-    "title": "Soirée CTF 🚩",
-    "date": "2023-11-14T18:00:00",
-    "detail":"Encore une soirée CTF 🚩.<br><br>Viens nous rejoindre face à un nouveau challenge 🤔<br>On attaque le CTF tous ensemble et on regarde la solution en fin de séance !<br><br>Apporte simplement ton laptop et je m'occupe de te trouver des challenges à ton niveau.<br><br>Quand ? Mardi 14 novembre de 18h à 21h<br>Où ?   Voir Discord pour la salle<br>Questions ? competition@ageei.org",
-    "organizator": "Le VP compétition de l'AGEEI",
-    "image": "ctf.png",
-    "button": {
-      "title": "Discord de compétition",
-      "link": "https://discord.gg/nQKsQpbK7U"
-    }
-  },
-  {
-    "title": "CyberSci",
-    "date": "2023-11-17T12:00:00",
-    "detail": "CyberSci est le défi national de cybersécurité du Canada destiné aux étudiants universitaires et collégiaux.<br><br>- Vous pensez avoir une équipe d'étudiants d'élite ? Venez le prouver. Nos gagnants affronteront ensuite les meilleurs au monde.<br>- Vous débutez ? C'est la meilleure façon d'apprendre et d'atteindre le sommet.<br>- Événements annuels en personne depuis 2016. Plus de 500 étudiants jusqu'à présent.<br><br>La finale nationale canadienne est à Ottawa cet été 😯<br>",
-    "organizator": "Le VP compétition de l'AGEEI",
-    "image": "cybersci.png"
-  },
-  {
-    "title": "Party du temps des fêtes 🍻",
-    "approximateMonth": "2023-12",
-    "detail": "Quoi de mieux qu'un bon party pour finir l'année ?",
-    "organizator": "Le VP loisir de l'AGEEI",
-    "image": "temps-des-fetes.png"
-  },
-  {
-    "title": "Chalet",
-    "approximateMonth": "2024-03",
-    "detail": "Et si on partait en chalet cet hiver ? 🤔<br><br>On prend un bus, et on passe une bonne fin de semaine 🚌<br>",
-    "organizator": "Le VP loisir de l'AGEEI",
-    "image": "chalet.png",
-    "button": {
-      "title":"Acheter un billet",
-      "link": "https://www.zeffy.com/fr-CA/ticketing/179f9a99-c5cf-4787-b1ea-c2df8540dea5"
-    }
-  },
-  {
-    "title": "Csgames 2024",
-    "date": "2024-03-15T12:00:00",
-    "detail": "La plus grosse compétition interuniversitaire est de retour ! 🎉<br><br>L'AGEEI doit retourner défendre sa première place en mobile 📱 Cette année, on voit les choses en grand, nous envoyons 20 étudiants 💪<br>",
-    "organizator": "Le VP compétition de l'AGEEI",
-    "image": "csgames.png",
-    "button": {
-      "title":"Formulaire de participation",
-      "link": "https://forms.gle/XxYUppT6jRSdpi4s8"
-    }
-  },
-  {
-    "title": "Party post intra 🍻",
-    "approximateMonth": "2024-03",
-    "detail": "Les examens étaient très difficiles cette session, je vais aller au party pour soigner ma peine 🍻",
-    "organizator": "Le VP loisir de l'AGEEI",
-    "image": "post-intra.png"
-  },
-  {
-    "title": "Photo des finissants 🎓",
-    "approximateMonth": "2024-04",
-    "detail": "Quel bel exploit ! Tu as réussi 👏<br>Viens, on va prendre ta photo pour célébrer l'occasion.<br>",
-    "organizator": "L'AGEEI",
-    "image": "graduate.png"
-  },
-  {
-    "title": "AG d'élection",
-    "date": "2024-04-10T12:30:00",
-    "detail": "Il est temps pour votre comité exécutif de vous dire au revoir !<br><br>Venez élire votre nouveau comité pour la prochaine année.<br>",
-    "organizator": "L'AGEEI",
-    "image": "bye.png"
-  },
-  {
-    "title": "NorthSec 🚩",
-    "date": "2024-05-17T12:00:00",
-    "detail": "Le plus gros CTF de l'année est de retour 😮<br><br>Il est temps que l'AGEEI s'impose dans le monde des CTF ! Cette année, on monte dans le top 10 😎<br>",
-    "organizator": "Le VP compétition de l'AGEEI",
-    "image": "nsec.png"
-  },
-  {
-    "title": "Tour de vélo de l'AGEEI - Édition 2024",
-    "date": "2024-06-15T09:00:00",
-    "detail": "L'AGEEI organise une balade à vélo à Montréal vers la mi-juin. On vous invite pour une boucle d'une vingtaine de kilomètres sur une piste cyclable qui longe le fleuve et fait le tour de l'Île des Sœurs et de l'Île Sainte-Hélène.",
-    "organizator":"Le VP loisir de l'AGEEI",
-    "image": "tour-velo.jpg"
-  },
-  {
-    "title": "BBQ",
-    "date": "2024-07-04T17:00:00",
-    "detail": "Venez profiter de l'été avec nous dans la cour de l'UQAM. Nous monterons des chapiteaux et servirons toutes sortes de bouffe BBQ et de boissons. Il y aura de la musique, des jeux, et surtout beaucoup de plaisir.",
-    "organizator":"Le VP loisir de l'AGEEI",
-    "image": "bbq-2024.jpg"
-  },
-  {
-    "title": "Bowling",
-    "date": "2024-07-18T17:00:00",
-    "detail": "Description à venir",
-    "organizator":"Le VP loisir de l'AGEEI",
-    "image": "bowling-2024.jpg"
-  },
-  {
-    "title": "INITIATIONS 2024",
-    "date": "2024-09-13T15:30:00",
-    "detail":"<h2>INITIATIONS VENDREDI ✨</h2> <p><strong>15h30 à 17h30 : BBQ</strong></p><p><strong>Quoi ?</strong> Venez rencontrer les autres initié.e.s lors de notre événement de bienvenue ! Au menu, hot-dog (options porc, halal ou véganes), barbe à papa, marchandise gratuite pour nos informaticien.ne.s et tout plein d’activités. 🔥🌭</p> <p><strong>Où ?</strong> En face du pavillon Sherbrooke (SH) près du Cœur des Sciences (Station de métro Président-Kennedy)</p> <p><strong>17h30 à 20h30 : LASER TAG</strong></p> <p><strong>Quoi ?</strong> On vous invite à une méga partie de laser tag au Laser Game Evolution. On privatise les lieux juste pour vous, alors soyez au rendez-vous ! 🔫</p> <p><strong>Où ?</strong> 1226 Rue Sainte-Catherine O, Montréal QC H3G 1P1</p> <p><strong>Important !</strong> Rejoignez-nous avant 17h, en face du pavillon Sherbrooke (SH) près du Cœur des Sciences, nous partirons tous ensemble.</p> <p><strong>21h00 à 3h00 : Party à L’ABREUVOIR</strong></p> <p><strong>Quoi ?</strong> Rejoignez-nous à l'Abreuvoir Bar & Terrasse pour rencontrer les initié.e.s et les étudiant.e.s actuel.le.s dans une ambiance plus que festive. En plus, on vous offre, très cher.e.s initié.e.s, des billets qui vous donnent droit à des consommations gratuites (une coupe de bière, cocktails et mocktails à nos frais). À ne pas manquer ! 🎉🍻</p> <p><strong>Où ?</strong> 403 Rue Ontario E, Montréal, QC H2L 1N5</p> <p><strong>Qui ? 👀</strong></p> <ul>   <li><strong>Initié.e :</strong> Participe à toutes les activités gratuitement.</li>   <li><strong>Membre de l’AGEEI non-initié.e ou (+1) de l’initié.e :</strong> Achète ton billet ici pour te joindre au party ! Tu auras le vestiaire d’inclus au bar, mais tu devras payer tes propres consommations. —> <a href=\"https://www.zeffy.com/ticketing/0a62e3be-5d45-4588-a819-d8a5e10d6cd4\">LIEN VERS LE BILLET</a></li> </ul> <p><strong>Important !</strong> Ceux qui seront déjà au laser tag, nous partirons tous ensemble vers le pub.</p> <p><strong>Important !</strong> Si vous le pouvez, n’apportez pas de sac à dos au bar pour éviter de remplir le sol de leur vestiaire. 😬</p> <br> <br> On vous y attend en grand nombre ! ",
-    "organizator":"Le comité exécutif de l'AGEEI",
-    "image": "initiations_2024.jpg",
-    "button":{
-      "title":"Acheter un billet pour membre non initié ou +1",
-      "link": "https://www.zeffy.com/ticketing/0a62e3be-5d45-4588-a819-d8a5e10d6cd4"
-    }
-  },
-  {
-    "title": "Soirée d'escalade de l'AGEEI",
-    "date": "2024-11-29T17:00:00",
-    "detail": "<p>Salut à toustes !</p>\n\n<p>L'AGEEI prévoit bientôt sa toute première <strong>soirée d'escalade au Café Bloc</strong>!<br>\nSi vous n'êtes pas familiers, l'escalade de bloc se pratique à l'intérieur, sur des murs de faible hauteur, et ne nécessite aucun équipement.<br>\nOn espère rejoindre des participant.e.s de tous les niveaux!</p>\n\n<p>🗓️<strong> Quand ? </strong><br>\nLe vendredi 29 novembre de 17h00 à 19h00</p>\n\n<p>📍<strong> Où ? </strong><br>\nAu Café Bloc (juste à côté de l'UQAM): <a href=\"https://maps.app.goo.gl/vgqgp1kwB3vugeLH7\">Lien Google Maps</a></p>\n\n<p>Les places sont limitées, alors réservez votre billet 🎟️ en ligne gratuitement : <a href=\"https://www.zeffy.com/fr-CA/ticketing/soiree-descalade-de-lageei-2\">Réserver maintenant</a></p>\n\n<p>On vous fournit l'entrée et les chaussures d'escalade <strong>gratuitement aux membres de l'AGEEI</strong>, alors vous n'aurez qu'à vous présenter et grimper!<br>\nIl y aura un vestiaire avec des casiers pour ranger vos effets personnels.</p>\n\n<p>Merci et à bientôt!</p>\n\n<p><em>Le comité exécutif de l'AGEEI</em></p>",
-    "organizator": "Le comité exécutif de l'AGEEI",
-    "image": "escalade_banniere.png",
-    "button": {
-      "title": "Les places sont limitées, alors réservez votre billet 🎟️ en ligne gratuitement. ",
-      "link": "https://www.zeffy.com/fr-CA/ticketing/soiree-descalade-de-lageei-2"
-    }
-  },
-  {
-    "title": "Assemblée Générale d’Été 📣",
-    "date": "2025-07-02T12:45:00",
-    "detail": "<p>Salut à toutes et à tous 👋</p>\n\n<p>N’oubliez pas que <strong>l’Assemblée Générale d’été de l’AGEEI</strong> aura lieu <strong>demain, le 2 juillet 2025 à 12 h 45</strong>, au <strong>local PK-1320</strong> et <strong>en ligne via Zoom</strong> 💻📍</p>\n\n<p>🗳️ <strong>À l’ordre du jour :</strong></p>\n<ul>\n  <li><strong>Élection du nouveau VP Loisir.</strong> <em>Pour s'inscrire au poste, remplir le formulaire dans vos mails scolaires</em></li>\n  <li><strong>Décision sur le budget d’été</strong></li>\n  <li>Vos questions et propositions !</li>\n</ul>\n\n<p>🎯 <strong>Votre voix compte !</strong> Venez faire entendre vos idées et voter pour que le budget soit débloqué 🗣️</p>\n\n<p>🔗 Le lien Zoom a été partagé dans vos courriels d’étudiant(e)s.</p>\n\n<p>À demain en grand nombre !</p>",
-    "organizator": "Le comité exécutif de l'AGEEI",
-    "image": "AG_ETE2025_REPRISE.png"
-  },
-  {
-    "title": "Mini-Putt Glow in the Dark",
-    "date": "2025-08-09T18:00:00",
-    "detail": "<p>Viens décrocher après les exams !</p>\n\n<p>Yo la gang 👋<br>\nT’es épuisé·e après ta semaine d’examens ? Viens te vider la tête, rire un bon coup et t’éclater avec l’AGEEI dans une soirée de <strong>mini-putt fluo</strong> ✨</p>\n\n<p>Au programme : fun, <strong>trophée à gagner</strong> 🏆, une <strong>surprise</strong> et même du <strong>merch à tirer</strong> 🎁</p>\n\n<p>🗓️ <strong>Quand ?</strong><br>\nSamedi 9 août 2025<br>\nÀ partir de 18h00</p>\n\n<p>📍 <strong>Où ?</strong><br>\nPutting Edge, juste en face de Concordia !<br>\n1259 Rue Guy Montreal, Quebec H3H 2K5</p>\n\n<p><strong>Thématique :</strong> Glow in the Dark<br>\nPorte du blanc ou du fluo si tu veux briller sous les néons 🌟</p>\n\n<p>🎟️ <strong>Tarifs :</strong><br>\n👤 Étudiant.e membre AGEEI : <strong>GRATUIT</strong> (oui, oui 😎)<br>\n➕ Invité.e non-membre (+1) : 10 $ Doit être le +1 d’un membre</p>\n\n<p>⚠️ <strong>30 places max</strong> → inscription obligatoire même si c’est gratuit</p>\n\n<p><a href=\"https://www.zeffy.com/ticketing/soiree-putting-edge\">Réserve ta place ici 👉</a><br>\nQR dispo sur les affiches AGEEI</p>\n\n<p>Viens te détendre, mettre des trous d’un coup, et peut-être repartir avec un prix<br>\n<strong>À ne pas manquer 💥</strong> Les places sont limitées alors dépêchez vous</p>",
-    "organizator": "Comité exécutif de l’AGEEI",
-    "image": "Affiche_Mini_putt_09_08.png",
-    "button": {
-      "title": "Réserve ta place ici",
-      "link": "https://www.zeffy.com/ticketing/soiree-putting-edge"
-    }
+    "title": "Qualifications des CS Games",
+    "date": "2025-01-31T12:00:00",
+    "detail": "Les Qualifications des CSGames arrivent à grands pas ! 💻🔥<br><br>📅 <strong>Date :</strong> Vendredi 31 janvier 2025<br>⏰ <strong>Heure :</strong> De 12h à 17h<br>📍 <strong>Lieu :</strong> Local SH-3220<br><em>Note :</em> La fin de semaine, l’accès au campus se fait via les portes du PK.<br><br><strong>Un petit rappel sur les CSGames :</strong><br>Il s’agit de la plus grande compétition informatique universitaire au Québec ! 🏆<br><br>Tu pourras mettre tes compétences à l’épreuve dans plusieurs domaines très en demande, notamment :<br>⚙️ DevOps<br>🔐 Cybersécurité<br>🤖 Systèmes embarqués<br>🧾 COBOL<br>🎨 UI/UX<br>… et bien d’autres !<br><br>C’est aussi une occasion unique de rencontrer des étudiant·e·s d’autres universités, de réseauter avec des gens de l’industrie et de participer à des soirées festives mémorables 🎉<br><br>On a très hâte de vous y voir ! 😊<br>",
+    "organizator": "Le VP Compétition de l'AGEEI"
   }
-
 ]
