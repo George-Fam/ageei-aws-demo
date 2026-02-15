@@ -134,6 +134,10 @@
 }
 
 @media screen and (max-width: 959px) {
+  .nav {
+    padding-bottom: 0 !important;
+  }
+
   .height-keeper {
     height: 69px;
   }

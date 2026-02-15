@@ -2,16 +2,39 @@
   L'AGEEI vous organise de nombreux événements au fil de l'année.<br>
   Nous ajoutons les détails ainsi que les dates des événements au plus vite.
 </div>
-<div class="button-container" *ngIf="scrollToId">
+
+<!-- Calendar header & controls -->
+<div class="timeline-header" *ngIf="showCalendar">
+  <div class="header-row">
+    <div class="header-title">
+      <h3>Calendrier des Événements</h3>
+      <p class="muted">Affichez le calendrier ou abonnez-vous pour recevoir tous les événements</p>
+    </div>
+    <div class="header-actions">
+      <button mat-stroked-button (click)="toggleCalendar()">
+        {{ calendarOpen ? 'Cacher le calendrier' : 'Afficher le calendrier' }}
+      </button>
+      <a *ngIf="subscribeUrl" mat-button color="primary" [href]="subscribeUrl" target="_blank" rel="noopener">
+        S'abonner
+      </a>
+    </div>
+  </div>
+
+  <div class="calendar-panel" *ngIf="calendarOpen">
+    <iframe [src]="calendarUrl" style="border:0"></iframe>
+  </div>
+</div>
+
+<div class="button-container" *ngIf="scrollToId !== undefined && scrollToId !== null">
   <button mat-flat-button class="scroll-button" (click)="scroll()">
-    Voir le prochain evenement
+    Voir le prochain événement
   </button>
 </div>
 
 <div class="timeline">
   <div *ngFor='let entry of timeLine;let i = index'>
     <div class="container" [ngClass]="{ left: i%2!==0, right:i%2===0}">
-      <div class="content" [id]="i">
+      <div class="content" [id]="i" [ngClass]="{ 'past-event': isPastEvent(entry) }">
 
         <div class="title-container">
           <div class="title">{{entry.title}}</div>
@@ -19,15 +42,22 @@
           <h3 *ngIf="entry.approximateMonth;">{{entry.approximateMonth | date:'MMMM yyyy' }}</h3>
         </div>
 
-        <p class="event-detail" [innerHTML]="entry.detail"></p>
-        <p><em>{{entry.organizator}}</em></p>
-        <div *ngIf="entry.button">
-          <button class="event-button" color="primary" mat-raised-button (click)="goToLink(entry.button.link)">
-            {{entry.button.title}}
-            <mat-icon>open_in_new</mat-icon>
-          </button>
+        <div *ngIf="!isPastEvent(entry) || isEventExpanded(i)">
+          <p class="event-detail" [innerHTML]="entry.detail"></p>
+          <p><em>{{entry.organizator}}</em></p>
+          <div *ngIf="entry.button">
+            <button class="event-button" color="primary" mat-raised-button (click)="goToLink(entry.button.link)">
+              {{entry.button.title}}
+              <mat-icon>open_in_new</mat-icon>
+            </button>
+          </div>
+          <img class="image" *ngIf="entry.image" src="/assets/events/{{entry.image}}" alt="Illustration pour l’événement {{entry.title}}" />
         </div>
-        <img class="image" *ngIf="entry.image" src="/assets/events/{{entry.image}}" />
+
+        <button *ngIf="isPastEvent(entry)" mat-stroked-button class="toggle-details-button" (click)="toggleEventDetails(i)">
+          {{ isEventExpanded(i) ? 'Cacher les détails' : 'Voir les détails' }}
+          <mat-icon>{{ isEventExpanded(i) ? 'expand_less' : 'expand_more' }}</mat-icon>
+        </button>
       </div>
     </div>
   </div>

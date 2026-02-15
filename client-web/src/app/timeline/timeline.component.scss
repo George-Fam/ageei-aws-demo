@@ -127,6 +127,15 @@
     margin: 10px auto;
     display: flex;
   }
+
+  .toggle-details-button {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
 }
 
 .image {
@@ -134,8 +143,39 @@
   width: 100%;
 }
 
+.content.past-event {
+  background-color: #f3f3f3;
+  color: #999;
+
+  .title {
+    color: #777;
+  }
+
+  .event-detail {
+    color: #888;
+  }
+
+  .event-button {
+    opacity: 0.6;
+  }
+
+  img {
+    filter: grayscale(100%);
+    opacity: 0.7;
+  }
+}
+
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
+  .description {
+    margin-top: 40px;
+  }
+
+  .scroll-button {
+    width: 80% !important;
+    font-size: 0.9rem;
+  }
+
   /* Place the timelime to the left */
   .timeline::after {
     left: 31px;
@@ -162,6 +202,53 @@
 
   /* Make all right containers behave like the left ones */
   .right {
-    left: 0%;
+    left: 0;
   }
+
+}
+
+.calendar-panel {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    margin-bottom: 8px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 480px;
+    border: none;
+  }
+}
+
+/* Header above calendar with controls */
+.timeline-header {
+  max-width: 1100px;
+  margin: 0 auto 36px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+
+.header-row {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.header-title h3 { margin: 0; }
+.muted { margin: 0; color: #666; font-size: 0.95rem; }
+
+.header-actions { display: flex; gap: 8px; align-items: center; }
+
+@media screen and (max-width: 800px) {
+  .header-row { flex-direction: column; align-items: stretch; }
+  .calendar-panel iframe { height: 360px; }
 }
