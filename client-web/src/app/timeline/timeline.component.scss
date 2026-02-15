@@ -136,6 +136,15 @@
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
+  .description {
+    margin-top: 40px;
+  }
+
+  .scroll-button {
+    width: 80% !important;
+    font-size: 0.9rem;
+  }
+
   /* Place the timelime to the left */
   .timeline::after {
     left: 31px;
