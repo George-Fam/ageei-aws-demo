@@ -1,6 +1,7 @@
-import { AfterViewChecked, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TimelineService } from './timeline.service';
 import { Timeline } from './timeline.interface';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-timeline',
@@ -8,24 +9,21 @@ import { Timeline } from './timeline.interface';
   styleUrls: ['./timeline.component.scss'],
 })
 export class TimelineComponent implements OnInit {
-  timeLine: Array<Timeline>;
+  timeLine: Array<Timeline> = [];
   currentDate: Date = new Date();
   scrollToId: number | undefined;
 
   public constructor(private timelineService: TimelineService) { }
 
   ngOnInit(): void {
-    const url: string = '/assets/events.json';
+
     this.timelineService.getTimelime().subscribe((data) => {
       data.reverse();
       this.timeLine = data;
       let currentID = 0;
       for (let item of this.timeLine) {
-        item.date = item.date;
-
         if (item.date && new Date(item.date).getTime() > this.currentDate.getTime()) {
-          console.log(this.scrollToId);
-          if (this.scrollToId === undefined) {
+          if (this.scrollToId === undefined || this.scrollToId === null) {
             this.scrollToId = currentID;
           }
         }
@@ -35,7 +33,7 @@ export class TimelineComponent implements OnInit {
   }
 
   scroll() {
-    if (this.scrollToId) {
+    if (this.scrollToId !== undefined && this.scrollToId !== null) {
       let el = document.getElementById(String(this.scrollToId));
       el?.scrollIntoView({ behavior: 'smooth' });
     }
