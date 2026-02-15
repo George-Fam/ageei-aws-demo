@@ -2,7 +2,30 @@
   L'AGEEI vous organise de nombreux événements au fil de l'année.<br>
   Nous ajoutons les détails ainsi que les dates des événements au plus vite.
 </div>
-<div class="button-container" *ngIf="scrollToId">
+
+<!-- Calendar header & controls -->
+<div class="timeline-header" *ngIf="showCalendar">
+  <div class="header-row">
+    <div class="header-title">
+      <h3>Calendrier des Événements</h3>
+      <p class="muted">Affichez le calendrier ou abonnez-vous pour recevoir tous les événements</p>
+    </div>
+    <div class="header-actions">
+      <button mat-stroked-button (click)="toggleCalendar()">
+        {{ calendarOpen ? 'Cacher le calendrier' : 'Afficher le calendrier' }}
+      </button>
+      <a *ngIf="subscribeUrl" mat-button color="primary" [href]="subscribeUrl" target="_blank" rel="noopener">
+        S'abonner
+      </a>
+    </div>
+  </div>
+
+  <div class="calendar-panel" *ngIf="calendarOpen">
+    <iframe [src]="calendarUrl" style="border:0"></iframe>
+  </div>
+</div>
+
+<div class="button-container" *ngIf="scrollToId !== undefined && scrollToId !== null">
   <button mat-flat-button class="scroll-button" (click)="scroll()">
     Voir le prochain événement
   </button>

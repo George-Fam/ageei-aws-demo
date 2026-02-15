@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TimelineService } from './timeline.service';
 import { Timeline } from './timeline.interface';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -12,8 +13,12 @@ export class TimelineComponent implements OnInit {
   timeLine: Array<Timeline> = [];
   currentDate: Date = new Date();
   scrollToId: number | undefined;
+  showCalendar = false;
+  calendarUrl: SafeResourceUrl | undefined;
+  calendarOpen = false;
+  subscribeUrl: string | undefined;
 
-  public constructor(private timelineService: TimelineService) { }
+  public constructor(private timelineService: TimelineService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
 
@@ -30,6 +35,10 @@ export class TimelineComponent implements OnInit {
         currentID += 1;
       }
     });
+  }
+
+  toggleCalendar() {
+    this.calendarOpen = !this.calendarOpen;
   }
 
   scroll() {
