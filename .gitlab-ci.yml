@@ -1,7 +1,15 @@
 stages:
   - dependencies
   - lint
+  - build
   - deploy
+
+variables:
+  API_TOKEN: $DEPLOYMENT_TOKEN
+  APP_PATH: '$CI_PROJECT_DIR/client-web'
+  OUTPUT_PATH: '$CI_PROJECT_DIR/client-web/public' # Angular output path. Defined in angular.json
+  API_PATH: '' # empty for now
+
 
 install_dependencies:
   image: node:16-alpine
@@ -32,24 +40,27 @@ lint:
     paths:
       - client-web/node_modules/
     policy: pull
+  only:
+    - main
 
-pages:
+build:
   image: node:16-alpine
-  stage: deploy
-  cache:
-    paths:
-      - client-web/node_modules/
+  stage: build
   script:
     - cd client-web
     - npm install -g @angular/cli@13.1.2
     - npm install
-    - ng build
-    - cd ..
-    - mkdir -p public
-    - mv ./client-web/public/* public/
-    - cp public/index.html public/404.html
+    - ng build --prod
   artifacts:
     paths:
-      - public
+      - client-web/dist/angular-basic
+  only:
+    - main
+
+deploy:
+  stage: deploy
+  image: registry.gitlab.com/static-web-apps/azure-static-web-apps-deploy
+  script:
+    - echo "App deployed successfully."
   only:
     - main
