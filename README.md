@@ -1,48 +1,49 @@
-# Site web AGEEI
+# Site web de l’AGEEI
 
-## Qualités recherchées
+Application web Angular du site de l’AGEEI.
 
-### Requis
+## Pile technologique
 
-- Git + Git Flow
+- Angular (TypeScript)
+- SCSS
 
-### Recherché
+## Pages & fonctionnalités (déjà en place)
 
-- Design web
-- Backend
-- Frontend
-- Bases de données
-- Sécurité 
+L’application est organisée en modules/fonctionnalités sous 
+`client-web/src/app` :
 
-## Pages
+- **Accueil** (`client-web/src/app/accueil`)
+- **Anciens examens** (`client-web/src/app/anciens-examens`)
+- **Charte** (`client-web/src/app/charte`)  
+  - Récupération du contenu de la charte via un service.
+- **Contact** (`client-web/src/app/contact`)
+- **FAQ** (`client-web/src/app/faq`)
+- **Timeline** (`client-web/src/app/timeline`)  
+  - Modèles + service pour les données.
+- **Composants partagés / mise en page** (`client-web/src/app/shared`)  
+  - En-tête et composants UI réutilisés.
 
-### Utilisateurs (Phase 1)
+## Azure Static Web Apps
 
-#### Accueil
+### Déploiement
+- Déployé vers Static Web Apps via GitLab CI.
 
-- Mission de l'AGEEI
+### Configuration 
+- Configuration ( Routing, Auth, etc. ) Static Web Apps dans le fichier : 
+  - `src/staticwebapp.config.json`
+- Documentation : [Configure Azure Static Web Apps](https://learn.microsoft.com/azure/static-web-apps/configuration)
 
-#### Anciens examens
+## Statut
+- En cours :
+  - **Backend d’événements** pour faciliter la publication et la modification.
+  - **Backend CMS** + **intégration front-end**.
+  - **Authentification** pour les administrateurs + **interface d’administration**.
+  - Migration du CTF vers Azure.
 
-- Possibilité de filtrer par cours, par année
+## Personnes Recherchées
+Contactez <technologie@ageei.org> si vous êtes intéressé(e) à contribuer !
 
-#### Charte
-
-Pull la charte à partir de gitlab
-
-#### Événements
-
-- Événements passés et à venir
-- Redirection vers la page d'inscription
-
-### Admin (Phase 2)
-
-#### Écran de connexion
-
-- Nom d'utilisateur
-- Mot de passe
-- Se rappeler de moi
-
-#### Gestion des administrateurs
-
-- Ajouter une adresse courriel, un mot de passe par défaut est généré. Lors de sa prochaine connexion il devra changer de mot de passe.
+- **Développeurs front-end** : Angular, TypeScript, SCSS.
+- **Développeurs back-end** : Node.js, Express, Azure Functions.
+- **Sécurité** : Audit de sécurité, tests d’intrusion, recommandations de 
+  durcissement.
