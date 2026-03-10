@@ -12,28 +12,21 @@
     "organizator": "Le VP loisir de l'AGEEI"
   },
   {
-    "title": "Designathon – Événement Design",
-    "date": "2026-03-21T09:00:00",
-    "detail": "<strong>Détails à venir.</strong><br>Reste à l’affût pour plus d’informations très bientôt",
-    "organizator": "UQAM - AGEEI"
-  },
-  {
-    "title": "Atelier UX/UI",
-    "date": "2026-03-20T17:00:00",
-    "detail": "<strong>Détails à venir.</strong><br>Reste à l’affût pour plus d’informations très bientôt",
-    "organizator": "UQAM - AGEEI"
-  },
-  {
     "title": "Cabane à Sucre",
-    "date": "2026-03-13T12:00:00",
-    "detail": "<strong>Détails à venir.</strong><br>Reste à l’affût pour plus d’informations très bientôt",
-    "organizator": "Le VP loisir de l'AGEEI"
+    "date": "2026-03-29T12:00:00",
+    "detail": "Ne manquez pas cette chance de participer à une sortie à la cabane à sucre organisée par l’AGEEI à l’occasion de la saison des sucres.<br><br>L’association vous invite à visiter l’Érablière Meunier, avec transport en autobus inclus.<br><br><strong>📅 Date :</strong> Dimanche 29 mars 2026<br><br><strong>🚌 Départ :</strong> 12h00<br>Merci d’arriver 15 minutes avant (11h45) afin de ne pas manquer l’autobus.<br><br><strong>🔙 Retour :</strong> 16h00<br>Arrivée prévue à l’UQAM vers 17h00.<br><br><strong>📍 Point de départ (UQAM) :</strong><br>200 rue Sherbrooke Ouest, Montréal, QC H2X 1X5<br><em>(embarquement dans l’autobus au stationnement du CPE de l’UQAM, à l’entrée sud du pavillon Sherbrooke)</em><br><br>Les places sont limitées, donc assurez-vous de réserver la vôtre rapidement.<br><br>Chaque membre de l’AGEEI peut acheter au maximum 1 billet invité.",
+    "organizator": "Le VP loisir de l’AGEEI",
+    "button": {
+      "title": "Réserver ma place",
+      "link": "https://www.zeffy.com/fr-CA/ticketing/soiree-cabane-a-sucre-de-lageei--2026-2"
+    },
+    "image": "cabanesucre.webp"
   },
   {
     "title": "CS Games",
     "date": "2026-03-06T09:00:00",
-    "detail": "<strong>Détails à venir.</strong><br>Reste à l’affût pour plus d’informations très bientôt",
-    "organizator": "Le VP Compétition de l'AGEEI"
+    "detail": "L’AGEEI a participé aux CS Games 2026, la plus grande compétition informatique universitaire au Québec, et nous sommes fiers d’annoncer une performance remarquable de notre délégation !<br><br>🏆 <strong>1re place en High Performance Computing</strong><br>🏆 <strong>1re place en Gaming</strong><br><br>Félicitations à tous les participants qui ont représenté l’UQAM !",
+    "organizator": "Le VP Compétition de l’AGEEI"
   },
   {
     "title": "Galentine.js",
