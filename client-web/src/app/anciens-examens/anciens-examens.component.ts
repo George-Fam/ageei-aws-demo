@@ -5,6 +5,7 @@ import { FormControl } from '@angular/forms';
   selector: 'app-anciens-examens',
   templateUrl: './anciens-examens.component.html',
   styleUrls: ['./anciens-examens.component.scss'],
+  standalone: false,
 })
 export class AnciensExamensComponent {
   searchValue: string;

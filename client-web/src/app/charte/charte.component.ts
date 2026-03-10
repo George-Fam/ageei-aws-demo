@@ -7,6 +7,7 @@ import { GitlabFileResponse } from './gitlab-file-response';
   selector: 'app-charte',
   templateUrl: './charte.component.html',
   styleUrls: ['./charte.component.scss'],
+  standalone: false,
 })
 export class CharteComponent implements OnInit {
   charte: string;

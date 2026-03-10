@@ -5,6 +5,7 @@ import { Title } from '@angular/platform-browser';
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.scss'],
+  standalone: false,
 })
 export class AccueilComponent {
   constructor(titleService: Title) {

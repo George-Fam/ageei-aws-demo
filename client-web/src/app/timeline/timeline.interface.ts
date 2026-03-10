@@ -8,5 +8,5 @@ export interface Timeline {
   button?: {
     title: string;
     link: string;
-  }
+  };
 }

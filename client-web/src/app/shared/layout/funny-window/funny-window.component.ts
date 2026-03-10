@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-funny-window',
   templateUrl: './funny-window.component.html',
   styleUrls: ['./funny-window.component.scss'],
+  standalone: false,
 })
 export class FunnyWindowComponent {
   @Input()

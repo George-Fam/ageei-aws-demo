@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss'],
+  standalone: false,
 })
 export class TimelineComponent implements OnInit {
   timeLine: Array<Timeline> = [];
@@ -19,10 +20,9 @@ export class TimelineComponent implements OnInit {
   subscribeUrl: string | undefined;
   expandedEvents: Set<number> = new Set();
 
-  public constructor(private timelineService: TimelineService, private sanitizer: DomSanitizer) { }
+  public constructor(private timelineService: TimelineService, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
-
     if (environment.googleCalendarId && environment.googleCalendarId.length > 0) {
       const base = 'https://calendar.google.com/calendar/embed';
       const params = new URLSearchParams({
@@ -36,7 +36,9 @@ export class TimelineComponent implements OnInit {
 
       // Build subscribe URL for CTA
       if (environment.googleCalendarId) {
-        this.subscribeUrl = `https://calendar.google.com/calendar/u/0/r?cid=${encodeURIComponent(environment.googleCalendarId)}`;
+        this.subscribeUrl = `https://calendar.google.com/calendar/u/0/r?cid=${encodeURIComponent(
+          environment.googleCalendarId
+        )}`;
       }
     }
     this.timelineService.getTimelime().subscribe((data) => {
@@ -68,7 +70,7 @@ export class TimelineComponent implements OnInit {
   goToLink(url: string) {
     // Ensure URL has a protocol
     const fullUrl = url.match(/^https?:\/\//) ? url : `https://${url}`;
-    window.open(fullUrl, "_blank");
+    window.open(fullUrl, '_blank');
   }
 
   isPastEvent(entry: Timeline): boolean {

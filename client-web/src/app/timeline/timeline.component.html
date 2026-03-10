@@ -48,7 +48,7 @@
           <div *ngIf="entry.button">
             <button class="event-button" color="primary" mat-raised-button (click)="goToLink(entry.button.link)">
               {{entry.button.title}}
-              <mat-icon>open_in_new</mat-icon>
+              <mat-icon iconPositionEnd>open_in_new</mat-icon>
             </button>
           </div>
           <img class="image" *ngIf="entry.image" src="/assets/events/{{entry.image}}" alt="Illustration pour l’événement {{entry.title}}" />
@@ -56,7 +56,7 @@
 
         <button *ngIf="isPastEvent(entry)" mat-stroked-button color="primary" class="toggle-details-button" (click)="toggleEventDetails(i)">
           {{ isEventExpanded(i) ? 'Cacher les détails' : 'Voir les détails' }}
-          <mat-icon>{{ isEventExpanded(i) ? 'expand_less' : 'expand_more' }}</mat-icon>
+          <mat-icon iconPositionEnd>{{ isEventExpanded(i) ? 'expand_less' : 'expand_more' }}</mat-icon>
         </button>
       </div>
     </div>
