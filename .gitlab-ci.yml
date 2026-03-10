@@ -7,12 +7,12 @@ stages:
 variables:
   API_TOKEN: $DEPLOYMENT_TOKEN
   APP_PATH: '$CI_PROJECT_DIR/client-web'
-  OUTPUT_PATH: '$CI_PROJECT_DIR/client-web/public' # Angular output path. Defined in angular.json
+  OUTPUT_PATH: '$CI_PROJECT_DIR/client-web/public/browser' # Angular output path. Defined in angular.json
   API_PATH: '' # empty for now
 
 
 install_dependencies:
-  image: node:16-alpine
+  image: node:22-alpine
   stage: dependencies
   script:
     - cd client-web
@@ -27,12 +27,11 @@ install_dependencies:
       - client-web/node_modules
 
 lint:
-  image: node:16-alpine
+  image: node:22-alpine
   stage: lint
   script:
     - cd client-web
-    - npm link @angular/cli@13.1.2
-    - ng lint
+    - npx ng lint
   cache:
     key:
       files:
@@ -44,16 +43,21 @@ lint:
     - main
 
 build:
-  image: node:16-alpine
+  image: node:22-alpine
   stage: build
   script:
     - cd client-web
-    - npm install -g @angular/cli@13.1.2
-    - npm install
-    - ng build --prod
+    - npx ng build --configuration production
+  cache:
+    key:
+      files:
+        - client-web/package-lock.json
+    paths:
+      - client-web/node_modules/
+    policy: pull
   artifacts:
     paths:
-      - client-web/dist/angular-basic
+      - client-web/public/browser
   only:
     - main
 

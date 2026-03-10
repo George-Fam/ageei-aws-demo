@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -8,7 +8,9 @@ import { Title } from '@angular/platform-browser';
   standalone: false,
 })
 export class AccueilComponent {
-  constructor(titleService: Title) {
+  constructor() {
+    const titleService = inject(Title);
+
     titleService.setTitle('AGEEI - Accueil');
   }
 }

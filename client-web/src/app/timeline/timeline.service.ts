@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Timeline } from './timeline.interface';
@@ -8,7 +8,7 @@ import { Timeline } from './timeline.interface';
   providedIn: 'root',
 })
 export class TimelineService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   getTimelime(): Observable<Array<Timeline>> {
     return this.http.get<Array<Timeline>>(environment.eventJson);

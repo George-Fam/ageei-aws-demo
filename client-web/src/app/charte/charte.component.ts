@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { CharteService } from './charte.service';
 import { GitlabFileResponse } from './gitlab-file-response';
@@ -10,9 +10,13 @@ import { GitlabFileResponse } from './gitlab-file-response';
   standalone: false,
 })
 export class CharteComponent implements OnInit {
+  private charteService = inject(CharteService);
+
   charte: string;
 
-  constructor(titleService: Title, private charteService: CharteService) {
+  constructor() {
+    const titleService = inject(Title);
+
     titleService.setTitle('AGEEI - Charte');
   }
 

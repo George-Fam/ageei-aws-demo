@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { TimelineService } from './timeline.service';
 import { Timeline } from './timeline.interface';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -11,6 +11,9 @@ import { environment } from 'src/environments/environment';
   standalone: false,
 })
 export class TimelineComponent implements OnInit {
+  private timelineService = inject(TimelineService);
+  private sanitizer = inject(DomSanitizer);
+
   timeLine: Array<Timeline> = [];
   currentDate: Date = new Date();
   scrollToId: number | undefined;
@@ -19,8 +22,6 @@ export class TimelineComponent implements OnInit {
   calendarOpen = false;
   subscribeUrl: string | undefined;
   expandedEvents: Set<number> = new Set();
-
-  public constructor(private timelineService: TimelineService, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
     if (environment.googleCalendarId && environment.googleCalendarId.length > 0) {
