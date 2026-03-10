@@ -1,3 +1,5 @@
 <div class="container">
-  <markdown *ngIf="charte"> {{ charte }} </markdown>
+  @if (charte) {
+  <markdown> {{ charte }} </markdown>
+  }
 </div>

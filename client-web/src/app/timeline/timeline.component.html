@@ -1,10 +1,11 @@
 <div class="description">
-  L'AGEEI vous organise de nombreux événements au fil de l'année.<br>
+  L'AGEEI vous organise de nombreux événements au fil de l'année.<br />
   Nous ajoutons les détails ainsi que les dates des événements au plus vite.
 </div>
 
 <!-- Calendar header & controls -->
-<div class="timeline-header" *ngIf="showCalendar">
+@if (showCalendar) {
+<div class="timeline-header">
   <div class="header-row">
     <div class="header-title">
       <h3>Calendrier des Événements</h3>
@@ -14,51 +15,65 @@
       <button mat-stroked-button color="primary" (click)="toggleCalendar()">
         {{ calendarOpen ? 'Cacher le calendrier' : 'Afficher le calendrier' }}
       </button>
-      <a *ngIf="subscribeUrl" mat-button color="primary" [href]="subscribeUrl" target="_blank" rel="noopener">
-        S'abonner
-      </a>
+      @if (subscribeUrl) {
+      <a mat-button color="primary" [href]="subscribeUrl" target="_blank" rel="noopener"> S'abonner </a>
+      }
     </div>
   </div>
-
-  <div class="calendar-panel" *ngIf="calendarOpen">
-    <iframe [src]="calendarUrl" style="border:0"></iframe>
+  @if (calendarOpen) {
+  <div class="calendar-panel">
+    <iframe [src]="calendarUrl" style="border: 0"></iframe>
   </div>
+  }
 </div>
-
-<div class="button-container" *ngIf="scrollToId !== undefined && scrollToId !== null">
-  <button mat-flat-button class="scroll-button" (click)="scroll()">
-    Voir le prochain événement
-  </button>
+} @if (scrollToId !== undefined && scrollToId !== null) {
+<div class="button-container">
+  <button mat-flat-button class="scroll-button" (click)="scroll()">Voir le prochain événement</button>
 </div>
+}
 
 <div class="timeline">
-  <div *ngFor='let entry of timeLine;let i = index'>
-    <div class="container" [ngClass]="{ left: i%2!==0, right:i%2===0}">
+  @for (entry of timeLine; track entry; let i = $index) {
+  <div>
+    <div class="container" [ngClass]="{ left: i % 2 !== 0, right: i % 2 === 0 }">
       <div class="content" [id]="i" [ngClass]="{ 'past-event': isPastEvent(entry) }">
-
         <div class="title-container">
-          <div class="title">{{entry.title}}</div>
-          <h3 *ngIf="entry.date;">{{entry.date | date:'long' }}</h3>
-          <h3 *ngIf="entry.approximateMonth;">{{entry.approximateMonth | date:'MMMM yyyy' }}</h3>
+          <div class="title">{{ entry.title }}</div>
+          @if (entry.date;) {
+          <h3>{{ entry.date | date : 'long' }}</h3>
+          } @if (entry.approximateMonth;) {
+          <h3>{{ entry.approximateMonth | date : 'MMMM yyyy' }}</h3>
+          }
         </div>
-
-        <div *ngIf="!isPastEvent(entry) || isEventExpanded(i)">
+        @if (!isPastEvent(entry) || isEventExpanded(i)) {
+        <div>
           <p class="event-detail" [innerHTML]="entry.detail"></p>
-          <p><em>{{entry.organizator}}</em></p>
-          <div *ngIf="entry.button">
+          <p>
+            <em>{{ entry.organizator }}</em>
+          </p>
+          @if (entry.button) {
+          <div>
             <button class="event-button" color="primary" mat-raised-button (click)="goToLink(entry.button.link)">
-              {{entry.button.title}}
+              {{ entry.button.title }}
               <mat-icon iconPositionEnd>open_in_new</mat-icon>
             </button>
           </div>
-          <img class="image" *ngIf="entry.image" src="/assets/events/{{entry.image}}" alt="Illustration pour l’événement {{entry.title}}" />
+          } @if (entry.image) {
+          <img
+            class="image"
+            src="/assets/events/{{ entry.image }}"
+            alt="Illustration pour l’événement {{ entry.title }}"
+          />
+          }
         </div>
-
-        <button *ngIf="isPastEvent(entry)" mat-stroked-button color="primary" class="toggle-details-button" (click)="toggleEventDetails(i)">
+        } @if (isPastEvent(entry)) {
+        <button mat-stroked-button color="primary" class="toggle-details-button" (click)="toggleEventDetails(i)">
           {{ isEventExpanded(i) ? 'Cacher les détails' : 'Voir les détails' }}
           <mat-icon iconPositionEnd>{{ isEventExpanded(i) ? 'expand_less' : 'expand_more' }}</mat-icon>
         </button>
+        }
       </div>
     </div>
   </div>
+  }
 </div>

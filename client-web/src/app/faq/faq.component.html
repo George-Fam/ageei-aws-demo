@@ -1,18 +1,32 @@
 <div class="container">
   <app-funny-window windowTitle="faq.txt">
     <div class="main-container" fxLayout.lt-md="column" fxLayout.gt-sm="row">
-      <div class="side-bar" fxFlex.gt-sm="25%" fxFlex.lt-md="100%" fxLayout.lt-md="row" fxLayout.gt-sm="column" fxLayout.xs="column"
-        fxLayoutAlign.gt-sm="start start" fxLayoutAlign.lt-md="space-between start">
-        <div *ngFor="let category of faqCategories" class="category-item-container" (click)="selectCategory(category)">
-          <div class="category-item" [class.selected-category-item]="category === selectedCategory"
-            [ngClass.lt-md]="'mobile-category-item'">
+      <div
+        class="side-bar"
+        fxFlex.gt-sm="25%"
+        fxFlex.lt-md="100%"
+        fxLayout.lt-md="row"
+        fxLayout.gt-sm="column"
+        fxLayout.xs="column"
+        fxLayoutAlign.gt-sm="start start"
+        fxLayoutAlign.lt-md="space-between start"
+      >
+        @for (category of faqCategories; track category) {
+        <div class="category-item-container" (click)="selectCategory(category)">
+          <div
+            class="category-item"
+            [class.selected-category-item]="category === selectedCategory"
+            [ngClass.lt-md]="'mobile-category-item'"
+          >
             {{ category.categoryName }}
           </div>
         </div>
+        }
       </div>
       <div class="question-container" fxFlex.gt-sm="75%" fxFlex.lt-md="100%">
         <mat-accordion>
-          <mat-expansion-panel hideToggle *ngFor="let faq of selectedCategory.faqs">
+          @for (faq of selectedCategory.faqs; track faq) {
+          <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
               <mat-panel-title>
                 <b>
@@ -22,6 +36,7 @@
             </mat-expansion-panel-header>
             <markdown> {{ faq.answer }} </markdown>
           </mat-expansion-panel>
+          }
         </mat-accordion>
       </div>
     </div>

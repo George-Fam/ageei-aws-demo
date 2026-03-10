@@ -1,8 +1,17 @@
 <div class="container">
   <div class="fifty-split" fxLayout="row wrap" fxLayoutGap="0px grid">
     <div fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
-      <ngx-typed-js fxLayout="column" fxLayoutAlign="center stretch" class="left-section" [strings]="questions"
-        [backDelay]="3000" [smartBackspace]="true" [typeSpeed]="50" [loop]="true" [loopCount]="3">
+      <ngx-typed-js
+        fxLayout="column"
+        fxLayoutAlign="center stretch"
+        class="left-section"
+        [strings]="questions"
+        [backDelay]="3000"
+        [smartBackspace]="true"
+        [typeSpeed]="50"
+        [loop]="true"
+        [loopCount]="3"
+      >
         <h1 class="typing"></h1>
       </ngx-typed-js>
     </div>
@@ -20,8 +29,15 @@
   <div class="blank-separator"></div>
   <!-- Necessary because fxFlex dynamically assign a margin of 0 for fifty-split and execs-container-->
   <div class="execs-container" fxLayout="row wrap" fxLayoutGap="16px grid">
-    <app-funny-window *ngFor="let exec of execs" fxFlex="33%" fxFlex.md="50%" fxFlex.sm="100%" fxFlex.xs="100%"
-      [windowTitle]="exec.position + '.txt'" class="exec-container">
+    @for (exec of execs; track exec) {
+    <app-funny-window
+      fxFlex="33%"
+      fxFlex.md="50%"
+      fxFlex.sm="100%"
+      fxFlex.xs="100%"
+      [windowTitle]="exec.position + '.txt'"
+      class="exec-container"
+    >
       <div class="exec" fxLayout="row" fxLayoutAlign="space-between center">
         <img [src]="exec.picture" />
         <div class="exec-presentation">
@@ -32,17 +48,21 @@
                 <a [href]="'mailto:' + exec.email">
                   <mat-icon class="mail">mail</mat-icon>
                 </a>
-                <a *ngIf="exec.github" [href]="'https://github.com/' + exec.github">
+                @if (exec.github) {
+                <a [href]="'https://github.com/' + exec.github">
                   <img src="assets/contact/github.png" />
                 </a>
-                <a *ngIf="exec.linkedin" [href]="'https://www.linkedin.com/in/' + exec.linkedin">
+                } @if (exec.linkedin) {
+                <a [href]="'https://www.linkedin.com/in/' + exec.linkedin">
                   <img src="assets/contact/linkedin.png" />
                 </a>
+                }
               </div>
             </div>
           </div>
         </div>
       </div>
     </app-funny-window>
+    }
   </div>
 </div>

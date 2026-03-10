@@ -5,13 +5,21 @@
         <img src="/assets/logo.png" class="logo" />
       </a>
       <div fxHide.lt-md class="nav-menu" fxLayout="row" fxLayoutAlign="space-between center">
-        <a class="link hover-underline-animation" *ngFor="let link of router_links" [routerLink]="link.url">
+        @for (link of router_links; track link) {
+        <a class="link hover-underline-animation" [routerLink]="link.url">
           {{ link.name }}
         </a>
+        }
       </div>
       <div>
         <div fxHide.gt-sm class="mobile-menu">
-          <input (change)="menuOpened = !menuOpened" [checked]="menuOpened" type="checkbox" id="toggle" style="display: none" />
+          <input
+            (change)="menuOpened = !menuOpened"
+            [checked]="menuOpened"
+            type="checkbox"
+            id="toggle"
+            style="display: none"
+          />
           <label class="toggle-btn toggle-btn__cross" for="toggle">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -19,9 +27,11 @@
           </label>
           <nav>
             <ul>
-              <li *ngFor="let link of router_links">
+              @for (link of router_links; track link) {
+              <li>
                 <a (click)="menuOpened = false" [routerLink]="link.url">{{ link.name }}</a>
               </li>
+              }
             </ul>
           </nav>
         </div>
