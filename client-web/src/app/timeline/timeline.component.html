@@ -11,7 +11,7 @@
       <p class="muted">Affichez le calendrier ou abonnez-vous pour recevoir tous les événements</p>
     </div>
     <div class="header-actions">
-      <button mat-stroked-button (click)="toggleCalendar()">
+      <button mat-stroked-button color="primary" (click)="toggleCalendar()">
         {{ calendarOpen ? 'Cacher le calendrier' : 'Afficher le calendrier' }}
       </button>
       <a *ngIf="subscribeUrl" mat-button color="primary" [href]="subscribeUrl" target="_blank" rel="noopener">
@@ -54,7 +54,7 @@
           <img class="image" *ngIf="entry.image" src="/assets/events/{{entry.image}}" alt="Illustration pour l’événement {{entry.title}}" />
         </div>
 
-        <button *ngIf="isPastEvent(entry)" mat-stroked-button class="toggle-details-button" (click)="toggleEventDetails(i)">
+        <button *ngIf="isPastEvent(entry)" mat-stroked-button color="primary" class="toggle-details-button" (click)="toggleEventDetails(i)">
           {{ isEventExpanded(i) ? 'Cacher les détails' : 'Voir les détails' }}
           <mat-icon>{{ isEventExpanded(i) ? 'expand_less' : 'expand_more' }}</mat-icon>
         </button>
