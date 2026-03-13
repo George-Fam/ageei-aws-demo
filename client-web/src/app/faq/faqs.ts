@@ -76,9 +76,9 @@ export const faqs = [
           "Notre local est situé au SH-R345 du pavillon Sherbrooke de la faculté des sciences, tout juste avant l’entrée du café fractal. Nous avons mis beaucoup d'efforts dans les derniers mois pour le rendre accueillant pour ceux et celles qui souhaitent travailler sur leurs travaux ou simplement décompresser entre deux cours. Au plaisir de vous y voir !",
       },
       {
-        question: 'Comment puis-je me retirer de l’AGEEI ?',
+        question: 'Remboursement de cotisation / Comment puis-je me retirer de l’AGEEI ?',
         answer:
-          'Vous pouvez contacter l’AGEEI à l’adresse courriel suivante : [executif@ageei.org](mailto:executif@ageei.org). Un membre du comité exécutif devrait être en mesure d’effectuer votre remboursement. Notez qu’en n’étant plus membre de l’AGEEI, vous perdez vos privilèges liés à l’association pour la durée de la session pour laquelle vous demandez un remboursement. Notez que vous avez jusqu’à la deuxième semaine d’une session pour révoquer votre adhésion à l’AGEEI.',
+          'Pour demander un remboursement de votre cotisation à l’AGEEI, remplissez le formulaire en ligne suivant : [https://forms.gle/QbFMbS2JhcrfzoLR7](https://forms.gle/QbFMbS2JhcrfzoLR7)\n\nVous aurez besoin de :\n\n- Le formulaire de démission rempli et signé (le PDF est disponible à télécharger dans le formulaire en ligne)\n- Votre relevé d’inscription-facture avec paiement effectué (capture d’écran du portail étudiant acceptée)\n\nVous devrez également fournir un numéro de téléphone ou une adresse courriel pour recevoir votre remboursement par virement Interac. À défaut, le remboursement sera envoyé à votre courriel étudiant UQAM.\n\nVous devez être connecté à un compte Google pour accéder au formulaire, car celui-ci requiert le téléversement de fichiers.',
       },
       {
         question: 'Je souhaite m’impliquer ! Comment puis-je faire ?',
