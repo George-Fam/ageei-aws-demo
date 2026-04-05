@@ -1,0 +1,10 @@
+{
+  "/cms-api": {
+    "target": "https://cms.ageei.org",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/cms-api": ""
+    }
+  }
+}
