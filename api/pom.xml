@@ -12,7 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
-        <azure.functions.maven.plugin.version>1.24.0</azure.functions.maven.plugin.version>
+        <azure.functions.maven.plugin.version>1.38.0</azure.functions.maven.plugin.version>
         <azure.functions.java.library.version>2.2.0</azure.functions.java.library.version>
         <functionAppName>ageei-admin-api</functionAppName>
     </properties>
@@ -96,11 +96,7 @@
                     <resourceGroup>Ageei.org_main_site</resourceGroup>
                     <!-- https://github.com/microsoft/azure-maven-plugins/wiki/Azure-Functions:-Configuration-Details#supported-regions  -->
                     <region>canadaeast</region>
-                    <runtime>
-                        <!-- runtime os: windows, linux or docker-->
-                        <os>linux</os>
-                        <javaVersion>17</javaVersion>
-                    </runtime>
+                    <javaVersion>17</javaVersion>
                     <appSettings>
                         <property>
                             <name>FUNCTIONS_EXTENSION_VERSION</name>

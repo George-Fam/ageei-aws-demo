@@ -77,6 +77,14 @@ deploy_api:
     - az account set --subscription $AZURE_SUBSCRIPTION_ID
     - tdnf install -y maven
     - cd api
-    - mvn azure-functions:deploy -DskipTests
+    - mvn package azure-functions:deploy -DskipTests
+    - az functionapp config appsettings set
+        --name ageei-admin-api
+        --resource-group Ageei.org_main_site
+        --settings
+          WEBHOOK_SECRET="$WEBHOOK_SECRET"
+          GOOGLE_CALENDAR_ID="$GOOGLE_CALENDAR_ID"
+          GOOGLE_SERVICE_ACCOUNT_KEY="$GOOGLE_SERVICE_ACCOUNT_KEY"
+          GOOGLE_IMPERSONATED_USER="technologie@ageei.org"
   only:
     - main
