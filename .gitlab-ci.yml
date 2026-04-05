@@ -75,7 +75,7 @@ deploy_api:
   script:
     - az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID
     - az account set --subscription $AZURE_SUBSCRIPTION_ID
-    - apt-get update -qq && apt-get install -y -qq maven
+    - tdnf install -y maven
     - cd api
     - mvn azure-functions:deploy -DskipTests
   only:
