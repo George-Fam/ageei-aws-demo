@@ -1,0 +1,14 @@
+// local.settings.json.template
+// For local development: copy to local.settings.json and fill in actual values.
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "java",
+    "GOOGLE_CALENDAR_ID": "calendar-id@group.calendar.google.com",
+    "GOOGLE_SERVICE_ACCOUNT_KEY": "<base64-encoded service account JSON — run: base64 -w 0 service-account.json>",
+    "GOOGLE_IMPERSONATED_USER": "technologie@ageei.org",
+    "DIRECTUS_URL": "https://cms.ageei.org",
+    "WEBHOOK_SECRET": "random-webhook-secret"
+  }
+}
