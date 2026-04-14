@@ -1,6 +1,7 @@
 stages:
   - dependencies
   - lint
+  - format
   - build
   - deploy
 
@@ -17,8 +18,9 @@ install_dependencies:
   script:
     - cd client-web
     - npm install
-  only:
-    - main
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
   cache:
     key:
       files:
@@ -39,8 +41,26 @@ lint:
     paths:
       - client-web/node_modules/
     policy: pull
-  only:
-    - main
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+prettier:
+  image: node:22-alpine
+  stage: format
+  script:
+    - cd client-web
+    - npm run prettier-check
+  cache:
+    key:
+      files:
+        - client-web/package-lock.json
+    paths:
+      - client-web/node_modules/
+    policy: pull
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
 build:
   image: node:22-alpine
@@ -58,8 +78,9 @@ build:
   artifacts:
     paths:
       - client-web/public/browser
-  only:
-    - main
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
 deploy:
   stage: deploy
