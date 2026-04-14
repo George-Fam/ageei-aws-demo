@@ -1,7 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { FAQCategoryInterface } from './faq-category.interface';
-import { faqs } from './faqs';
+import { FAQCategoryInterface } from './faq.interface';
+import { FaqService } from './faq.service';
 
 @Component({
   selector: 'app-faq',
@@ -9,16 +9,19 @@ import { faqs } from './faqs';
   styleUrls: ['./faq.component.scss'],
   standalone: false,
 })
-export class FaqComponent {
-  faqCategories: FAQCategoryInterface[];
-  selectedCategory: FAQCategoryInterface;
+export class FaqComponent implements OnInit {
+  faqCategories: FAQCategoryInterface[] = [];
+  selectedCategory: FAQCategoryInterface | null = null;
+  private faqService = inject(FaqService);
 
   constructor() {
-    const titleService = inject(Title);
-
-    titleService.setTitle('AGEEI - FAQ');
-    this.faqCategories = faqs;
-    this.selectedCategory = this.faqCategories[0];
+    inject(Title).setTitle('AGEEI - FAQ');
+  }
+  ngOnInit(): void {
+    this.faqService.getFaqs().subscribe((categories) => {
+      this.faqCategories = categories;
+      this.selectedCategory = categories[0] ?? null;
+    });
   }
 
   selectCategory(category: FAQCategoryInterface): void {
