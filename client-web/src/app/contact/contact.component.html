@@ -50,11 +50,13 @@
                 </a>
                 @if (exec.github) {
                 <a [href]="'https://github.com/' + exec.github">
-                  <img src="assets/contact/github.png" />
+                  <img ngSrc="assets/contact/github.png" height="120"
+                       width="120"  alt="Lien Github"/>
                 </a>
                 } @if (exec.linkedin) {
                 <a [href]="'https://www.linkedin.com/in/' + exec.linkedin">
-                  <img src="assets/contact/linkedin.png" />
+                  <img ngSrc="assets/contact/linkedin.png" height="540"
+                       width="635"  alt="Lien LinkedIn"/>
                 </a>
                 }
               </div>

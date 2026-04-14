@@ -1,13 +1,12 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { registerLocaleData } from '@angular/common';
+import { NgOptimizedImage, registerLocaleData } from '@angular/common';
 import localeFrCa from '@angular/common/locales/fr-CA';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharteModule } from './charte/charte.module';
 import { HeaderComponent } from './shared/layout/header/header.component';
 import { SharedModule } from './shared/shared.module';
-import { AnciensExamensModule } from './anciens-examens/anciens-examens.module';
 import { AccueilModule } from './accueil/accueil.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FaqModule } from './faq/faq.module';
@@ -20,11 +19,11 @@ registerLocaleData(localeFrCa);
     AppRoutingModule,
     BrowserModule,
     SharedModule,
-    AnciensExamensModule,
     AccueilModule,
     CharteModule,
     FaqModule,
     BrowserAnimationsModule,
+    NgOptimizedImage,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr-CA' }],
   bootstrap: [AppComponent],
