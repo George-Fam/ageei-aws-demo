@@ -29,7 +29,7 @@
       padding-right: 1em;
     }
     .mission-header-text {
-      font-family: 'Libre Baskerville';
+      font-family: 'Libre Baskerville', serif;
       padding: 0.5em 1.2em;
       text-align: center;
       font-size: 2vw;
@@ -60,10 +60,7 @@
       .mission-text {
         font-size: 4.5vw;
         line-height: 5.5vw;
-        padding-top: 0px;
-        padding-bottom: 20px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 0 15px 20px;
       }
     }
 
