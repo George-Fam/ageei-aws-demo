@@ -29,31 +29,31 @@
   <div class="blank-separator"></div>
   <!-- Necessary because fxFlex dynamically assign a margin of 0 for fifty-split and execs-container-->
   <div class="execs-container" fxLayout="row wrap" fxLayoutGap="16px grid">
-    @for (exec of execs; track exec) {
+    @for (exec of execs; track exec.id) {
     <app-funny-window
       fxFlex="33%"
       fxFlex.md="50%"
       fxFlex.sm="100%"
       fxFlex.xs="100%"
-      [windowTitle]="exec.position + '.txt'"
+      [windowTitle]="exec.role + '.txt'"
       class="exec-container"
     >
       <div class="exec" fxLayout="row" fxLayoutAlign="space-between center">
-        <img [src]="exec.picture" />
+        <img [src]="exec.image" />
         <div class="exec-presentation">
           <div fxLayout="column" fxLayoutAlign="center start">
-            <div class="exec-name">{{ exec.fullname }}</div>
+            <div class="exec-name">{{ exec.name }}</div>
             <div class="exec-icons">
               <div fxLayout="row" fxLayoutAlign="space-evenly center">
                 <a [href]="'mailto:' + exec.email">
                   <mat-icon class="mail">mail</mat-icon>
                 </a>
                 @if (exec.github) {
-                <a [href]="'https://github.com/' + exec.github">
+                <a [href]="exec.github">
                   <img src="assets/contact/github.png" alt="Lien Github"/>
                 </a>
                 } @if (exec.linkedin) {
-                <a [href]="'https://www.linkedin.com/in/' + exec.linkedin">
+                <a [href]="exec.linkedin">
                   <img src="assets/contact/linkedin.png" alt="Lien LinkedIn"/>
                 </a>
                 }
