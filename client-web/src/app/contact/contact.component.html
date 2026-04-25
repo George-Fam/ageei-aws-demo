@@ -27,17 +27,11 @@
     </div>
   </div>
   <div class="blank-separator"></div>
-  <!-- Necessary because fxFlex dynamically assign a margin of 0 for fifty-split and execs-container-->
-  <div class="execs-container" fxLayout="row wrap" fxLayoutGap="16px grid">
+  <div class="section-block">
+  <h2 class="execs-title">Membres du comité exécutif</h2>
+  <div class="cards-row" fxLayout="row wrap" fxLayoutGap="16px grid">
     @for (exec of execs; track exec.id) {
-    <app-funny-window
-      fxFlex="33%"
-      fxFlex.md="50%"
-      fxFlex.sm="100%"
-      fxFlex.xs="100%"
-      [windowTitle]="exec.role + '.txt'"
-      class="exec-container"
-    >
+    <app-funny-window [windowTitle]="exec.role + '.txt'" class="exec-container">
       <div class="exec" fxLayout="row" fxLayoutAlign="space-between center">
         <img [src]="exec.image" />
         <div class="exec-presentation">
@@ -50,11 +44,11 @@
                 </a>
                 @if (exec.github) {
                 <a [href]="exec.github">
-                  <img src="assets/contact/github.png" alt="Lien Github"/>
+                  <img src="assets/contact/github.png" alt="Lien Github" />
                 </a>
                 } @if (exec.linkedin) {
                 <a [href]="exec.linkedin">
-                  <img src="assets/contact/linkedin.png" alt="Lien LinkedIn"/>
+                  <img src="assets/contact/linkedin.png" alt="Lien LinkedIn" />
                 </a>
                 }
               </div>
@@ -65,4 +59,53 @@
     </app-funny-window>
     }
   </div>
+  </div>
+
+  @if (comiteGroups.length > 0) {
+  <div class="blank-separator"></div>
+  <div class="section-block">
+  <div class="comites-section">
+    <h2 class="comites-title">Membres étudiants du comité de programme</h2>
+    @for (group of comiteGroups; track group.comite) {
+    <div class="comite-group">
+      <h3 class="comite-subtitle">Au {{ group.comite }}&nbsp;:</h3>
+      @if (group.membres.length === 0) {
+      <p class="comite-empty">Aucun</p>
+      } @else {
+      <div class="cards-row" fxLayout="row wrap" fxLayoutGap="16px grid">
+        @for (membre of group.membres; track membre.id) {
+        <app-funny-window [windowTitle]="membre.name + '.txt'" class="exec-container">
+          <div class="exec" fxLayout="row" fxLayoutAlign="space-between center">
+            <img [src]="membre.image" [alt]="membre.name" />
+            <div class="exec-presentation">
+              <div fxLayout="column" fxLayoutAlign="center start">
+                <div class="exec-name">{{ membre.name }}</div>
+                <div class="exec-icons">
+                  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <a [href]="'mailto:' + membre.email">
+                      <mat-icon class="mail">mail</mat-icon>
+                    </a>
+                    @if (membre.github) {
+                    <a [href]="membre.github">
+                      <img src="assets/contact/github.png" alt="Lien Github" />
+                    </a>
+                    } @if (membre.linkedin) {
+                    <a [href]="membre.linkedin">
+                      <img src="assets/contact/linkedin.png" alt="Lien LinkedIn" />
+                    </a>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </app-funny-window>
+        }
+      </div>
+      }
+    </div>
+    }
+  </div>
+  </div>
+  }
 </div>

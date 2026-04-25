@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ExecInterface } from './exec.interface';
+import { ComiteGroup, ExecInterface } from './exec.interface';
 import { ContactService } from './contact.service';
 
 @Component({
@@ -11,6 +11,7 @@ import { ContactService } from './contact.service';
 })
 export class ContactComponent implements OnInit {
   execs: ExecInterface[] = [];
+  comiteGroups: ComiteGroup[] = [];
   questions = ['Une question ?', 'Un commentaire ?', 'Une opinion constructive ?'];
 
   private contactService = inject(ContactService);
@@ -23,6 +24,9 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this.contactService.getExecs().subscribe((execs) => {
       this.execs = execs;
+    });
+    this.contactService.getComiteGroups().subscribe((groups) => {
+      this.comiteGroups = groups;
     });
   }
 }
