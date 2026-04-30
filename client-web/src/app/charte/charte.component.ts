@@ -1,7 +1,9 @@
-import { Component, HostListener, OnInit, inject } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Component, HostListener, OnInit, SecurityContext, inject } from '@angular/core';
+import { DomSanitizer, Title } from '@angular/platform-browser';
+import { forkJoin } from 'rxjs';
+import { ContactService } from '../contact/contact.service';
+import { ComiteGroup, ExecInterface } from '../contact/exec.interface';
 import { CharteService } from './charte.service';
-import { GitlabFileResponse } from './gitlab-file-response';
 
 @Component({
   selector: 'app-charte',
@@ -11,44 +13,36 @@ import { GitlabFileResponse } from './gitlab-file-response';
 })
 export class CharteComponent implements OnInit {
   private charteService = inject(CharteService);
+  private contactService = inject(ContactService);
+  private sanitizer = inject(DomSanitizer);
 
-  charte: string;
+  charte: string = '';
+  execs: ExecInterface[] = [];
+  comiteGroups: ComiteGroup[] = [];
 
   constructor() {
-    const titleService = inject(Title);
-
-    titleService.setTitle('AGEEI - Charte');
+    inject(Title).setTitle('AGEEI - Charte');
   }
 
   ngOnInit(): void {
-    this.getCharte();
-  }
-
-  getCharte() {
-    this.charteService.getCharte().subscribe((data: GitlabFileResponse) => {
-      this.charte = this.b64DecodeUnicode(data.content);
+    forkJoin({
+      charte: this.charteService.getCharte(),
+      execs: this.contactService.getExecs(),
+      comiteGroups: this.contactService.getComiteGroups(),
+    }).subscribe(({ charte, execs, comiteGroups }) => {
+      this.charte = this.sanitizer.sanitize(SecurityContext.HTML, charte) ?? '';
+      this.execs = execs;
+      this.comiteGroups = comiteGroups;
     });
   }
 
   @HostListener('click', ['$event'])
-  onClick(event: any): void {
+  onClick(event: MouseEvent): void {
     event.preventDefault();
-  }
-
-  /**
-   * The atob function doesn't decode unicode caracters correctly.
-   * This magic function seems to do the trick.
-   * Source : https://stackoverflow.com/a/30106551
-   */
-  private b64DecodeUnicode(str: string) {
-    // Going backwards: from bytestream, to percent-encoding, to original string.
-    return decodeURIComponent(
-      atob(str)
-        .split('')
-        .map(function (c) {
-          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        })
-        .join('')
-    );
+    const anchor = (event.target as HTMLElement).closest('a');
+    const href = anchor?.getAttribute('href');
+    if (href?.startsWith('#')) {
+      document.getElementById(decodeURIComponent(href.slice(1)))?.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }

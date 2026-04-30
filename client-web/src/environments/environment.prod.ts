@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  charteUrl: 'https://gitlab.com/api/v4/projects/8011854/repository/files/charte.md?ref=master',
+  charteUrl: 'https://cms.ageei.org/items/charte',
   cmsUrl: 'https://cms.ageei.org',
   faqUrl: 'https://cms.ageei.org/items/faq?fields=category,question,answer',
   executivesUrl: 'https://cms.ageei.org/items/executives',
