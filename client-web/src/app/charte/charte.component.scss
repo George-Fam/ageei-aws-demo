@@ -1,0 +1,162 @@
+::ng-deep .charte-content {
+  max-width: 860px;
+  margin: 0 auto;
+  line-height: 1.75;
+  font-size: 1rem;
+
+  // Strip the full-page wrapper tags Angular's innerHTML passes through
+  html,
+  head,
+  body {
+    display: contents;
+  }
+
+  img {
+    max-width: 180px;
+    display: block;
+    margin: 1.5em 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.25em;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid #131312;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 2.5em 0 0.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #131312;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 1.75em 0 0.35em;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.25em 0 0.25em;
+  }
+
+  p {
+    margin: 0.75em 0;
+  }
+
+  a {
+    color: #131312;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  // Table of contents
+  h2 + ul {
+    list-style: none;
+    padding: 1.25em 1.5em;
+    margin: 0.5em 0 2em;
+    background-color: #f0e8df;
+    border: 1px solid #d9d0c8;
+
+    li {
+      margin: 0.15em 0;
+    }
+
+    > li {
+      font-weight: 600;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1.25em;
+      margin: 0.1em 0;
+
+      > li {
+        font-weight: 400;
+      }
+
+      ul {
+        padding-left: 1.25em;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 1.75em;
+    margin: 0.5em 0;
+
+    li {
+      margin: 0.25em 0;
+    }
+
+    ul,
+    ol {
+      margin: 0.1em 0;
+    }
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 1em 0 1.5em;
+    font-size: 0.95rem;
+
+    thead tr {
+      border-bottom: 2px solid #131312;
+    }
+
+    th {
+      text-align: left;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      padding: 0.5em 0.75em;
+    }
+
+    td {
+      padding: 0.45em 0.75em;
+      border-bottom: 1px solid #d9d0c8;
+      vertical-align: top;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background-color: #f0e8df;
+    }
+  }
+}

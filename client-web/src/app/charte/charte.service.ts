@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { GitlabFileResponse } from './gitlab-file-response';
+import { DirectusCharteResponse } from './directus-charte-response';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +10,7 @@ import { GitlabFileResponse } from './gitlab-file-response';
 export class CharteService {
   private http = inject(HttpClient);
 
-  getCharte(): Observable<GitlabFileResponse> {
-    return this.http.get<GitlabFileResponse>(environment.charteUrl);
+  getCharte(): Observable<string> {
+    return this.http.get<DirectusCharteResponse>(environment.charteUrl).pipe(map(({ data }) => data.content));
   }
 }

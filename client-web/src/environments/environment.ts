@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  charteUrl: 'https://gitlab.com/api/v4/projects/8011854/repository/files/charte.md?ref=master',
+  charteUrl: '/cms-api/items/charte',
   cmsUrl: '/cms-api',
   faqUrl: '/cms-api/items/faq?fields=category,question,answer',
   executivesUrl: '/cms-api/items/executives',
