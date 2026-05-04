@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { DomSanitizer, Meta, SafeResourceUrl, Title } from '@angular/platform-browser';
 import { TimelineService } from './timeline.service';
 import { CmsEvent } from './timeline.interface';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -22,6 +22,17 @@ export class TimelineComponent implements OnInit {
   calendarOpen = false;
   subscribeUrl: string | undefined;
   expandedEvents: Set<number> = new Set();
+
+  constructor() {
+    inject(Title).setTitle('AGEEI - Calendrier');
+    const meta = inject(Meta);
+    const desc = "Tous les événements organisés par l'AGEEI au fil de l'année.";
+    meta.updateTag({ name: 'description', content: desc });
+    meta.updateTag({ property: 'og:title', content: 'AGEEI - Calendrier des événements' });
+    meta.updateTag({ property: 'og:description', content: desc });
+    meta.updateTag({ property: 'og:url', content: 'https://ageei.org/calendrier' });
+    meta.updateTag({ property: 'og:image', content: 'https://ageei.org/assets/logo.png' });
+  }
 
   ngOnInit(): void {
     if (environment.googleCalendarId && environment.googleCalendarId.length > 0) {

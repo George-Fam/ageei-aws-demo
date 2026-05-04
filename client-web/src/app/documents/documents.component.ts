@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { DirectusDocument, ImportantDocument } from './documents.interface';
 import { DocumentsService } from './documents.service';
 
@@ -21,6 +21,13 @@ export class DocumentsComponent implements OnInit {
 
   constructor() {
     inject(Title).setTitle('AGEEI - Documents');
+    const meta = inject(Meta);
+    const desc = "Procès-verbaux et documents officiels de l'AGEEI.";
+    meta.updateTag({ name: 'description', content: desc });
+    meta.updateTag({ property: 'og:title', content: 'AGEEI - Documents' });
+    meta.updateTag({ property: 'og:description', content: desc });
+    meta.updateTag({ property: 'og:url', content: 'https://ageei.org/documents' });
+    meta.updateTag({ property: 'og:image', content: 'https://ageei.org/assets/logo.png' });
   }
 
   ngOnInit(): void {
