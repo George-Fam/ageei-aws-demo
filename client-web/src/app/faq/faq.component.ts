@@ -22,6 +22,8 @@ export class FaqComponent implements OnInit {
   selectedCategory: FAQCategoryInterface | null = null;
   searchControl = new FormControl('');
   searchResults: FaqSearchResult[] = [];
+  isLoading = true;
+  hasError = false;
   private faqService = inject(FaqService);
 
   constructor() {
@@ -29,9 +31,18 @@ export class FaqComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.faqService.getFaqs().subscribe((categories) => {
-      this.faqCategories = categories;
-      this.selectedCategory = categories[0] ?? null;
+    this.isLoading = true;
+    this.hasError = false;
+    this.faqService.getFaqs().subscribe({
+      next: (categories) => {
+        this.faqCategories = categories;
+        this.selectedCategory = categories[0] ?? null;
+        this.isLoading = false;
+      },
+      error: () => {
+        this.isLoading = false;
+        this.hasError = true;
+      },
     });
 
     this.searchControl.valueChanges.pipe(debounceTime(200)).subscribe((query) => {

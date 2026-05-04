@@ -1,4 +1,9 @@
 <div class="container">
+  @if (isLoading) {
+    <app-loading-state></app-loading-state>
+  } @else if (hasError) {
+    <app-error-state (retry)="ngOnInit()"></app-error-state>
+  } @else {
   <app-funny-window windowTitle="faq.txt">
 
     <div class="search-bar">
@@ -77,4 +82,5 @@
     }
 
   </app-funny-window>
+  } <!-- end @else -->
 </div>

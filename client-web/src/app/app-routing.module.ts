@@ -28,7 +28,7 @@ const routes: Routes = [
     path: 'documents',
     loadChildren: () => import('./documents/documents.module').then((m) => m.DocumentsModule),
   },
-  { path: '**', pathMatch: 'full', redirectTo: '' }, // catch any unfound routes and redirect to home page
+  { path: '**', loadChildren: () => import('./not-found/not-found.module').then((m) => m.NotFoundModule) },
 ];
 
 @NgModule({

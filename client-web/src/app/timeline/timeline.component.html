@@ -1,7 +1,14 @@
+<app-scroll-to-top></app-scroll-to-top>
 <div class="description">
   L'AGEEI vous organise de nombreux événements au fil de l'année.<br />
   Nous ajoutons les détails ainsi que les dates des événements au plus vite.
 </div>
+
+@if (isLoading) {
+  <app-loading-state></app-loading-state>
+} @else if (hasError) {
+  <app-error-state (retry)="ngOnInit()"></app-error-state>
+} @else {
 
 <!-- Calendar header & controls -->
 @if (showCalendar) {
@@ -74,3 +81,5 @@
     </div>
   }
 </div>
+
+} <!-- end @else -->
