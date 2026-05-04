@@ -1,4 +1,9 @@
 <div class="container">
+  @if (isLoading) {
+    <app-loading-state></app-loading-state>
+  } @else if (hasError) {
+    <app-error-state (retry)="ngOnInit()"></app-error-state>
+  } @else {
   <app-funny-window windowTitle="faq.txt">
     <div class="main-container" fxLayout.lt-md="column" fxLayout.gt-sm="row">
       <div
@@ -40,4 +45,5 @@
       </div>
     </div>
   </app-funny-window>
+  } <!-- end @else -->
 </div>

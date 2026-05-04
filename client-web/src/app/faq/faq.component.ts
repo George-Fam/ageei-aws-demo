@@ -12,15 +12,27 @@ import { FaqService } from './faq.service';
 export class FaqComponent implements OnInit {
   faqCategories: FAQCategoryInterface[] = [];
   selectedCategory: FAQCategoryInterface | null = null;
+  isLoading = true;
+  hasError = false;
   private faqService = inject(FaqService);
 
   constructor() {
     inject(Title).setTitle('AGEEI - FAQ');
   }
+
   ngOnInit(): void {
-    this.faqService.getFaqs().subscribe((categories) => {
-      this.faqCategories = categories;
-      this.selectedCategory = categories[0] ?? null;
+    this.isLoading = true;
+    this.hasError = false;
+    this.faqService.getFaqs().subscribe({
+      next: (categories) => {
+        this.faqCategories = categories;
+        this.selectedCategory = categories[0] ?? null;
+        this.isLoading = false;
+      },
+      error: () => {
+        this.isLoading = false;
+        this.hasError = true;
+      },
     });
   }
 

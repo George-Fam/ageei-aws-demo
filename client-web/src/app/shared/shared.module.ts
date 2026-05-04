@@ -14,6 +14,9 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
 import { FunnyWindowComponent } from './layout/funny-window/funny-window.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { ScrollToTopComponent } from './layout/scroll-to-top/scroll-to-top.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ErrorStateComponent } from './layout/error-state/error-state.component';
+import { LoadingStateComponent } from './layout/loading-state/loading-state.component';
 
 @NgModule({
   imports: [
@@ -30,6 +33,7 @@ import { ScrollToTopComponent } from './layout/scroll-to-top/scroll-to-top.compo
     ReactiveFormsModule,
     MatCardModule,
     MatExpansionModule,
+    MatProgressSpinnerModule,
     NgxTypedJsModule,
   ],
   exports: [
@@ -45,10 +49,13 @@ import { ScrollToTopComponent } from './layout/scroll-to-top/scroll-to-top.compo
     ReactiveFormsModule,
     MatCardModule,
     MatExpansionModule,
+    MatProgressSpinnerModule,
     NgxTypedJsModule,
     FunnyWindowComponent,
     ScrollToTopComponent,
+    ErrorStateComponent,
+    LoadingStateComponent,
   ],
-  declarations: [FunnyWindowComponent, ScrollToTopComponent],
+  declarations: [FunnyWindowComponent, ScrollToTopComponent, ErrorStateComponent, LoadingStateComponent],
 })
 export class SharedModule {}

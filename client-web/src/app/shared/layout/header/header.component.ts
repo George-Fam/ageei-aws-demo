@@ -1,4 +1,5 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,12 +7,12 @@ import { AfterViewInit, Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
   standalone: false,
 })
-export class HeaderComponent implements AfterViewInit {
-  menuOpened: boolean;
+export class HeaderComponent {
+  menuOpened = false;
+  isHidden = false;
+  private prevScrollPos = 0;
 
-  constructor() {
-    this.menuOpened = false;
-  }
+  router = inject(Router);
 
   router_links = [
     { name: 'Accueil', url: '/' },
@@ -22,20 +23,32 @@ export class HeaderComponent implements AfterViewInit {
     { name: 'Contact', url: '/contact' },
   ];
 
-  ngAfterViewInit(): void {
-    // Hide menu on scroll
-    let prevScrollpos = window.pageYOffset;
-    window.onscroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      const container = document.getElementById('nav-container');
-      if (container) {
-        if (prevScrollpos > currentScrollPos) {
-          container.style.top = '0';
-        } else {
-          container.style.top = '-130px';
-        }
-        prevScrollpos = currentScrollPos;
-      }
-    };
+  @HostListener('window:scroll')
+  onScroll(): void {
+    const currentScrollPos = window.pageYOffset;
+    this.isHidden = this.prevScrollPos < currentScrollPos && currentScrollPos > 60;
+    this.prevScrollPos = currentScrollPos;
+  }
+
+  @HostListener('window:keydown.escape')
+  onEscape(): void {
+    this.menuOpened = false;
+  }
+
+  isActiveLink(url: string): boolean {
+    if (url === '/') {
+      return this.router.isActive('/', {
+        paths: 'exact',
+        queryParams: 'exact',
+        fragment: 'ignored',
+        matrixParams: 'ignored',
+      });
+    }
+    return this.router.isActive(url, {
+      paths: 'subset',
+      queryParams: 'subset',
+      fragment: 'ignored',
+      matrixParams: 'ignored',
+    });
   }
 }

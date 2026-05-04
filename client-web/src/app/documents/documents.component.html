@@ -1,5 +1,10 @@
 <app-scroll-to-top></app-scroll-to-top>
 <div class="container">
+  @if (isLoading) {
+    <app-loading-state></app-loading-state>
+  } @else if (hasError) {
+    <app-error-state (retry)="ngOnInit()"></app-error-state>
+  } @else {
   @if (importantDocuments.length > 0) {
     <section class="section">
       <h2 class="section-title">Documents importants</h2>
@@ -66,4 +71,5 @@
       <p class="no-documents">Aucun procès-verbal disponible.</p>
     }
   </section>
+  } <!-- end @else -->
 </div>
