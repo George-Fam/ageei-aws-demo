@@ -1,4 +1,9 @@
 <div class="container">
+  @if (isLoading) {
+    <app-loading-state></app-loading-state>
+  } @else if (hasError) {
+    <app-error-state (retry)="ngOnInit()"></app-error-state>
+  } @else {
   <div class="fifty-split" fxLayout="row wrap" fxLayoutGap="0px grid">
     <div fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%">
       <ngx-typed-js
@@ -108,4 +113,5 @@
   </div>
   </div>
   }
+  } <!-- end @else -->
 </div>

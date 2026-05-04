@@ -1,46 +1,50 @@
 <div class="container">
-  @if (charte && execs.length) {
-  <div class="charte-content">
+  @if (isLoading) {
+    <app-loading-state></app-loading-state>
+  } @else if (hasError) {
+    <app-error-state (retry)="ngOnInit()"></app-error-state>
+  } @else if (charte && execs.length) {
+    <div class="charte-content">
 
-    <h1>Charte de l'AGEEI</h1>
+      <h1>Charte de l'AGEEI</h1>
 
-    <p>Liste des officiers :</p>
-    <div class="table-wrapper">
-    <table>
-      <thead>
-        <tr>
-          <th>Position</th>
-          <th>Nom</th>
-          <th>Courriel</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (exec of execs; track exec.id) {
-        <tr>
-          <td>{{ exec.role }}</td>
-          <td>{{ exec.name }}</td>
-          <td><a href="mailto:{{ exec.email }}">{{ exec.email }}</a></td>
-        </tr>
+      <p>Liste des officiers :</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Position</th>
+              <th>Nom</th>
+              <th>Courriel</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (exec of execs; track exec.id) {
+              <tr>
+                <td>{{ exec.role }}</td>
+                <td>{{ exec.name }}</td>
+                <td><a href="mailto:{{ exec.email }}">{{ exec.email }}</a></td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      @if (comiteGroups.length) {
+        <p>Membres étudiants du comité de programme :</p>
+        @for (group of comiteGroups; track group.comite) {
+          <p>Au {{ group.comite }} :</p>
+          <ul>
+            @for (membre of group.membres; track membre.id) {
+              <li>{{ membre.name }}</li>
+            } @empty {
+              <li>Aucun</li>
+            }
+          </ul>
         }
-      </tbody>
-    </table>
-    </div>
-
-    @if (comiteGroups.length) {
-    <p>Membres étudiants du comité de programme :</p>
-    @for (group of comiteGroups; track group.comite) {
-    <p>Au {{ group.comite }} :</p>
-    <ul>
-      @for (membre of group.membres; track membre.id) {
-      <li>{{ membre.name }}</li>
-      } @empty {
-      <li>Aucun</li>
       }
-    </ul>
-    }
-    }
 
-    <div [innerHTML]="charte"></div>
-  </div>
+      <div [innerHTML]="charte"></div>
+    </div>
   }
 </div>

@@ -19,20 +19,31 @@ export class CharteComponent implements OnInit {
   charte: string = '';
   execs: ExecInterface[] = [];
   comiteGroups: ComiteGroup[] = [];
+  isLoading = true;
+  hasError = false;
 
   constructor() {
     inject(Title).setTitle('AGEEI - Charte');
   }
 
   ngOnInit(): void {
+    this.isLoading = true;
+    this.hasError = false;
     forkJoin({
       charte: this.charteService.getCharte(),
       execs: this.contactService.getExecs(),
       comiteGroups: this.contactService.getComiteGroups(),
-    }).subscribe(({ charte, execs, comiteGroups }) => {
-      this.charte = this.sanitizer.sanitize(SecurityContext.HTML, charte) ?? '';
-      this.execs = execs;
-      this.comiteGroups = comiteGroups;
+    }).subscribe({
+      next: ({ charte, execs, comiteGroups }) => {
+        this.charte = this.sanitizer.sanitize(SecurityContext.HTML, charte) ?? '';
+        this.execs = execs;
+        this.comiteGroups = comiteGroups;
+        this.isLoading = false;
+      },
+      error: () => {
+        this.isLoading = false;
+        this.hasError = true;
+      },
     });
   }
 
