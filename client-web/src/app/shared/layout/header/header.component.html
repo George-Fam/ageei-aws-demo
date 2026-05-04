@@ -1,40 +1,46 @@
 <div>
-  <div class="container" id="nav-container">
-    <div class="nav" fxLayout="row" fxLayoutAlign="space-between center">
+  <div class="container" [class.hidden]="isHidden">
+    <div class="nav">
       <a routerLink="/">
-        <img src="/assets/logo.png" class="logo"  alt="Logo"/>
+        <img src="/assets/logo.png" class="logo" alt="Logo" />
       </a>
-      <div fxHide.lt-md class="nav-menu" fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="desktop-nav nav-menu">
         @for (link of router_links; track link) {
-        <a class="link hover-underline-animation" [routerLink]="link.url">
-          {{ link.name }}
-        </a>
+          <a
+            class="link hover-underline-animation"
+            [routerLink]="link.url"
+            [attr.aria-current]="isActiveLink(link.url) ? 'page' : null"
+          >
+            {{ link.name }}
+          </a>
         }
       </div>
-      <div>
-        <div fxHide.gt-sm class="mobile-menu">
-          <input
-            (change)="menuOpened = !menuOpened"
-            [checked]="menuOpened"
-            type="checkbox"
-            id="toggle"
-            style="display: none"
-          />
-          <label class="toggle-btn toggle-btn__cross" for="toggle">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-          </label>
-          <nav>
-            <ul>
-              @for (link of router_links; track link) {
+      <div class="mobile-menu" [class.menu-opened]="menuOpened">
+        <button
+          class="toggle-btn"
+          [class.toggle-btn__cross]="menuOpened"
+          (click)="menuOpened = !menuOpened"
+          [attr.aria-expanded]="menuOpened"
+          aria-controls="mobile-nav-menu"
+          aria-label="Menu de navigation"
+        >
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </button>
+        <nav id="mobile-nav-menu" [attr.aria-hidden]="!menuOpened">
+          <ul>
+            @for (link of router_links; track link) {
               <li>
-                <a (click)="menuOpened = false" [routerLink]="link.url">{{ link.name }}</a>
+                <a
+                  (click)="menuOpened = false"
+                  [routerLink]="link.url"
+                  [attr.aria-current]="isActiveLink(link.url) ? 'page' : null"
+                >{{ link.name }}</a>
               </li>
-              }
-            </ul>
-          </nav>
-        </div>
+            }
+          </ul>
+        </nav>
       </div>
     </div>
     <div class="divider"></div>
