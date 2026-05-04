@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { forkJoin } from 'rxjs';
 import { ComiteGroup, ExecInterface } from './exec.interface';
 import { ContactService } from './contact.service';
@@ -21,6 +21,13 @@ export class ContactComponent implements OnInit {
 
   constructor() {
     inject(Title).setTitle('AGEEI - Contact');
+    const meta = inject(Meta);
+    const desc = "Contactez le comité exécutif de l'AGEEI et consultez les membres étudiants.";
+    meta.updateTag({ name: 'description', content: desc });
+    meta.updateTag({ property: 'og:title', content: 'AGEEI - Contact' });
+    meta.updateTag({ property: 'og:description', content: desc });
+    meta.updateTag({ property: 'og:url', content: 'https://ageei.org/contact' });
+    meta.updateTag({ property: 'og:image', content: 'https://ageei.org/assets/logo.png' });
   }
 
   ngOnInit(): void {

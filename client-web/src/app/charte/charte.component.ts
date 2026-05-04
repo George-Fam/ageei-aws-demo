@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit, SecurityContext, inject } from '@angular/core';
-import { DomSanitizer, Title } from '@angular/platform-browser';
+import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { forkJoin } from 'rxjs';
 import { ContactService } from '../contact/contact.service';
 import { ComiteGroup, ExecInterface } from '../contact/exec.interface';
@@ -24,6 +24,13 @@ export class CharteComponent implements OnInit {
 
   constructor() {
     inject(Title).setTitle('AGEEI - Charte');
+    const meta = inject(Meta);
+    const desc = "Règlements généraux et charte officielle de l'AGEEI.";
+    meta.updateTag({ name: 'description', content: desc });
+    meta.updateTag({ property: 'og:title', content: 'AGEEI - Charte' });
+    meta.updateTag({ property: 'og:description', content: desc });
+    meta.updateTag({ property: 'og:url', content: 'https://ageei.org/charte' });
+    meta.updateTag({ property: 'og:image', content: 'https://ageei.org/assets/logo.png' });
   }
 
   ngOnInit(): void {

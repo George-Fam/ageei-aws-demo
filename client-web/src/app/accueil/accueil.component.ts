@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-accueil',
@@ -9,8 +9,13 @@ import { Title } from '@angular/platform-browser';
 })
 export class AccueilComponent {
   constructor() {
-    const titleService = inject(Title);
-
-    titleService.setTitle('AGEEI - Accueil');
+    inject(Title).setTitle('AGEEI - Accueil');
+    const meta = inject(Meta);
+    const desc = "Association générale des étudiantes et étudiants en informatique de l'UQAM.";
+    meta.updateTag({ name: 'description', content: desc });
+    meta.updateTag({ property: 'og:title', content: 'AGEEI - Association des étudiant·e·s en informatique' });
+    meta.updateTag({ property: 'og:description', content: desc });
+    meta.updateTag({ property: 'og:url', content: 'https://ageei.org/' });
+    meta.updateTag({ property: 'og:image', content: 'https://ageei.org/assets/logo.png' });
   }
 }
