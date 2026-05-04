@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { forkJoin } from 'rxjs';
 import { DirectusDocument, ImportantDocument } from './documents.interface';
 import { DocumentsService } from './documents.service';
 
@@ -16,6 +17,8 @@ export class DocumentsComponent implements OnInit {
 
   importantDocuments: ImportantDocument[] = [];
   importantByCategory: { category: string; docs: ImportantDocument[] }[] = [];
+  isLoading = true;
+  hasError = false;
 
   private service = inject(DocumentsService);
 
@@ -24,23 +27,26 @@ export class DocumentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getDocuments().subscribe({
-      next: (documents) => {
-        this.pvDocuments = documents;
+    this.isLoading = true;
+    this.hasError = false;
+    forkJoin({
+      pvs: this.service.getDocuments(),
+      important: this.service.getImportantDocuments(),
+    }).subscribe({
+      next: ({ pvs, important }) => {
+        this.pvDocuments = pvs;
         this.groupPvByYear();
         if (this.pvByYear.length > 0) {
           this.expandedYears.add(this.pvByYear[0].year);
         }
-      },
-      error: (err) => console.error('Error fetching PVs:', err),
-    });
-
-    this.service.getImportantDocuments().subscribe({
-      next: (documents) => {
-        this.importantDocuments = documents;
+        this.importantDocuments = important;
         this.groupImportantByCategory();
+        this.isLoading = false;
       },
-      error: (err) => console.error('Error fetching important documents:', err),
+      error: () => {
+        this.isLoading = false;
+        this.hasError = true;
+      },
     });
   }
 

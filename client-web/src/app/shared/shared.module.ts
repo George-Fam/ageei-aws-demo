@@ -13,6 +13,9 @@ import { MatCardModule } from '@angular/material/card';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { FunnyWindowComponent } from './layout/funny-window/funny-window.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ErrorStateComponent } from './layout/error-state/error-state.component';
+import { LoadingStateComponent } from './layout/loading-state/loading-state.component';
 
 @NgModule({
   imports: [
@@ -29,6 +32,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ReactiveFormsModule,
     MatCardModule,
     MatExpansionModule,
+    MatProgressSpinnerModule,
     NgxTypedJsModule,
   ],
   exports: [
@@ -44,9 +48,12 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ReactiveFormsModule,
     MatCardModule,
     MatExpansionModule,
+    MatProgressSpinnerModule,
     NgxTypedJsModule,
     FunnyWindowComponent,
+    ErrorStateComponent,
+    LoadingStateComponent,
   ],
-  declarations: [FunnyWindowComponent],
+  declarations: [FunnyWindowComponent, ErrorStateComponent, LoadingStateComponent],
 })
 export class SharedModule {}
