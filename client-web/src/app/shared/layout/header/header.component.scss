@@ -1,4 +1,5 @@
-#nav-container {
+#nav-container,
+.container {
   position: fixed;
   top: 0;
   width: 100%;
@@ -7,7 +8,15 @@
   z-index: 999;
   box-sizing: border-box;
 
+  &.hidden {
+    top: -130px;
+  }
+
   .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding-bottom: 1em;
 
     .logo {
@@ -18,16 +27,32 @@
       .logo {
         width: 85px;
       }
+      padding-bottom: 0;
+    }
+
+    .desktop-nav {
+      @media screen and (max-width: 959px) {
+        display: none;
+      }
     }
 
     .nav-menu {
       width: 45%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
       .link {
         font-size: 1.5vw;
       }
     }
 
     .mobile-menu {
+      @media screen and (min-width: 960px) {
+        display: none;
+      }
+
       nav {
         background-color: rgba(0, 0, 0, 0.8);
         position: fixed;
@@ -67,6 +92,48 @@
           }
         }
       }
+
+      &.menu-opened {
+        nav {
+          opacity: 1;
+          visibility: visible;
+
+          ul {
+            top: 100px;
+
+            li {
+              transform: translateY(0px);
+              opacity: 1;
+
+              @for $i from 1 through 4 {
+                $t: $i * 0.1;
+                &:nth-child(#{$i}) {
+                  transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) #{$t}s;
+                }
+              }
+            }
+          }
+        }
+
+        .toggle-btn {
+          .bar {
+            background-color: red;
+
+            &:nth-child(2) {
+              transform: translateX(50px);
+              opacity: 0;
+            }
+
+            &:nth-child(1) {
+              transform: translateY(10px) rotate(45deg);
+            }
+
+            &:nth-child(3) {
+              transform: translateY(-8px) rotate(-45deg);
+            }
+          }
+        }
+      }
     }
 
     .toggle-btn {
@@ -74,6 +141,9 @@
       position: relative;
       z-index: 10;
       cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
 
       .bar {
         width: 40px;
@@ -81,48 +151,6 @@
         margin: 5px auto;
         background-color: #131312;
         transition: all 0.3s ease-in-out;
-      }
-    }
-
-    #toggle:checked {
-      & ~ nav {
-        opacity: 1;
-        visibility: visible;
-
-        ul {
-          top: 100px;
-
-          li {
-            transform: translateY(0px);
-            opacity: 1;
-
-            @for $i from 1 through 4 {
-              $t: $i * 0.1;
-              &:nth-child(#{$i}) {
-                transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) #{$t}s;
-              }
-            }
-          }
-        }
-      }
-
-      & + label.toggle-btn {
-        .bar {
-          background-color: red;
-
-          &:nth-child(2) {
-            transform: translateX(50px);
-            opacity: 0;
-          }
-
-          &:nth-child(1) {
-            transform: translateY(10px) rotate(45deg);
-          }
-
-          &:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-          }
-        }
       }
     }
   }
@@ -133,10 +161,6 @@
 }
 
 @media screen and (max-width: 959px) {
-  .nav {
-    padding-bottom: 0 !important;
-  }
-
   .height-keeper {
     height: 69px;
   }
