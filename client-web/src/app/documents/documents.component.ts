@@ -1,0 +1,102 @@
+import { Component, inject, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { DirectusDocument, ImportantDocument } from './documents.interface';
+import { DocumentsService } from './documents.service';
+
+@Component({
+  selector: 'app-documents',
+  templateUrl: './documents.component.html',
+  styleUrls: ['./documents.component.scss'],
+  standalone: false,
+})
+export class DocumentsComponent implements OnInit {
+  pvDocuments: DirectusDocument[] = [];
+  pvByYear: { year: string; docs: DirectusDocument[] }[] = [];
+  expandedYears: Set<string> = new Set<string>();
+
+  importantDocuments: ImportantDocument[] = [];
+  importantByCategory: { category: string; docs: ImportantDocument[] }[] = [];
+
+  private service = inject(DocumentsService);
+
+  constructor() {
+    inject(Title).setTitle('AGEEI - Documents');
+  }
+
+  ngOnInit(): void {
+    this.service.getDocuments().subscribe({
+      next: (documents) => {
+        this.pvDocuments = documents;
+        this.groupPvByYear();
+        if (this.pvByYear.length > 0) {
+          this.expandedYears.add(this.pvByYear[0].year);
+        }
+      },
+      error: (err) => console.error('Error fetching PVs:', err),
+    });
+
+    this.service.getImportantDocuments().subscribe({
+      next: (documents) => {
+        this.importantDocuments = documents;
+        this.groupImportantByCategory();
+      },
+      error: (err) => console.error('Error fetching important documents:', err),
+    });
+  }
+
+  private groupPvByYear(): void {
+    const grouped = new Map<string, DirectusDocument[]>();
+    for (const doc of this.pvDocuments) {
+      const year = doc.school_year || 'Autre';
+      if (!grouped.has(year)) grouped.set(year, []);
+      grouped.get(year)?.push(doc);
+    }
+    this.pvByYear = Array.from(grouped.entries())
+      .map(([year, docs]) => ({
+        year,
+        docs: docs.sort((a, b) => b.date.localeCompare(a.date)),
+      }))
+      .sort((a, b) => b.year.localeCompare(a.year));
+  }
+
+  private groupImportantByCategory(): void {
+    const grouped = new Map<string, ImportantDocument[]>();
+    for (const doc of this.importantDocuments) {
+      const cat = doc.category || 'Général';
+      if (!grouped.has(cat)) grouped.set(cat, []);
+      grouped.get(cat)?.push(doc);
+    }
+    this.importantByCategory = Array.from(grouped.entries())
+      .map(([category, docs]) => ({ category, docs }))
+      .sort((a, b) => (a.docs[0].sort ?? 0) - (b.docs[0].sort ?? 0));
+  }
+
+  toggleYear(year: string): void {
+    if (this.expandedYears.has(year)) {
+      this.expandedYears.delete(year);
+    } else {
+      this.expandedYears.add(year);
+    }
+  }
+
+  isYearExpanded(year: string): boolean {
+    return this.expandedYears.has(year);
+  }
+
+  openPv(doc: DirectusDocument): void {
+    const url = doc.file_pdf || doc.file_md;
+    if (url) window.open(url, '_blank');
+  }
+
+  hasPvFile(doc: DirectusDocument): boolean {
+    return !!(doc.file_pdf || doc.file_md);
+  }
+
+  openImportantDoc(doc: ImportantDocument): void {
+    if (doc.file_pdf) window.open(doc.file_pdf, '_blank');
+  }
+
+  hasImportantDocFile(doc: ImportantDocument): boolean {
+    return !!doc.file_pdf;
+  }
+}
