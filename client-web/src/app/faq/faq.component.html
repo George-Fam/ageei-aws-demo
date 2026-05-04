@@ -1,43 +1,80 @@
 <div class="container">
   <app-funny-window windowTitle="faq.txt">
-    <div class="main-container" fxLayout.lt-md="column" fxLayout.gt-sm="row">
-      <div
-        class="side-bar"
-        fxFlex.gt-sm="25%"
-        fxFlex.lt-md="100%"
-        fxLayout.lt-md="row"
-        fxLayout.gt-sm="column"
-        fxLayout.xs="column"
-        fxLayoutAlign.gt-sm="start start"
-        fxLayoutAlign.lt-md="space-between start"
-      >
-        @for (category of faqCategories; track category.categoryName) {
-          <div class="category-item-container"
-               (click)="selectCategory(category)">
-            <div
-              class="category-item"
-              [class.selected-category-item]="category === selectedCategory"
-              [ngClass.lt-md]="'mobile-category-item'"
-            >
-              {{ category.categoryName }}
-            </div>
-          </div>
+
+    <div class="search-bar">
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput [formControl]="searchControl" placeholder="Rechercher dans la FAQ..." />
+        @if (isSearching) {
+          <button matSuffix mat-icon-button aria-label="Effacer" (click)="clearSearch()">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+    </div>
+
+    @if (isSearching) {
+      <div class="search-results">
+        @if (searchResults.length === 0) {
+          <p class="no-results">Aucun résultat pour « {{ searchControl.value }} »</p>
+        } @else {
+          <mat-accordion>
+            @for (result of searchResults; track result.question) {
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="result-title">
+                      <b>{{ result.question }}</b>
+                      <span class="result-category">{{ result.categoryName }}</span>
+                    </div>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="faq-answer" [innerHTML]="result.answer"></div>
+              </mat-expansion-panel>
+            }
+          </mat-accordion>
         }
       </div>
-      <div class="question-container" fxFlex.gt-sm="75%" fxFlex.lt-md="100%">
-        <mat-accordion>
-          @for (faq of selectedCategory?.faqs ?? []; track faq) {
-            <mat-expansion-panel hideToggle>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <b>{{ faq.question }}</b>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="faq-answer" [innerHTML]="faq.answer"></div>
-            </mat-expansion-panel>
+    } @else {
+      <div class="main-container" fxLayout.lt-md="column" fxLayout.gt-sm="row">
+        <div
+          class="side-bar"
+          fxFlex.gt-sm="25%"
+          fxFlex.lt-md="100%"
+          fxLayout.lt-md="row"
+          fxLayout.gt-sm="column"
+          fxLayout.xs="column"
+          fxLayoutAlign.gt-sm="start start"
+          fxLayoutAlign.lt-md="space-between start"
+        >
+          @for (category of faqCategories; track category.categoryName) {
+            <div class="category-item-container" (click)="selectCategory(category)">
+              <div
+                class="category-item"
+                [class.selected-category-item]="category === selectedCategory"
+                [ngClass.lt-md]="'mobile-category-item'"
+              >
+                {{ category.categoryName }}
+              </div>
+            </div>
           }
-        </mat-accordion>
+        </div>
+        <div class="question-container" fxFlex.gt-sm="75%" fxFlex.lt-md="100%">
+          <mat-accordion>
+            @for (faq of selectedCategory?.faqs ?? []; track faq) {
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <b>{{ faq.question }}</b>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="faq-answer" [innerHTML]="faq.answer"></div>
+              </mat-expansion-panel>
+            }
+          </mat-accordion>
+        </div>
       </div>
-    </div>
+    }
+
   </app-funny-window>
 </div>
