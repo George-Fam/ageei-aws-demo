@@ -22,6 +22,8 @@ export class TimelineComponent implements OnInit {
   calendarOpen = false;
   subscribeUrl: string | undefined;
   expandedEvents: Set<number> = new Set();
+  isLoading = true;
+  hasError = false;
 
   constructor() {
     inject(Title).setTitle('AGEEI - Calendrier');
@@ -35,6 +37,8 @@ export class TimelineComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isLoading = true;
+    this.hasError = false;
     if (environment.googleCalendarId && environment.googleCalendarId.length > 0) {
       const base = 'https://calendar.google.com/calendar/embed';
       const params = new URLSearchParams({
@@ -52,10 +56,17 @@ export class TimelineComponent implements OnInit {
         )}`;
       }
     }
-    this.timelineService.getEvents().subscribe((data) => {
-      data.sort((a, b) => new Date(b.start_date).getTime() - new Date(a.start_date).getTime());
-      this.upcomingCount = data.filter((e) => new Date(e.start_date).getTime() >= this.currentDate.getTime()).length;
-      this.events = data;
+    this.timelineService.getEvents().subscribe({
+      next: (data) => {
+        data.sort((a, b) => new Date(b.start_date).getTime() - new Date(a.start_date).getTime());
+        this.upcomingCount = data.filter((e) => new Date(e.start_date).getTime() >= this.currentDate.getTime()).length;
+        this.events = data;
+        this.isLoading = false;
+      },
+      error: () => {
+        this.isLoading = false;
+        this.hasError = true;
+      },
     });
   }
 

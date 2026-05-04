@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { forkJoin } from 'rxjs';
 import { ComiteGroup, ExecInterface } from './exec.interface';
 import { ContactService } from './contact.service';
 
@@ -13,6 +14,8 @@ export class ContactComponent implements OnInit {
   execs: ExecInterface[] = [];
   comiteGroups: ComiteGroup[] = [];
   questions = ['Une question ?', 'Un commentaire ?', 'Une opinion constructive ?'];
+  isLoading = true;
+  hasError = false;
 
   private contactService = inject(ContactService);
 
@@ -28,11 +31,21 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.contactService.getExecs().subscribe((execs) => {
-      this.execs = execs;
-    });
-    this.contactService.getComiteGroups().subscribe((groups) => {
-      this.comiteGroups = groups;
+    this.isLoading = true;
+    this.hasError = false;
+    forkJoin({
+      execs: this.contactService.getExecs(),
+      groups: this.contactService.getComiteGroups(),
+    }).subscribe({
+      next: ({ execs, groups }) => {
+        this.execs = execs;
+        this.comiteGroups = groups;
+        this.isLoading = false;
+      },
+      error: () => {
+        this.isLoading = false;
+        this.hasError = true;
+      },
     });
   }
 }
