@@ -1,3 +1,50 @@
+.search-bar {
+  padding: 1em 2em 0;
+
+  .search-field {
+    width: 100%;
+  }
+}
+
+.search-results {
+  padding: 0 2em 2em;
+
+  .no-results {
+    text-align: center;
+    color: #666;
+    padding: 2em;
+  }
+
+  mat-expansion-panel {
+    background-color: #fff8f2;
+    border-bottom: 1px solid #131312;
+    border-radius: 0;
+    box-shadow: none;
+
+    .result-title {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      .result-category {
+        font-size: 0.75em;
+        color: #666;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+    }
+
+    .faq-answer {
+      margin: 1em 0;
+
+      ::ng-deep a {
+        color: #0000ee;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 .main-container {
   .side-bar {
     border-right: 1px solid #131312;
