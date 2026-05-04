@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { FunnyWindowComponent } from './layout/funny-window/funny-window.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { ScrollToTopComponent } from './layout/scroll-to-top/scroll-to-top.component';
 
 @NgModule({
   imports: [
@@ -46,7 +47,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatExpansionModule,
     NgxTypedJsModule,
     FunnyWindowComponent,
+    ScrollToTopComponent,
   ],
-  declarations: [FunnyWindowComponent],
+  declarations: [FunnyWindowComponent, ScrollToTopComponent],
 })
 export class SharedModule {}
