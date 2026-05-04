@@ -1,0 +1,68 @@
+<div class="container">
+  @if (importantDocuments.length > 0) {
+    <section class="section">
+      <h2 class="section-title">Documents importants</h2>
+      @for (group of importantByCategory; track group.category) {
+        @if (importantByCategory.length > 1) {
+          <h3 class="category-title">{{ group.category }}</h3>
+        }
+        <div class="doc-cards">
+          @for (doc of group.docs; track doc.id) {
+            <div class="doc-card" [class.clickable]="hasImportantDocFile(doc)" (click)="openImportantDoc(doc)">
+              <div class="doc-card-icon">
+                <mat-icon>picture_as_pdf</mat-icon>
+              </div>
+              <div class="doc-card-body">
+                <div class="doc-card-title">{{ doc.title }}</div>
+                @if (doc.description) {
+                  <div class="doc-card-desc">{{ doc.description }}</div>
+                }
+              </div>
+              @if (hasImportantDocFile(doc)) {
+                <mat-icon class="doc-card-action">open_in_new</mat-icon>
+              }
+            </div>
+          }
+        </div>
+      }
+    </section>
+
+    <mat-divider></mat-divider>
+  }
+
+  <section class="section">
+    <h2 class="section-title">Procès-verbaux</h2>
+    @for (yearGroup of pvByYear; track yearGroup.year) {
+      <div class="year-section">
+        <h3 class="school-year" (click)="toggleYear(yearGroup.year)">
+          <mat-icon>{{ isYearExpanded(yearGroup.year) ? 'expand_more' : 'chevron_right' }}</mat-icon>
+          {{ yearGroup.year }}
+          <span class="doc-count">{{ yearGroup.docs.length }} document(s)</span>
+        </h3>
+
+        @if (isYearExpanded(yearGroup.year)) {
+          <div class="documents-list">
+            @for (doc of yearGroup.docs; track doc.id) {
+              <div class="doc-row" [class.clickable]="hasPvFile(doc)" (click)="hasPvFile(doc) && openPv(doc)">
+                <mat-icon>{{ doc.type === 'AG' ? 'groups' : 'people' }}</mat-icon>
+                <div class="doc-info">
+                  <div class="doc-title">{{ doc.title }}</div>
+                  <div class="doc-date">{{ doc.date | date: 'mediumDate' }}</div>
+                </div>
+                @if (doc.file_pdf) {
+                  <mat-icon class="file-icon">picture_as_pdf</mat-icon>
+                } @else if (doc.file_md) {
+                  <mat-icon class="file-icon">description</mat-icon>
+                }
+              </div>
+            } @empty {
+              <p class="no-documents">Aucun document disponible pour cette année.</p>
+            }
+          </div>
+        }
+      </div>
+    } @empty {
+      <p class="no-documents">Aucun procès-verbal disponible.</p>
+    }
+  </section>
+</div>

@@ -17,6 +17,7 @@ export class HeaderComponent implements AfterViewInit {
     { name: 'Accueil', url: '/' },
     { name: 'FAQ', url: '/faq' },
     { name: 'Calendrier', url: '/calendrier' },
+    { name: 'Documents', url: '/documents' },
     { name: 'Charte', url: '/charte' },
     { name: 'Contact', url: '/contact' },
   ];
