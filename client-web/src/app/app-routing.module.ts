@@ -28,6 +28,10 @@ const routes: Routes = [
     path: 'documents',
     loadChildren: () => import('./documents/documents.module').then((m) => m.DocumentsModule),
   },
+  {
+    path: 'posts',
+    loadChildren: () => import('./posts/posts.module').then((m) => m.PostsModule),
+  },
   { path: '**', loadChildren: () => import('./not-found/not-found.module').then((m) => m.NotFoundModule) },
 ];
 

@@ -19,6 +19,7 @@ export class HeaderComponent {
     { name: 'FAQ', url: '/faq' },
     { name: 'Calendrier', url: '/calendrier' },
     { name: 'Documents', url: '/documents' },
+    { name: 'Publications', url: '/posts' },
     { name: 'Charte', url: '/charte' },
     { name: 'Contact', url: '/contact' },
   ];

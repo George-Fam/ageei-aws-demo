@@ -20,18 +20,56 @@
     </div>
   </div>
   <div class="mission-container">
-    <app-funny-window class="mission-header">
-      <div class="mission-header-text" fxLayoutAlign="center start">NOTRE MISSION</div>
-    </app-funny-window>
-    <div class="fifty-split" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutAlign="space-evenly center">
-      <app-funny-window fxFlex.gt-sm="50%" fxFlex.lt-md="100%" fxFlexOrder.gt-sm="1" fxFlexOrder.lt-md="2" fxLayout="row" fxLayoutAlign="center center">
-        <img class="mission-image-content" src="assets/accueil/accueil-1.jpg"  alt="Membres de l'association"/>
-      </app-funny-window>
-      <div fxFlex.gt-sm="50%" fxFlex.lt-md="100%" fxFlexOrder.gt-sm="2" fxFlexOrder.lt-md="1" class="mission-text">
-        L’association générale des étudiantes et étudiants en informatique a pour but de regrouper les étudiants en
-        informatique de l’Université du Québec à Montréal et d’assurer, dans le cadre des affaires universitaires, leur
-        bienêtre physique, moral, intellectuel, social et économique.
+    <app-funny-window class="mission-window window-shadow" windowTitle="NOTRE MISSION">
+      <div class="mission-content" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutAlign="space-between stretch" fxLayoutGap.gt-sm="24px">
+        <div class="mission-image-panel" fxFlex.gt-sm="26%" fxFlex.lt-md="100%">
+          <img class="mission-image-content" src="assets/accueil/accueil-1.jpg" alt="Membres de l'association" />
+        </div>
+        <div class="mission-text" fxFlex>
+          L’association générale des étudiantes et étudiants en informatique a pour but de regrouper les étudiants en
+          informatique de l’Université du Québec à Montréal et d’assurer, dans le cadre des affaires universitaires, leur
+          bienêtre physique, moral, intellectuel, social et économique.
+        </div>
       </div>
-    </div>
+    </app-funny-window>
   </div>
+
+  <div class="featured-container">
+    <app-funny-window class="featured-window window-shadow" windowTitle="PUBLICATION À LA UNE">
+      @if (isFeaturedLoading) {
+        <p class="featured-state">Chargement de la publication...</p>
+      } @else if (hasFeaturedError) {
+        <p class="featured-state">
+          Impossible de charger la publication.
+          <button class="featured-inline-action" mat-button (click)="loadFeaturedPost()">Réessayer</button>
+        </p>
+      } @else if (featuredPost) {
+        <div class="featured-body" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap.gt-sm="28px">
+          @if (featuredPost.imageUrl) {
+            <div class="featured-image-panel" fxFlex.gt-sm="26%" fxFlex.lt-md="100%">
+              <img class="featured-image" [src]="featuredPost.imageUrl" [alt]="featuredPost.title" />
+            </div>
+          }
+          <div class="featured-text" fxFlex>
+            <h2>{{ featuredPost.title }}</h2>
+            <p class="featured-date">{{ featuredPost.date_created | date: 'longDate' }}</p>
+            <div #featuredExcerpt class="featured-excerpt" [class.overflows]="excerptOverflows" [innerHTML]="featuredPost.content"></div>
+            <div class="featured-actions">
+              @if (featuredPost.link) {
+                <a class="featured-action secondary" [href]="featuredPost.link" target="_blank" rel="noopener noreferrer">
+                  {{ featuredPost.link_label || 'Lien externe' }}
+                </a>
+              }
+              <a class="featured-action" routerLink="/posts">Voir toutes les publications</a>
+            </div>
+          </div>
+        </div>
+      } @else {
+        <p class="featured-state">Aucune publication en vedette pour le moment.</p>
+      }
+    </app-funny-window>
+  </div>
+  @if (showScrollHint) {
+    <div class="scroll-hint" aria-hidden="true">↓</div>
+  }
 </div>

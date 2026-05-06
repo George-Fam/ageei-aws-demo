@@ -11,6 +11,8 @@ export const environment = {
   comitesUrl: '/cms-api/items/Comites',
   documentsReunionUrl: '/cms-api/items/documents_reunions',
   documentsUrl: '/cms-api/items/documents',
+  postsUrl: '/cms-api/items/posts',
+  featuredPostUrl: '/cms-api/items/featured_post',
   googleCalendarId: 'c_d7c8140170e380f8b85a8289cbb3ac4692134e5aa0bb89716a0ac60475edfc58@group.calendar.google.com',
   googleCalendarTimeZone: 'America/Toronto',
 };

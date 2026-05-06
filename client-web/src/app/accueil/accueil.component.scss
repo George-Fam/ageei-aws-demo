@@ -1,72 +1,326 @@
-.main-title-container {
-  height: 19vw;
-  .main-title {
-    font-size: 5.5vw;
-    line-height: 5.5vw;
+.container {
+  padding-bottom: 10px;
+
+  @media screen and (max-width: 959px) {
+    padding-bottom: 60px;
+  }
+}
+
+.scroll-hint {
+  display: none;
+
+  @media screen and (max-width: 959px) {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     font-family: 'Inconsolata', monospace;
+    font-size: 16px;
+    color: #131312;
+    background: #fff8f2;
+    border: 2px solid #131312;
+    padding: 6px 18px;
+    pointer-events: none;
+    animation: bounce-hint 1.6s ease-in-out infinite;
+  }
+}
+
+.main-title-container {
+  height: min(19vw, 300px);
+  border-bottom: 2px solid #131312;
+
+  .main-title {
+    font-size: min(5.5vw, 72px);
+    line-height: min(5.5vw, 72px);
+    font-family: 'Inconsolata', monospace;
+
     .typing {
       display: inline;
       font-family: inherit;
       font-size: inherit;
+      margin: 0;
+    }
+
+    ::ng-deep .typed-cursor {
+      font-size: min(5.5vw, 72px) !important;
+
+      @media screen and (max-width: 959px) {
+        font-size: 5vw !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: 959px) {
+    height: auto;
+    padding: 4vw 0 5vw;
+
+    .main-title {
+      font-size: 5vw;
+      line-height: 7.5vw;
     }
   }
 }
 
 .mission-container {
-  margin-top: 25px;
-  position: relative;
-  .mission-header {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: clamp(220px, 18vw, 380px);
+  margin-top: 40px;
+  animation: section-enter 0.45s ease both;
+  animation-delay: 0.05s;
+
+  .mission-content {
+    max-height: 320px;
+    overflow: hidden;
+
     @media screen and (max-width: 959px) {
-      position: inherit;
-      width: 100%;
-      padding-left: 1em;
-      padding-right: 1em;
+      max-height: none;
+      overflow: visible;
     }
-    .mission-header-text {
+  }
+
+  .mission-image-panel {
+    align-self: stretch;
+    overflow: hidden;
+  }
+
+  .mission-image-content {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    min-height: 220px;
+
+    @media screen and (max-width: 959px) {
+      height: auto;
+      min-height: unset;
+      object-fit: unset;
+    }
+  }
+
+  .mission-text {
+    font-size: min(1.4vw, 18px);
+    line-height: min(2.5vw, 32px);
+    padding: 28px 32px;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 959px) {
+      font-size: 4.5vw;
+      line-height: 6.5vw;
+      padding: 18px 18px 24px;
+    }
+  }
+}
+
+.featured-container {
+  margin-top: 48px;
+  animation: section-enter 0.45s ease both;
+  animation-delay: 0.15s;
+
+  .featured-state {
+    text-align: center;
+    padding: 3vw 2vw;
+    font-family: 'Inconsolata', monospace;
+    font-size: min(1.3vw, 18px);
+    color: #555;
+
+    @media screen and (max-width: 959px) {
+      font-size: 4vw;
+      padding: 24px 16px;
+    }
+  }
+
+  .featured-inline-action {
+    font-family: 'Inconsolata', monospace;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #131312;
+  }
+
+  .featured-body {
+    padding: 28px 32px;
+
+    @media screen and (max-width: 959px) {
+      padding: 0;
+    }
+  }
+
+  .featured-image-panel {
+    align-self: flex-start;
+  }
+
+  .featured-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .featured-text {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 0;
+
+    @media screen and (max-width: 959px) {
+      padding: 18px 18px 24px;
+    }
+
+    h2 {
       font-family: 'Libre Baskerville', serif;
-      padding: 0.5em 1.2em;
-      text-align: center;
-      font-size: 2vw;
-      line-height: 2vw;
+      font-size: min(2.1vw, 30px);
+      line-height: min(2.8vw, 40px);
+      margin: 0 0 10px;
+      border-left: 4px solid #131312;
+      padding-left: 14px;
+
       @media screen and (max-width: 959px) {
-        padding: 1.5em 1.2em;
+        font-size: 5.5vw;
+        line-height: 7.5vw;
+        border-left-width: 3px;
+        padding-left: 10px;
+      }
+    }
+
+    .featured-date {
+      font-family: 'Inconsolata', monospace;
+      font-size: min(1vw, 14px);
+      letter-spacing: 0.04em;
+      color: #666;
+      margin: 0 0 20px;
+      padding-left: 18px;
+
+      &::before {
+        content: '// ';
+        opacity: 0.45;
+      }
+
+      @media screen and (max-width: 959px) {
+        font-size: 3.5vw;
+        padding-left: 13px;
+      }
+    }
+
+    .featured-excerpt {
+      font-size: min(1.3vw, 17px);
+      line-height: min(2.3vw, 28px);
+      margin-bottom: 28px;
+      overflow: hidden;
+      max-height: 16em;
+
+      &.overflows {
+        mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+      }
+
+      @media screen and (max-width: 959px) {
         font-size: 4vw;
-        line-height: 3vw;
+        line-height: 6.5vw;
+        margin-bottom: 24px;
+      }
+
+      ::ng-deep {
+        p {
+          margin: 0 0 0.8em;
+          text-align: justify;
+        }
+
+        p:last-child {
+          margin-bottom: 0;
+        }
+
+        ul,
+        ol {
+          margin: 0 0 0.8em;
+          padding-left: 1.5em;
+        }
+
+        strong,
+        b {
+          font-weight: 700;
+        }
+
+        em,
+        i {
+          font-style: italic;
+        }
+
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .featured-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      .featured-action {
+        display: inline-block;
+        flex: 1;
+        text-align: center;
+        padding: 10px 22px;
+        border: 2px solid #131312;
+        background-color: #131312;
+        color: #fff8f2;
+        font-family: 'Inconsolata', monospace;
+        font-size: min(1.1vw, 15px);
+        text-decoration: none;
+        box-shadow: 3px 3px 0 #131312;
+        transition: transform 0.12s ease, box-shadow 0.12s ease;
+
+        &:hover {
+          transform: translate(2px, 2px);
+          box-shadow: 1px 1px 0 #131312;
+        }
+
+        &:active {
+          transform: translate(3px, 3px);
+          box-shadow: none;
+        }
+
+        &.secondary {
+          background-color: #fff8f2;
+          color: #131312;
+
+          &:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0 #131312;
+          }
+
+          &:active {
+            transform: translate(3px, 3px);
+            box-shadow: none;
+          }
+        }
+
+        @media screen and (max-width: 959px) {
+          font-size: 3.5vw;
+          line-height: 1;
+          padding: 9px 16px;
+        }
       }
     }
   }
-  .fifty-split {
-    padding-top: 52px;
-    @media screen and (max-width: 959px) {
-      padding-top: 0px;
-    }
+}
 
-    .mission-text {
-      font-size: 1.5vw;
-      line-height: 2.5vw;
-      padding-top: 60px;
-      padding-left: 30px;
-      padding-right: 30px;
-      text-align: justify;
-    }
+@keyframes bounce-hint {
+  0%,
+  100% {
+    bottom: 20px;
+  }
+  50% {
+    bottom: 13px;
+  }
+}
 
-    @media screen and (max-width: 959px) {
-      .mission-text {
-        font-size: 4.5vw;
-        line-height: 5.5vw;
-        padding: 0 15px 20px;
-      }
-    }
-
-    .mission-image-content {
-      width: 100%;
-      display: block;
-    }
+@keyframes section-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

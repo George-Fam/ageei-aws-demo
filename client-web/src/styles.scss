@@ -38,6 +38,11 @@ a {
   background-color: #131312;
 }
 
+.window-shadow {
+  display: block;
+  box-shadow: 5px 5px 0 #131312;
+}
+
 .hover-underline-animation {
   display: inline-block;
   position: relative;
