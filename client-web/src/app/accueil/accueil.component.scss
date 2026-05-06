@@ -168,6 +168,9 @@ $mobile-break: 'screen and (max-width: 959px)';
       gap: 12px;
 
       .featured-action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex: 1;
         text-align: center;
         padding: 10px 22px;
