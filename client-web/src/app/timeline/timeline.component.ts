@@ -22,6 +22,7 @@ export class TimelineComponent implements OnInit {
   calendarOpen = false;
   subscribeUrl: string | undefined;
   expandedEvents: Set<number> = new Set();
+  futureFurtherExpanded = false;
   isLoading = true;
   hasError = false;
 
@@ -72,6 +73,10 @@ export class TimelineComponent implements OnInit {
 
   toggleCalendar() {
     this.calendarOpen = !this.calendarOpen;
+  }
+
+  toggleFutureFurther() {
+    this.futureFurtherExpanded = !this.futureFurtherExpanded;
   }
 
   goToLink(url: string) {

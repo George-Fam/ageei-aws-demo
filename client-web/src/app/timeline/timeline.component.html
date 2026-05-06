@@ -35,6 +35,15 @@
 </div>
 }
 
+@if (upcomingCount > 1) {
+<div class="future-toggle-row">
+  <button mat-stroked-button color="primary" class="future-toggle-button" (click)="toggleFutureFurther()">
+    <mat-icon>{{ futureFurtherExpanded ? 'expand_less' : 'expand_more' }}</mat-icon>
+    {{ futureFurtherExpanded ? 'Cacher les événements à venir' : (upcomingCount - 1) + ' événement' + (upcomingCount - 1 > 1 ? 's' : '') + ' à venir' }}
+  </button>
+</div>
+}
+
 <div class="timeline">
   @for (entry of events; track entry.id; let i = $index) {
     @if (i === upcomingCount && upcomingCount > 0 && upcomingCount < events.length) {
@@ -42,6 +51,8 @@
       <span class="separator-label">Événements passés</span>
     </div>
     }
+    @if (i < upcomingCount - 1 && !futureFurtherExpanded) {
+    } @else {
     <div>
       <div class="container" [ngClass]="{ left: i % 2 !== 0, right: i % 2 === 0 }">
         <div class="content" [id]="i" [ngClass]="{ 'past-event': isPastEvent(entry), 'next-event': i === upcomingCount - 1 && upcomingCount > 0 }">
@@ -79,6 +90,7 @@
         </div>
       </div>
     </div>
+    }
   }
 </div>
 
