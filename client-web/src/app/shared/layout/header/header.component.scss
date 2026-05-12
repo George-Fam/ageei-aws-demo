@@ -4,14 +4,14 @@
   top: 0;
   width: 100%;
   max-width: none;
-  transition: top 0.8s;
+  transition: transform 0.8s;
   background-color: #fff8f2;
   z-index: 999;
   box-sizing: border-box;
   overflow: visible;
 
   &.hidden {
-    top: -130px;
+    transform: translateY(-100%);
   }
 
   .nav {

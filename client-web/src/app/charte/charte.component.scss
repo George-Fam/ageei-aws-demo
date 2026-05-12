@@ -1,6 +1,116 @@
+.charte-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.toc-sidebar {
+  flex: 0 0 260px;
+  width: 260px;
+  position: sticky;
+  top: calc(10vw + 1.5rem);
+  max-height: calc(100vh - 10vw - 3rem);
+  transition: top 0.8s, max-height 0.8s;
+  overflow-y: auto;
+  scrollbar-width: none;
+  background-color: #f0e8df;
+  border: 1px solid #d9d0c8;
+  padding: 1rem 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.toc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem 0.75rem;
+  border-bottom: 1px solid #d9d0c8;
+}
+
+.toc-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #131312;
+}
+
+.toc-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #131312;
+  padding: 0;
+  line-height: 1;
+}
+
+.toc-nav {
+  padding-top: 0.4rem;
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &--children {
+    padding-bottom: 0.25rem;
+  }
+}
+
+.toc-item {
+  margin: 0;
+}
+
+.toc-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.3rem 1rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+  font-weight: 600;
+  color: #131312;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease;
+
+  &:hover {
+    background-color: #e0d5ca;
+  }
+
+  &--child {
+    font-weight: 400;
+    padding-left: 1.75rem;
+    font-size: 0.78rem;
+  }
+
+  &--active {
+    background-color: #d9d0c8;
+    font-weight: 700;
+    border-left: 2px solid #131312;
+    padding-left: calc(1rem - 2px);
+
+    &.toc-link--child {
+      padding-left: calc(1.75rem - 2px);
+    }
+  }
+}
+
+.charte-content {
+  flex: 1;
+  min-width: 0;
+}
+
 ::ng-deep .charte-content {
-  max-width: 860px;
-  margin: 0 auto;
   line-height: 1.75;
   font-size: 1rem;
 
@@ -34,12 +144,14 @@
     margin: 2.5em 0 0.5em;
     padding-bottom: 0.3em;
     border-bottom: 1px solid #131312;
+    scroll-margin-top: calc(10vw + 1rem);
   }
 
   h3 {
     font-size: 1.05rem;
     font-weight: 700;
     margin: 1.75em 0 0.35em;
+    scroll-margin-top: calc(10vw + 1rem);
   }
 
   h4,
@@ -61,45 +173,6 @@
 
     &:hover {
       opacity: 0.6;
-    }
-  }
-
-  // Table of contents
-  h2 + ul {
-    list-style: none;
-    padding: 1.25em 1.5em;
-    margin: 0.5em 0 2em;
-    background-color: #f0e8df;
-    border: 1px solid #d9d0c8;
-
-    li {
-      margin: 0.15em 0;
-    }
-
-    > li {
-      font-weight: 600;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 1.25em;
-      margin: 0.1em 0;
-
-      > li {
-        font-weight: 400;
-      }
-
-      ul {
-        padding-left: 1.25em;
-      }
-    }
-
-    a {
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
     }
   }
 
@@ -157,6 +230,78 @@
 
     tbody tr:hover {
       background-color: #f0e8df;
+    }
+  }
+}
+
+:host-context(body.nav-hidden) .toc-sidebar {
+  top: 1.5rem;
+  max-height: calc(100vh - 3rem);
+}
+
+@media screen and (max-width: 959px) {
+  ::ng-deep .charte-content {
+    h2,
+    h3 {
+      scroll-margin-top: calc(69px + 1rem);
+    }
+  }
+
+  // Sidebar pulled out of flow entirely
+  .charte-layout {
+    display: block;
+  }
+
+  .toc-sidebar {
+    position: fixed;
+    top: calc(69px + 0.75rem);
+    left: 1rem;
+    width: auto;
+    flex: none;
+    background: none;
+    border: none;
+    padding: 0;
+    max-height: none;
+    overflow-y: visible;
+    z-index: 50;
+  }
+
+  .toc-header {
+    padding: 0;
+    border: none;
+  }
+
+  .toc-title {
+    display: none;
+  }
+
+  .toc-mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    background-color: #f0e8df;
+    border: 1px solid #131312;
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  .toc-nav {
+    display: none;
+    position: absolute;
+    top: calc(2.75rem + 0.2rem);
+    left: 0;
+    width: 280px;
+    background-color: #f0e8df;
+    border: 1px solid #d9d0c8;
+    max-height: 65vh;
+    overflow-y: auto;
+    padding-top: 0.4rem;
+
+    &.toc-nav--open {
+      display: block;
     }
   }
 }

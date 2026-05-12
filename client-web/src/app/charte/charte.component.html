@@ -4,47 +4,96 @@
   } @else if (hasError) {
     <app-error-state (retry)="ngOnInit()"></app-error-state>
   } @else if (charte && execs.length) {
-    <div class="charte-content">
+    <div class="charte-layout">
 
-      <h1>Charte de l'AGEEI</h1>
+      @if (tocItems.length) {
+        <aside class="toc-sidebar">
+          <div class="toc-header">
+            <span class="toc-title">Table des matières</span>
+            <button
+              type="button"
+              class="toc-mobile-toggle"
+              (click)="isTocMobileOpen = !isTocMobileOpen"
+              [attr.aria-expanded]="isTocMobileOpen"
+              aria-label="Afficher/masquer la table des matières"
+            >
+              {{ isTocMobileOpen ? '✕' : '☰' }}
+            </button>
+          </div>
 
-      <p>Liste des officiers :</p>
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>Position</th>
-              <th>Nom</th>
-              <th>Courriel</th>
-            </tr>
-          </thead>
-          <tbody>
-            @for (exec of execs; track exec.id) {
-              <tr>
-                <td>{{ exec.role }}</td>
-                <td>{{ exec.name }}</td>
-                <td><a href="mailto:{{ exec.email }}">{{ exec.email }}</a></td>
-              </tr>
-            }
-          </tbody>
-        </table>
-      </div>
-
-      @if (comiteGroups.length) {
-        <p>Membres étudiants du comité de programme :</p>
-        @for (group of comiteGroups; track group.comite) {
-          <p>Au {{ group.comite }} :</p>
-          <ul>
-            @for (membre of group.membres; track membre.id) {
-              <li>{{ membre.name }}</li>
-            } @empty {
-              <li>Aucun</li>
-            }
-          </ul>
-        }
+          <nav class="toc-nav" [class.toc-nav--open]="isTocMobileOpen">
+            <ul class="toc-list">
+              @for (item of tocItems; track item.id) {
+                <li class="toc-item toc-item--h2">
+                  <button
+                    type="button"
+                    class="toc-link"
+                    [class.toc-link--active]="activeSectionId === item.id"
+                    (click)="scrollToSection(item.id)"
+                  >{{ item.text }}</button>
+                  @if (item.children.length) {
+                    <ul class="toc-list toc-list--children">
+                      @for (child of item.children; track child.id) {
+                        <li class="toc-item toc-item--h3">
+                          <button
+                            type="button"
+                            class="toc-link toc-link--child"
+                            [class.toc-link--active]="activeSectionId === child.id"
+                            (click)="scrollToSection(child.id)"
+                          >{{ child.text }}</button>
+                        </li>
+                      }
+                    </ul>
+                  }
+                </li>
+              }
+            </ul>
+          </nav>
+        </aside>
       }
 
-      <div [innerHTML]="charte"></div>
+      <div class="charte-content">
+        <h1>Charte de l'AGEEI</h1>
+
+        <p>Liste des officiers :</p>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Position</th>
+                <th>Nom</th>
+                <th>Courriel</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (exec of execs; track exec.id) {
+                <tr>
+                  <td>{{ exec.role }}</td>
+                  <td>{{ exec.name }}</td>
+                  <td><a href="mailto:{{ exec.email }}">{{ exec.email }}</a></td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+
+        @if (comiteGroups.length) {
+          <p>Membres étudiants du comité de programme :</p>
+          @for (group of comiteGroups; track group.comite) {
+            <p>Au {{ group.comite }} :</p>
+            <ul>
+              @for (membre of group.membres; track membre.id) {
+                <li>{{ membre.name }}</li>
+              } @empty {
+                <li>Aucun</li>
+              }
+            </ul>
+          }
+        }
+
+        <div [innerHTML]="charte"></div>
+      </div>
+
     </div>
   }
 </div>
