@@ -21,6 +21,7 @@ import com.microsoft.azure.functions.HttpRequestMessage;
 import com.microsoft.azure.functions.HttpResponseMessage;
 import com.microsoft.azure.functions.HttpStatus;
 import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Map;
 import java.util.Optional;
@@ -28,6 +29,7 @@ import java.util.logging.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
@@ -206,6 +208,20 @@ class CalendarSyncFunctionTest {
 
         assertTrue(result.has("data"));
         assertTrue(result.get("data").isArray());
+    }
+
+    @Test
+    void fetchEventsFromDirectus_filtersOutDraftEvents() throws Exception {
+        CalendarSyncFunction f = spyWithHttpMock();
+        doReturn(mockHttpResponse).when(mockHttpClient).send(any(), any());
+        when(mockHttpResponse.statusCode()).thenReturn(200);
+        when(mockHttpResponse.body()).thenReturn("{\"data\":[]}");
+
+        f.fetchEventsFromDirectus(mockContext);
+
+        ArgumentCaptor<HttpRequest> requestCaptor = ArgumentCaptor.forClass(HttpRequest.class);
+        verify(mockHttpClient).send(requestCaptor.capture(), any());
+        assertTrue(requestCaptor.getValue().uri().getRawQuery().contains("filter%5BisDraft%5D%5B_neq%5D=true"));
     }
 
     //endregion

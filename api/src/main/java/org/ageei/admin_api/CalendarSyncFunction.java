@@ -105,7 +105,7 @@ public class CalendarSyncFunction {
             throw new IllegalStateException("DIRECTUS_URL not configured");
         }
 
-        String url = directusUrl + "/items/events?limit=-1&sort=start_date";
+        String url = directusUrl + "/items/events?limit=-1&sort=start_date&filter%5BisDraft%5D%5B_neq%5D=true";
 
         //noinspection resource — HttpClient.close() was added in Java 21; this code targets Java 17
         HttpClient client = newHttpClient();

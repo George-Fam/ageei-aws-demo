@@ -8,6 +8,7 @@ export interface CmsEvent {
   poster: string | null;
   link_url: string | null;
   link_label: string | null;
+  isDraft?: boolean;
 }
 
 export interface CmsEventsResponse {

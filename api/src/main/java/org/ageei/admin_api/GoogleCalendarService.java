@@ -91,6 +91,11 @@ public class GoogleCalendarService {
 
         int created = 0, updated = 0, skipped = 0;
         for (JsonNode eventNode : events) {
+            if (eventNode.path("isDraft").asBoolean(false)) {
+                skipped++;
+                continue;
+            }
+
             String ageeiId = eventNode.path("id").asText("");
             if (ageeiId.isBlank()) {
                 logger.warning("Skipping event with no 'id' field: " +

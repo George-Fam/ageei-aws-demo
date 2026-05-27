@@ -283,6 +283,21 @@ class GoogleCalendarServiceTest {
     }
 
     @Test
+    void skipsDraftEventAndDeletesExistingCalendarCopy() throws Exception {
+        when(mockList.execute()).thenReturn(calendarWithEvents(List.of(existingEvent("id1", "google-evt-1"))));
+        when(mockEvents.delete(eq(CALENDAR_ID), eq("google-evt-1"))).thenReturn(mockDelete);
+
+        service.syncFromDirectus(MAPPER.readTree("""
+                {"data":[{"id":"id1","title":"Draft","isDraft":true,
+                "start_date":"2026-04-07T10:00:00","end_date":null}]}
+                """), LOGGER);
+
+        verify(mockEvents, never()).insert(any(), any());
+        verify(mockEvents, never()).update(any(), any(), any());
+        verify(mockEvents).delete(CALENDAR_ID, "google-evt-1");
+    }
+
+    @Test
     void existingEventWithNullExtendedProperties_isSkipped() throws Exception {
         Event eventNoEp = new Event();
         eventNoEp.setId("google-evt-no-ep");
