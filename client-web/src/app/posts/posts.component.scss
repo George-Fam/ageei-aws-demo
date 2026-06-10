@@ -1,12 +1,12 @@
 .container {
-  max-width: 1180px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 16px 0;
 }
 
 .posts-list {
   display: grid;
-  gap: 28px;
+  gap: 20px;
 }
 
 .posts-skeleton {
@@ -68,19 +68,11 @@
   display: grid;
   grid-template-columns: minmax(220px, 320px) 1fr;
   min-height: 320px;
-  background: var(--paper-card);
-  border-radius: 0;
-  border: 3px solid var(--ink);
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
   overflow: hidden;
   box-shadow: var(--shadow);
-
-  &:nth-child(2n) {
-    transform: rotate(0.35deg);
-  }
-
-  &:nth-child(2n + 1) {
-    transform: rotate(-0.25deg);
-  }
 }
 
 .post-card.no-image {
@@ -95,7 +87,7 @@
 }
 
 .post-content {
-  padding: clamp(20px, 3vw, 34px);
+  padding: 20px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -104,8 +96,8 @@
 .post-title {
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(1.55rem, 2.7vw, 2.6rem);
-  line-height: 1.05;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.3;
 }
 
 .post-date {
@@ -144,12 +136,9 @@
   display: inline-block;
   margin-top: 18px;
   font-weight: 600;
-  align-self: flex-start;
-  padding: 10px 14px;
-  border: 3px solid var(--ink);
-  background: var(--accent-3);
-  box-shadow: 4px 4px 0 var(--ink);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--accent);
 }
 
 .empty-state {

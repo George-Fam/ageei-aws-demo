@@ -4,8 +4,9 @@
     margin: 0 auto;
     min-height: 190px;
     height: auto;
-    border: 3px solid var(--ink);
-    background: var(--paper-card);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
     box-shadow: var(--shadow);
     .divider {
       background-color: var(--ink);
@@ -37,8 +38,14 @@
   }
   @media screen and (max-width: 959px) {
     .fifty-split {
-      min-height: 175px;
+      width: 100%;
+      max-width: 324px;
       height: auto;
+      min-height: 175px;
+      margin: 0;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
   .execs-title {
@@ -72,7 +79,7 @@
     .exec {
       height: 100%;
       .exec-presentation {
-        font: 800 20px var(--sans);
+        font-size: 20px;
         .exec-name {
           text-align: center;
           width: 100%;
@@ -125,6 +132,25 @@
         margin-left: 8px;
         font-style: italic;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .container {
+    .section-block {
+      width: 100%;
+      max-width: 340px;
+      padding: 0;
+    }
+
+    .cards-row {
+      justify-content: center;
+    }
+
+    .exec-container {
+      width: 100%;
+      max-width: 340px;
     }
   }
 }
