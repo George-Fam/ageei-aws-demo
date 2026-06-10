@@ -2,6 +2,9 @@ import { AfterViewChecked, Component, ElementRef, HostListener, OnInit, ViewChil
 import { Meta, Title } from '@angular/platform-browser';
 import { Post } from '../posts/posts.interface';
 import { PostsService } from '../posts/posts.service';
+import { TimelineService } from '../timeline/timeline.service';
+import { CmsEvent } from '../timeline/timeline.interface';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-accueil',
@@ -13,11 +16,15 @@ export class AccueilComponent implements OnInit, AfterViewChecked {
   featuredPost: Post | null = null;
   isFeaturedLoading = true;
   hasFeaturedError = false;
+  nextEvent: CmsEvent | null = null;
+  isNextEventLoading = true;
+  hasNextEventError = false;
   showScrollHint = true;
   excerptOverflows = false;
 
   @ViewChild('featuredExcerpt') private featuredExcerptRef?: ElementRef<HTMLElement>;
   private postsService = inject(PostsService);
+  private timelineService = inject(TimelineService);
 
   constructor() {
     inject(Title).setTitle('AGEEI - Accueil');
@@ -32,6 +39,7 @@ export class AccueilComponent implements OnInit, AfterViewChecked {
 
   ngOnInit(): void {
     this.loadFeaturedPost();
+    this.loadNextEvent();
   }
 
   @HostListener('window:scroll')
@@ -52,6 +60,29 @@ export class AccueilComponent implements OnInit, AfterViewChecked {
         this.hasFeaturedError = true;
       },
     });
+  }
+
+  loadNextEvent(): void {
+    this.isNextEventLoading = true;
+    this.hasNextEventError = false;
+    this.timelineService.getEvents().subscribe({
+      next: (events) => {
+        const now = new Date().getTime();
+        this.nextEvent =
+          events
+            .filter((event) => new Date(event.start_date).getTime() >= now)
+            .sort((a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime())[0] ?? null;
+        this.isNextEventLoading = false;
+      },
+      error: () => {
+        this.isNextEventLoading = false;
+        this.hasNextEventError = true;
+      },
+    });
+  }
+
+  posterUrl(posterId: string): string {
+    return `${environment.cmsUrl}/assets/${posterId}`;
   }
 
   ngAfterViewChecked(): void {

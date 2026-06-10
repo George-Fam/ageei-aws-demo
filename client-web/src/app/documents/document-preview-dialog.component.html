@@ -1,0 +1,49 @@
+<div class="document-preview">
+  <div class="preview-header">
+    <div class="file-stamp">
+      <mat-icon>{{ data.url?.includes('.pdf') ? 'picture_as_pdf' : 'description' }}</mat-icon>
+    </div>
+    <div>
+      <p class="eyebrow">{{ data.category || data.type || 'Document' }}</p>
+      <h2 mat-dialog-title>{{ data.title }}</h2>
+    </div>
+    <button mat-icon-button matTooltip="Fermer" aria-label="Fermer" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <mat-dialog-content>
+    @if (data.description) {
+      <p class="description">{{ data.description }}</p>
+    }
+
+    <dl class="meta-grid">
+      @if (data.date) {
+        <div>
+          <dt>Date</dt>
+          <dd>{{ data.date | date : 'longDate' }}</dd>
+        </div>
+      }
+      @if (data.type) {
+        <div>
+          <dt>Type</dt>
+          <dd>{{ data.type }}</dd>
+        </div>
+      }
+      <div>
+        <dt>Fichier</dt>
+        <dd>{{ data.url ? 'Disponible' : 'Non disponible' }}</dd>
+      </div>
+    </dl>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-stroked-button (click)="close()">Fermer</button>
+    @if (data.url) {
+      <button mat-raised-button color="primary" (click)="openDocument()">
+        Ouvrir
+        <mat-icon iconPositionEnd>open_in_new</mat-icon>
+      </button>
+    }
+  </mat-dialog-actions>
+</div>

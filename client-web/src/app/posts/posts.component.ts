@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Post } from './posts.interface';
 import { PostsService } from './posts.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-posts',
@@ -14,6 +15,7 @@ export class PostsComponent implements OnInit {
   isLoading = true;
   hasError = false;
   private postsService = inject(PostsService);
+  private snackBar = inject(MatSnackBar);
 
   constructor() {
     inject(Title).setTitle('AGEEI - Publications');
@@ -43,5 +45,25 @@ export class PostsComponent implements OnInit {
         this.hasError = true;
       },
     });
+  }
+
+  sharePost(post: Post): void {
+    const url = `${window.location.origin}/posts#post-${post.id}`;
+    const shareNavigator = navigator as Navigator & {
+      share?: (data: { title: string; text?: string; url: string }) => Promise<void>;
+    };
+
+    if (shareNavigator.share) {
+      shareNavigator.share({ title: post.title, text: "Publication de l'AGEEI", url }).catch(() => this.copyUrl(url));
+    } else {
+      this.copyUrl(url);
+    }
+  }
+
+  private copyUrl(url: string): void {
+    navigator.clipboard
+      ?.writeText(url)
+      .then(() => this.snackBar.open('Lien copié', 'OK', { duration: 2500 }))
+      .catch(() => this.snackBar.open('Impossible de copier le lien', 'OK', { duration: 2500 }));
   }
 }

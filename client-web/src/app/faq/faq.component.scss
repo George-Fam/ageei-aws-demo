@@ -16,8 +16,8 @@
   }
 
   mat-expansion-panel {
-    background-color: #fff8f2;
-    border-bottom: 1px solid #131312;
+    background-color: var(--paper-card);
+    border-bottom: 2px solid var(--ink);
     border-radius: 0;
     box-shadow: none;
 
@@ -64,7 +64,9 @@
       .category-item {
         font-size: 1.4em;
         text-transform: uppercase;
-        color: #131312;
+        color: var(--ink);
+        font-family: var(--sans);
+        font-weight: 800;
         box-sizing: border-box;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -72,7 +74,7 @@
         line-height: 1.6;
       }
       .selected-category-item {
-        border-bottom: 1px solid #131312;
+        border-bottom: 4px solid var(--accent);
       }
       .mobile-category-item {
         font-size: 1.8vw;
@@ -89,7 +91,8 @@
     padding-bottom: 2em;
     mat-expansion-panel {
       background-color: #fff8f2;
-      border-bottom: 1px solid #131312;
+      background-color: var(--paper-card);
+      border-bottom: 2px solid var(--ink);
       border-radius: 0;
       box-shadow: none;
       mat-expansion-panel-header {

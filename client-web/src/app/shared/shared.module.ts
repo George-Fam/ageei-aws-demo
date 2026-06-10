@@ -17,6 +17,9 @@ import { ScrollToTopComponent } from './layout/scroll-to-top/scroll-to-top.compo
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ErrorStateComponent } from './layout/error-state/error-state.component';
 import { LoadingStateComponent } from './layout/loading-state/loading-state.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   imports: [
@@ -34,6 +37,9 @@ import { LoadingStateComponent } from './layout/loading-state/loading-state.comp
     MatCardModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatTooltipModule,
     NgxTypedJsModule,
   ],
   exports: [
@@ -50,6 +56,9 @@ import { LoadingStateComponent } from './layout/loading-state/loading-state.comp
     MatCardModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatTooltipModule,
     NgxTypedJsModule,
     FunnyWindowComponent,
     ScrollToTopComponent,

@@ -1,6 +1,6 @@
 .container {
   padding: 8px;
-  max-width: 1000px;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
@@ -9,16 +9,15 @@
 }
 
 .section-title {
-  font-size: 20px;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.87);
+  font: 800 clamp(1.6rem, 3vw, 2.6rem) / 1 var(--display);
+  color: var(--ink);
   margin: 0 0 16px;
 }
 
 .category-title {
   font-size: 14px;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.54);
+  color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 16px 0 8px;
@@ -26,6 +25,54 @@
 
 mat-divider {
   margin: 8px 0;
+}
+
+.documents-skeleton {
+  display: grid;
+  gap: 10px;
+  padding: 14px 0;
+}
+
+.skeleton-title,
+.skeleton-doc {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  background: var(--paper-card);
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(0, 126, 120, 0.14), transparent);
+    animation: skeleton-sweep 1.35s ease infinite;
+  }
+}
+
+.skeleton-title {
+  width: 42%;
+  height: 42px;
+  border-width: 3px;
+  box-shadow: 4px 4px 0 var(--ink);
+
+  &.small {
+    width: 28%;
+    margin-top: 22px;
+  }
+}
+
+.skeleton-doc {
+  height: 70px;
+  box-shadow: 3px 3px 0 var(--ink);
+
+  &.important {
+    height: 86px;
+  }
+
+  &.short {
+    width: 76%;
+  }
 }
 
 // Important documents cards
@@ -40,9 +87,10 @@ mat-divider {
   display: flex;
   align-items: center;
   padding: 12px 16px;
-  background: white;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  background: var(--paper-card);
+  border-radius: 0;
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
   gap: 14px;
   transition: box-shadow 0.2s;
 
@@ -96,8 +144,8 @@ mat-divider {
 
 .school-year {
   margin: 8px 0;
-  color: rgba(0, 0, 0, 0.87);
-  font-weight: 500;
+  color: var(--ink);
+  font-weight: 800;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -134,9 +182,10 @@ mat-divider {
   display: flex;
   align-items: center;
   padding: 8px 12px;
-  background: white;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  background: var(--paper-card);
+  border-radius: 0;
+  border: 2px solid var(--ink);
+  box-shadow: none;
   gap: 12px;
   transition: background 0.2s;
 
@@ -185,4 +234,10 @@ mat-divider {
   color: rgba(0, 0, 0, 0.6);
   padding: 16px;
   font-size: 14px;
+}
+
+@keyframes skeleton-sweep {
+  to {
+    transform: translateX(100%);
+  }
 }

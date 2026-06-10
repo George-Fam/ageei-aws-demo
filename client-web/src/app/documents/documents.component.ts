@@ -3,6 +3,8 @@ import { Meta, Title } from '@angular/platform-browser';
 import { forkJoin } from 'rxjs';
 import { DirectusDocument, ImportantDocument } from './documents.interface';
 import { DocumentsService } from './documents.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DocumentPreviewDialogComponent, DocumentPreviewDialogData } from './document-preview-dialog.component';
 
 @Component({
   selector: 'app-documents',
@@ -21,6 +23,7 @@ export class DocumentsComponent implements OnInit {
   hasError = false;
 
   private service = inject(DocumentsService);
+  private dialog = inject(MatDialog);
 
   constructor() {
     inject(Title).setTitle('AGEEI - Documents');
@@ -98,7 +101,12 @@ export class DocumentsComponent implements OnInit {
 
   openPv(doc: DirectusDocument): void {
     const url = doc.file_pdf || doc.file_md;
-    if (url) window.open(url, '_blank');
+    this.previewDocument({
+      title: doc.title,
+      date: doc.date,
+      type: doc.type,
+      url,
+    });
   }
 
   hasPvFile(doc: DirectusDocument): boolean {
@@ -106,10 +114,28 @@ export class DocumentsComponent implements OnInit {
   }
 
   openImportantDoc(doc: ImportantDocument): void {
-    if (doc.file_pdf) window.open(doc.file_pdf, '_blank');
+    this.previewDocument({
+      title: doc.title,
+      description: doc.description,
+      category: doc.category,
+      url: doc.file_pdf,
+    });
   }
 
   hasImportantDocFile(doc: ImportantDocument): boolean {
     return !!doc.file_pdf;
+  }
+
+  private previewDocument(data: DocumentPreviewDialogData): void {
+    const dialogRef = this.dialog.open(DocumentPreviewDialogComponent, {
+      width: 'min(620px, calc(100vw - 24px))',
+      maxWidth: '100vw',
+      panelClass: 'ageei-dialog-panel',
+      data,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result?.action === 'open' && data.url) window.open(data.url, '_blank');
+    });
   }
 }
