@@ -1,9 +1,15 @@
 .container {
   .fifty-split {
-    height: 130px;
+    max-width: 1060px;
+    margin: 0 auto;
+    min-height: 190px;
+    height: auto;
+    border: 3px solid var(--ink);
+    background: var(--paper-card);
+    box-shadow: var(--shadow);
     .divider {
-      background-color: #131312;
-      width: 1px;
+      background-color: var(--ink);
+      width: 3px;
       height: 90%;
     }
     .left-section {
@@ -11,7 +17,7 @@
       height: 100%;
       .typing {
         display: inline;
-        font-size: 40px;
+        font: 800 clamp(2rem, 5vw, 4.5rem) / 0.95 var(--display);
       }
     }
     .right-section {
@@ -31,11 +37,12 @@
   }
   @media screen and (max-width: 959px) {
     .fifty-split {
-      height: 175px;
+      min-height: 175px;
+      height: auto;
     }
   }
   .execs-title {
-    font-size: 24px;
+    font: 800 clamp(1.7rem, 3vw, 2.8rem) / 1 var(--display);
     margin-bottom: 8px;
   }
   .exec-container {
@@ -65,7 +72,7 @@
     .exec {
       height: 100%;
       .exec-presentation {
-        font-size: 20px;
+        font: 800 20px var(--sans);
         .exec-name {
           text-align: center;
           width: 100%;
@@ -105,13 +112,13 @@
   }
   .comites-section {
     .comites-title {
-      font-size: 24px;
+      font: 800 clamp(1.7rem, 3vw, 2.8rem) / 1 var(--display);
       margin-bottom: 8px;
     }
     .comite-group {
       margin-bottom: 24px;
       .comite-subtitle {
-        font-size: 18px;
+        font: 800 clamp(1.1rem, 1.8vw, 1.45rem) / 1.1 var(--display);
         margin-bottom: 12px;
       }
       .comite-empty {

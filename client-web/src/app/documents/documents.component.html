@@ -1,7 +1,15 @@
 <app-scroll-to-top></app-scroll-to-top>
 <div class="container">
   @if (isLoading) {
-    <app-loading-state></app-loading-state>
+    <div class="documents-skeleton" aria-hidden="true">
+      <div class="skeleton-title"></div>
+      <div class="skeleton-doc important"></div>
+      <div class="skeleton-doc important short"></div>
+      <div class="skeleton-title small"></div>
+      <div class="skeleton-doc"></div>
+      <div class="skeleton-doc"></div>
+      <div class="skeleton-doc short"></div>
+    </div>
   } @else if (hasError) {
     <app-error-state (retry)="ngOnInit()"></app-error-state>
   } @else {

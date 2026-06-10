@@ -14,8 +14,9 @@
   transition: top 0.8s, max-height 0.8s;
   overflow-y: auto;
   scrollbar-width: none;
-  background-color: #f0e8df;
-  border: 1px solid #d9d0c8;
+  background-color: var(--paper-card);
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
   padding: 1rem 0;
 
   &::-webkit-scrollbar {
@@ -128,22 +129,20 @@
   }
 
   h1 {
-    font-size: 2rem;
-    font-weight: 700;
+    font: 800 clamp(2rem, 4vw, 4rem) / 0.95 var(--display);
     letter-spacing: -0.01em;
     margin: 0 0 0.25em;
     padding-bottom: 0.4em;
-    border-bottom: 2px solid #131312;
+    border-bottom: 4px solid var(--ink);
   }
 
   h2 {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font: 800 1.35rem var(--sans);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     margin: 2.5em 0 0.5em;
     padding-bottom: 0.3em;
-    border-bottom: 1px solid #131312;
+    border-bottom: 3px solid var(--ink);
     scroll-margin-top: calc(10vw + 1rem);
   }
 

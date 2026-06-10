@@ -1,73 +1,116 @@
 <div class="container">
-  <div class="main-title-container" fxLayout="column" fxLayoutAlign="space-around center">
-    <div class="main-title">
-      <ngx-typed-js
-        [strings]="[
-          'Association Générale des Étudiants et Étudiantes en Informatique 💻',
-          'Association Générale des Étudiants et Étudiantes en Informatique 🎉',
-          'Association Générale des Étudiants et Étudiantes en Informatique 🚩',
-          'Association Générale des Étudiants et Étudiantes en Informatique 👨‍💻',
-          'Association Générale des Étudiants et Étudiantes en Informatique 💽',
-          'Association Générale des Étudiants et Étudiantes en Informatique 👩‍💻',
-          'Association Générale des Étudiants et Étudiantes en Informatique 🥳'
-        ]"
-        [backDelay]="5000"
-        [smartBackspace]="true"
-        [typeSpeed]="50"
-      >
-        <h1 class="typing"></h1>
-      </ngx-typed-js>
-    </div>
-  </div>
-  <div class="mission-container">
-    <app-funny-window class="mission-window window-shadow" windowTitle="NOTRE MISSION">
-      <div class="mission-content" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutAlign="space-between stretch" fxLayoutGap.gt-sm="24px">
-        <div class="mission-image-panel" fxFlex.gt-sm="26%" fxFlex.lt-md="100%">
-          <img class="mission-image-content" src="assets/accueil/accueil-1.jpg" alt="Membres de l'association" />
-        </div>
-        <div class="mission-text" fxFlex>
-          L’association générale des étudiantes et étudiants en informatique a pour but de regrouper les étudiants en
-          informatique de l’Université du Québec à Montréal et d’assurer, dans le cadre des affaires universitaires, leur
-          bienêtre physique, moral, intellectuel, social et économique.
+  <div class="home-layout">
+    <div class="home-main">
+      <div class="main-title-container" fxLayout="column" fxLayoutAlign="space-around center">
+        <div class="main-title">
+          <ngx-typed-js
+            [strings]="[
+              'Association Générale des Étudiants et Étudiantes en Informatique 💻',
+              'Association Générale des Étudiants et Étudiantes en Informatique 🎉',
+              'Association Générale des Étudiants et Étudiantes en Informatique 🚩',
+              'Association Générale des Étudiants et Étudiantes en Informatique 👨‍💻',
+              'Association Générale des Étudiants et Étudiantes en Informatique 💽',
+              'Association Générale des Étudiants et Étudiantes en Informatique 👩‍💻',
+              'Association Générale des Étudiants et Étudiantes en Informatique 🥳'
+            ]"
+            [backDelay]="5000"
+            [smartBackspace]="true"
+            [typeSpeed]="50"
+          >
+            <h1 class="typing"></h1>
+          </ngx-typed-js>
         </div>
       </div>
-    </app-funny-window>
-  </div>
-
-  <div class="featured-container">
-    <app-funny-window class="featured-window window-shadow" windowTitle="PUBLICATION À LA UNE">
-      @if (isFeaturedLoading) {
-        <p class="featured-state">Chargement de la publication...</p>
-      } @else if (hasFeaturedError) {
-        <p class="featured-state">
-          Impossible de charger la publication.
-          <button class="featured-inline-action" mat-button (click)="loadFeaturedPost()">Réessayer</button>
-        </p>
-      } @else if (featuredPost) {
-        <div class="featured-body" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap.gt-sm="28px">
-          @if (featuredPost.imageUrl) {
-            <div class="featured-image-panel" fxFlex.gt-sm="26%" fxFlex.lt-md="100%">
-              <img class="featured-image" [src]="featuredPost.imageUrl" [alt]="featuredPost.title" />
+      <div class="mission-container">
+        <app-funny-window class="mission-window window-shadow" windowTitle="NOTRE MISSION">
+          <div class="mission-content" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutAlign="space-between stretch" fxLayoutGap.gt-sm="24px">
+            <div class="mission-image-panel" fxFlex.gt-sm="26%" fxFlex.lt-md="100%">
+              <img class="mission-image-content" src="assets/accueil/accueil-1.jpg" alt="Membres de l'association" />
             </div>
-          }
-          <div class="featured-text" fxFlex>
-            <h2>{{ featuredPost.title }}</h2>
-            <p class="featured-date">{{ featuredPost.date_created | date: 'longDate' }}</p>
-            <div #featuredExcerpt class="featured-excerpt" [class.overflows]="excerptOverflows" [innerHTML]="featuredPost.content"></div>
-            <div class="featured-actions">
-              @if (featuredPost.link) {
-                <a class="featured-action secondary" [href]="featuredPost.link" target="_blank" rel="noopener noreferrer">
-                  {{ featuredPost.link_label || 'Lien externe' }}
-                </a>
-              }
-              <a class="featured-action" routerLink="/posts">Voir toutes les publications</a>
+            <div class="mission-text" fxFlex>
+              L’association générale des étudiantes et étudiants en informatique a pour but de regrouper les étudiants en
+              informatique de l’Université du Québec à Montréal et d’assurer, dans le cadre des affaires universitaires, leur
+              bienêtre physique, moral, intellectuel, social et économique.
             </div>
           </div>
-        </div>
-      } @else {
-        <p class="featured-state">Aucune publication en vedette pour le moment.</p>
-      }
-    </app-funny-window>
+        </app-funny-window>
+      </div>
+    </div>
+    <aside class="home-side-rail" aria-label="Actualités">
+      <div class="featured-container">
+        <app-funny-window class="featured-window window-shadow" windowTitle="PUBLICATION À LA UNE">
+          @if (isFeaturedLoading) {
+            <div class="featured-skeleton" aria-hidden="true">
+              <div class="featured-skeleton-image"></div>
+              <div class="featured-skeleton-copy">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          } @else if (hasFeaturedError) {
+            <p class="featured-state">
+              Impossible de charger la publication.
+              <button class="featured-inline-action" mat-button (click)="loadFeaturedPost()">Réessayer</button>
+            </p>
+          } @else if (featuredPost) {
+            <div class="featured-body">
+              @if (featuredPost.imageUrl) {
+                <div class="featured-image-panel">
+                  <img class="featured-image" [src]="featuredPost.imageUrl" [alt]="featuredPost.title" />
+                </div>
+              }
+              <div class="featured-text">
+                <h2>{{ featuredPost.title }}</h2>
+                <p class="featured-date">{{ featuredPost.date_created | date: 'longDate' }}</p>
+                <div #featuredExcerpt class="featured-excerpt" [class.overflows]="excerptOverflows" [innerHTML]="featuredPost.content"></div>
+                <div class="featured-actions">
+                  @if (featuredPost.link) {
+                    <a class="featured-action secondary" [href]="featuredPost.link" target="_blank" rel="noopener noreferrer">
+                      {{ featuredPost.link_label || 'Lien externe' }}
+                    </a>
+                  }
+                  <a class="featured-action" routerLink="/posts">Voir toutes les publications</a>
+                </div>
+              </div>
+            </div>
+          } @else {
+            <p class="featured-state">Aucune publication en vedette pour le moment.</p>
+          }
+        </app-funny-window>
+      </div>
+
+      <div class="next-event-container">
+        <app-funny-window class="next-event-window window-shadow" windowTitle="PROCHAIN ÉVÉNEMENT">
+          @if (isNextEventLoading) {
+            <div class="next-event-skeleton" aria-hidden="true">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          } @else if (hasNextEventError) {
+            <p class="next-event-state">
+              Impossible de charger le prochain événement.
+              <button class="featured-inline-action" mat-button (click)="loadNextEvent()">Réessayer</button>
+            </p>
+          } @else if (nextEvent) {
+            <div class="next-event-body" [class.with-poster]="nextEvent.poster">
+              @if (nextEvent.poster) {
+                <img class="next-event-poster" [src]="posterUrl(nextEvent.poster)" alt="Illustration pour l'événement {{ nextEvent.title }}" />
+              }
+              <div class="next-event-copy">
+                <p class="next-event-date">{{ nextEvent.start_date | date : "d MMMM yyyy 'à' HH'h'mm" }}</p>
+                <h2>{{ nextEvent.title }}</h2>
+                <p class="next-event-organizer">{{ nextEvent.author_organizer }}</p>
+                <a class="next-event-action" routerLink="/calendrier" [fragment]="'event-' + nextEvent.id">Voir le calendrier</a>
+              </div>
+            </div>
+          } @else {
+            <p class="next-event-state">Aucun événement à venir pour le moment.</p>
+          }
+        </app-funny-window>
+      </div>
+    </aside>
   </div>
   @if (showScrollHint) {
     <div class="scroll-hint" aria-hidden="true">↓</div>

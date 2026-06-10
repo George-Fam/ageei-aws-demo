@@ -1,14 +1,19 @@
 .main-window {
-  border: 2px solid #131312;
+  border: 3px solid var(--ink);
   display: block;
-  background-color: #fff8f2;
+  background-color: var(--paper-card);
+  transform: rotate(-0.25deg);
   .top-bar {
-    padding: 10px 16px;
-    border-bottom: 2px solid #131312;
+    padding: 9px 16px;
+    border-bottom: 3px solid var(--ink);
     display: block;
+    background: repeating-linear-gradient(135deg, rgba(23, 20, 18, 0.09) 0 8px, transparent 8px 16px), var(--paper-deep);
+    font: 800 0.9rem var(--sans);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     .dots {
       .dot {
-        background-color: #131312;
+        background-color: var(--ink);
         height: 10px;
         width: 10px;
         border-radius: 50%;
@@ -24,7 +29,7 @@
       display: block;
     }
     .text {
-      font-family: 'Libre Baskerville', serif;
+      font-family: var(--display);
       padding: 2vw 4.167vw;
       text-align: center;
       font-size: 2vw;

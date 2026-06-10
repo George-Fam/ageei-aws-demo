@@ -1,0 +1,49 @@
+<div class="event-preview" [class.past]="data.isPast">
+  <div class="preview-header">
+    <div>
+      <p class="eyebrow">{{ data.isPast ? 'Événement passé' : 'Événement à venir' }}</p>
+      <h2 mat-dialog-title>{{ data.event.title }}</h2>
+    </div>
+    <button mat-icon-button matTooltip="Fermer" aria-label="Fermer" (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <mat-dialog-content>
+    @if (data.posterUrl) {
+      <img class="preview-poster" [src]="data.posterUrl" alt="Illustration pour l'événement {{ data.event.title }}" />
+    }
+
+    <div class="preview-meta">
+      <div>
+        <span>Date</span>
+        <strong>{{ data.event.start_date | date : "d MMMM yyyy 'à' HH'h'mm" }}</strong>
+      </div>
+      @if (data.event.end_date) {
+        <div>
+          <span>Fin</span>
+          <strong>{{ data.event.end_date | date : "d MMMM yyyy 'à' HH'h'mm" }}</strong>
+        </div>
+      }
+      <div>
+        <span>Organisation</span>
+        <strong>{{ data.event.author_organizer }}</strong>
+      </div>
+    </div>
+
+    <p class="preview-description">{{ data.event.description }}</p>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-stroked-button (click)="share()">
+      <mat-icon>ios_share</mat-icon>
+      Partager
+    </button>
+    @if (data.event.link_url) {
+      <button mat-raised-button color="primary" (click)="openLink()">
+        {{ data.event.link_label || 'Ouvrir le lien' }}
+        <mat-icon iconPositionEnd>open_in_new</mat-icon>
+      </button>
+    }
+  </mat-dialog-actions>
+</div>
