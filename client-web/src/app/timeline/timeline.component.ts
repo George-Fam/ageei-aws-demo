@@ -212,7 +212,7 @@ export class TimelineComponent implements OnInit {
   }
 
   isExternalEvent(entry: CmsEvent): boolean {
-    return !entry.author_organizer?.toLowerCase().includes('ageei');
+    return entry.isExternal === true;
   }
 
   formatDescription(text: string): string {

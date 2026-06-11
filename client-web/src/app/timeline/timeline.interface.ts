@@ -9,6 +9,7 @@ export interface CmsEvent {
   link_url: string | null;
   link_label: string | null;
   isDraft?: boolean;
+  isExternal?: boolean;
 }
 
 export interface CmsEventsResponse {
