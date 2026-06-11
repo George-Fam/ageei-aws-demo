@@ -136,7 +136,7 @@ export class TimelineComponent implements OnInit {
   }
 
   isPastEvent(entry: CmsEvent): boolean {
-    return new Date(entry.start_date).getTime() < this.currentDate.getTime();
+    return new Date(entry.end_date || entry.start_date).getTime() < this.currentDate.getTime();
   }
 
   isEventExpanded(id: string): boolean {
