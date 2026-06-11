@@ -3,4 +3,30 @@
   bottom: 2rem;
   right: 2rem;
   z-index: 100;
+  border: 3px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--accent-3);
+  color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+
+  --mdc-fab-container-color: var(--accent-3);
+  --mat-fab-container-color: var(--accent-3);
+  --mat-fab-foreground-color: var(--ink);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--accent);
+    color: var(--paper);
+    box-shadow: 2px 2px 0 var(--ink);
+    transform: translate(2px, 2px);
+
+    --mdc-fab-container-color: var(--accent);
+    --mat-fab-container-color: var(--accent);
+    --mat-fab-foreground-color: var(--paper);
+  }
+
+  mat-icon {
+    color: inherit;
+  }
 }
