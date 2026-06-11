@@ -34,7 +34,7 @@ export class TimelineComponent implements OnInit {
   futureFurtherExpanded = false;
   isLoading = true;
   hasError = false;
-  activeFilter: TimelineFilter = 'all';
+  activeFilter: TimelineFilter = 'upcoming';
   private pendingFragmentEventId: string | null = null;
   private fragmentPreviewOpened = false;
   filters: { value: TimelineFilter; label: string }[] = [
