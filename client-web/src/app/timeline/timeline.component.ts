@@ -1,14 +1,20 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, Meta, SafeResourceUrl, Title } from '@angular/platform-browser';
-import { TimelineService } from './timeline.service';
-import { CmsEvent } from './timeline.interface';
+import { TimelineService } from './services/timeline.service';
+import { CmsEvent } from './models/timeline.interface';
 import { environment } from 'src/environments/environment';
-import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { EventPreviewDialogComponent } from './event-preview-dialog.component';
-
-type TimelineFilter = 'all' | 'internal' | 'external' | 'upcoming' | 'past';
+import { TimelineEventActionsService } from './services/timeline-event-actions.service';
+import {
+  TimelineFilter,
+  countTimelineEvents,
+  filterTimelineEvents,
+  getNextTimelineEvent,
+  isExternalTimelineEvent,
+  isPastTimelineEvent,
+  normalizeEventFragment,
+  sortTimelineEventsDescending,
+} from './utils/timeline-events';
 
 @Component({
   selector: 'app-timeline',
@@ -18,13 +24,11 @@ type TimelineFilter = 'all' | 'internal' | 'external' | 'upcoming' | 'past';
 })
 export class TimelineComponent implements OnInit {
   private timelineService = inject(TimelineService);
+  private eventActions = inject(TimelineEventActionsService);
   private route = inject(ActivatedRoute);
   private sanitizer = inject(DomSanitizer);
-  private dialog = inject(MatDialog);
-  private snackBar = inject(MatSnackBar);
 
   events: CmsEvent[] = [];
-  upcomingCount = 0;
   currentDate: Date = new Date();
   showCalendar = false;
   calendarUrl: SafeResourceUrl | undefined;
@@ -59,7 +63,7 @@ export class TimelineComponent implements OnInit {
   ngOnInit(): void {
     this.isLoading = true;
     this.hasError = false;
-    this.pendingFragmentEventId = this.normalizeEventFragment(this.route.snapshot.fragment);
+    this.pendingFragmentEventId = normalizeEventFragment(this.route.snapshot.fragment);
 
     if (environment.googleCalendarUrl && environment.googleCalendarUrl.length > 0) {
       this.calendarUrl = this.sanitizer.bypassSecurityTrustResourceUrl(environment.googleCalendarUrl);
@@ -68,9 +72,7 @@ export class TimelineComponent implements OnInit {
     }
     this.timelineService.getEvents().subscribe({
       next: (data) => {
-        data.sort((a, b) => new Date(b.start_date).getTime() - new Date(a.start_date).getTime());
-        this.upcomingCount = data.filter((e) => new Date(e.start_date).getTime() >= this.currentDate.getTime()).length;
-        this.events = data;
+        this.events = sortTimelineEventsDescending(data);
         this.isLoading = false;
         this.revealFragmentEvent();
       },
@@ -82,30 +84,15 @@ export class TimelineComponent implements OnInit {
   }
 
   get filteredEvents(): CmsEvent[] {
-    return this.events.filter((event) => {
-      switch (this.activeFilter) {
-        case 'internal':
-          return !this.isExternalEvent(event);
-        case 'external':
-          return this.isExternalEvent(event);
-        case 'upcoming':
-          return !this.isPastEvent(event);
-        case 'past':
-          return this.isPastEvent(event);
-        default:
-          return true;
-      }
-    });
+    return filterTimelineEvents(this.events, this.activeFilter, this.currentDate);
   }
 
   get filteredUpcomingCount(): number {
-    return this.filteredEvents.filter((event) => !this.isPastEvent(event)).length;
+    return countTimelineEvents(this.filteredEvents, 'upcoming', this.currentDate);
   }
 
   get nextEvent(): CmsEvent | null {
-    const upcoming = this.events.filter((event) => !this.isPastEvent(event));
-    upcoming.sort((a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime());
-    return upcoming[0] ?? null;
+    return getNextTimelineEvent(this.events, this.currentDate);
   }
 
   selectFilter(filter: TimelineFilter): void {
@@ -113,13 +100,7 @@ export class TimelineComponent implements OnInit {
   }
 
   filterCount(filter: TimelineFilter): number {
-    return this.events.filter((event) => {
-      if (filter === 'internal') return !this.isExternalEvent(event);
-      if (filter === 'external') return this.isExternalEvent(event);
-      if (filter === 'upcoming') return !this.isPastEvent(event);
-      if (filter === 'past') return this.isPastEvent(event);
-      return true;
-    }).length;
+    return countTimelineEvents(this.events, filter, this.currentDate);
   }
 
   toggleCalendar() {
@@ -131,12 +112,11 @@ export class TimelineComponent implements OnInit {
   }
 
   goToLink(url: string) {
-    const fullUrl = url.match(/^https?:\/\//) ? url : `https://${url}`;
-    window.open(fullUrl, '_blank');
+    this.eventActions.openLink(url);
   }
 
   isPastEvent(entry: CmsEvent): boolean {
-    return new Date(entry.end_date || entry.start_date).getTime() < this.currentDate.getTime();
+    return isPastTimelineEvent(entry, this.currentDate);
   }
 
   isEventExpanded(id: string): boolean {
@@ -165,38 +145,11 @@ export class TimelineComponent implements OnInit {
   }
 
   openEventPreview(entry: CmsEvent): void {
-    const dialogRef = this.dialog.open(EventPreviewDialogComponent, {
-      width: 'min(760px, calc(100vw - 24px))',
-      maxWidth: '100vw',
-      panelClass: 'ageei-dialog-panel',
-      data: {
-        event: entry,
-        posterUrl: entry.poster ? this.posterUrl(entry.poster) : null,
-        isPast: this.isPastEvent(entry),
-      },
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result?.action === 'openLink' && entry.link_url) this.goToLink(entry.link_url);
-      if (result?.action === 'share') this.shareEvent(entry);
-    });
+    this.eventActions.openPreview(entry, this.isPastEvent(entry));
   }
 
   shareEvent(entry: CmsEvent): void {
-    const url = this.eventShareUrl(entry);
-    const shareNavigator = navigator as Navigator & {
-      share?: (data: { title: string; text?: string; url: string }) => Promise<void>;
-    };
-
-    if (shareNavigator.share) {
-      shareNavigator.share({ title: entry.title, text: "Événement de l'AGEEI", url }).catch(() => this.copyUrl(url));
-    } else {
-      this.copyUrl(url);
-    }
-  }
-
-  eventShareUrl(entry: CmsEvent): string {
-    return `${window.location.origin}/calendrier#event-${entry.id}`;
+    this.eventActions.share(entry);
   }
 
   isExternalEvent(entry: CmsEvent): boolean {
@@ -208,7 +161,7 @@ export class TimelineComponent implements OnInit {
   }
 
   posterUrl(posterId: string): string {
-    return `${environment.cmsUrl}/assets/${posterId}`;
+    return this.eventActions.posterUrl(posterId);
   }
 
   private revealFragmentEvent(): void {
@@ -222,10 +175,17 @@ export class TimelineComponent implements OnInit {
       return;
     }
 
-    const eventIndex = this.events.findIndex((event) => event.id === eventId);
     if (this.isPastEvent(entry)) {
+      this.activeFilter = 'past';
       this.expandedEvents.add(entry.id);
-    } else if (!this.shouldShowEvent(entry, eventIndex)) {
+    }
+
+    const eventIndex = this.filteredEvents.findIndex((event) => event.id === eventId);
+    if (eventIndex < 0) {
+      return;
+    }
+
+    if (!this.isPastEvent(entry) && !this.shouldShowEvent(entry, eventIndex)) {
       this.futureFurtherExpanded = true;
     }
 
@@ -236,20 +196,5 @@ export class TimelineComponent implements OnInit {
         this.openEventPreview(entry);
       }
     });
-  }
-
-  private normalizeEventFragment(fragment: string | null): string | null {
-    if (!fragment?.startsWith('event-')) {
-      return null;
-    }
-
-    return fragment.slice('event-'.length);
-  }
-
-  private copyUrl(url: string): void {
-    navigator.clipboard
-      ?.writeText(url)
-      .then(() => this.snackBar.open('Lien copié', 'OK', { duration: 2500 }))
-      .catch(() => this.snackBar.open('Impossible de copier le lien', 'OK', { duration: 2500 }));
   }
 }
