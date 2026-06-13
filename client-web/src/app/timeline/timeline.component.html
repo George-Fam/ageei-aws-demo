@@ -1,28 +1,32 @@
 <app-scroll-to-top></app-scroll-to-top>
 <div class="description">
   L'AGEEI vous propose de nombreuses activités cette année, mais l'aventure se passe aussi hors campus !<br />
-  Nous vous poussons à participer à des événements externes : profitez du soutien de l'AGEEI pour <strong>créer vos équipes</strong>. <br />
+  Nous vous poussons à participer à des événements externes : profitez du soutien de l'AGEEI pour
+  <strong>créer vos équipes</strong>. <br />
   Retrouvez tous les détails et les dates de nos prochains rendez-vous ci-dessous.
 </div>
 
 @if (isLoading) {
-  <div class="timeline-skeleton" aria-hidden="true">
-    <div class="skeleton-card skeleton-wide"></div>
-    <div class="skeleton-rail">
-      <div class="skeleton-event"></div>
-      <div class="skeleton-event offset"></div>
-      <div class="skeleton-event"></div>
-    </div>
+<div class="timeline-skeleton" aria-hidden="true">
+  <div class="skeleton-card skeleton-wide"></div>
+  <div class="skeleton-rail">
+    <div class="skeleton-event"></div>
+    <div class="skeleton-event offset"></div>
+    <div class="skeleton-event"></div>
   </div>
+</div>
 } @else if (hasError) {
-  <app-error-state (retry)="ngOnInit()"></app-error-state>
-} @else {
-
-@if (nextEvent) {
+<app-error-state (retry)="ngOnInit()"></app-error-state>
+} @else { @if (nextEvent) {
 <aside class="next-event-marker">
   <span>Prochain</span>
   <strong>{{ nextEvent.title }}</strong>
-  <button mat-icon-button matTooltip="Voir les détails" aria-label="Voir le prochain événement" (click)="openEventPreview(nextEvent)">
+  <button
+    mat-icon-button
+    matTooltip="Voir les détails"
+    aria-label="Voir le prochain événement"
+    (click)="openEventPreview(nextEvent)"
+  >
     <mat-icon>arrow_forward</mat-icon>
   </button>
 </aside>
@@ -34,7 +38,9 @@
   <div class="header-row">
     <div class="header-title">
       <h3>Calendrier des Événements</h3>
-      <p class="muted">Consultez le calendrier ou abonnez-vous pour suivre toutes nos activités (internes et externes)</p>
+      <p class="muted">
+        Consultez le calendrier ou abonnez-vous pour suivre toutes nos activités (internes et externes)
+      </p>
     </div>
     <div class="header-actions">
       <button mat-stroked-button color="primary" (click)="toggleCalendar()">
@@ -55,15 +61,15 @@
 
 <div class="filter-panel" aria-label="Filtres des événements">
   @for (filter of filters; track filter.value) {
-    <button
-      type="button"
-      class="filter-chip"
-      [class.active]="activeFilter === filter.value"
-      (click)="selectFilter(filter.value)"
-    >
-      {{ filter.label }}
-      <span>{{ filterCount(filter.value) }}</span>
-    </button>
+  <button
+    type="button"
+    class="filter-chip"
+    [class.active]="activeFilter === filter.value"
+    (click)="selectFilter(filter.value)"
+  >
+    {{ filter.label }}
+    <span>{{ filterCount(filter.value) }}</span>
+  </button>
   }
 </div>
 
@@ -71,74 +77,40 @@
 <div class="future-toggle-row">
   <button mat-stroked-button color="primary" class="future-toggle-button" (click)="toggleFutureFurther()">
     <mat-icon>{{ futureFurtherExpanded ? 'expand_less' : 'expand_more' }}</mat-icon>
-    {{ futureFurtherExpanded ? 'Cacher les événements à venir' : (filteredUpcomingCount - 1) + ' événement' + (filteredUpcomingCount - 1 > 1 ? 's' : '') + ' à venir' }}
+    {{
+      futureFurtherExpanded
+        ? 'Cacher les événements à venir'
+        : filteredUpcomingCount - 1 + ' événement' + (filteredUpcomingCount - 1 > 1 ? 's' : '') + ' à venir'
+    }}
   </button>
 </div>
 }
 
 <div class="timeline">
-  @for (entry of filteredEvents; track entry.id; let i = $index) {
-    @if (shouldShowPastSeparator(i)) {
-    <div class="timeline-separator">
-      <span class="separator-label">Événements passés</span>
-    </div>
-    }
-    @if (!shouldShowEvent(entry, i)) {
-    } @else {
-    <div>
-      <div class="container" [ngClass]="{ left: i % 2 !== 0, right: i % 2 === 0 }">
-        <div
-          class="content"
-          [id]="'event-' + entry.id"
-          [ngClass]="{ 'past-event': isPastEvent(entry), 'next-event': isNextEvent(entry), external: isExternalEvent(entry) }"
-        >
-          <div class="title-container">
-            <div class="title">{{ entry.title }}</div>
-            <h3>{{ entry.start_date | date : "d MMMM yyyy 'à' HH'h'mm" }}</h3>
-          </div>
-          @if (!isPastEvent(entry) || isEventExpanded(entry.id)) {
-          <div>
-            <p class="event-detail" [innerHTML]="formatDescription(entry.description)"></p>
-            <p>
-              <em>{{ entry.author_organizer }}</em>
-            </p>
-            <div class="event-actions">
-              <button mat-stroked-button class="event-button" (click)="openEventPreview(entry)">
-                Détails
-                <mat-icon iconPositionEnd>open_in_new</mat-icon>
-              </button>
-              <button mat-icon-button matTooltip="Partager" aria-label="Partager {{ entry.title }}" (click)="shareEvent(entry)">
-                <mat-icon>ios_share</mat-icon>
-              </button>
-            </div>
-            @if (entry.link_url && entry.link_label) {
-            <div>
-              <button class="event-button" color="primary" mat-raised-button (click)="goToLink(entry.link_url)">
-                {{ entry.link_label }}
-                <mat-icon iconPositionEnd>open_in_new</mat-icon>
-              </button>
-            </div>
-            } @if (entry.poster) {
-            <img
-              class="image"
-              [src]="posterUrl(entry.poster)"
-              alt="Illustration pour l'événement {{ entry.title }}"
-            />
-            }
-          </div>
-          } @if (isPastEvent(entry)) {
-          <button mat-stroked-button color="primary" class="toggle-details-button" (click)="toggleEventDetails(entry.id)">
-            {{ isEventExpanded(entry.id) ? 'Cacher les détails' : 'Voir les détails' }}
-            <mat-icon iconPositionEnd>{{ isEventExpanded(entry.id) ? 'expand_less' : 'expand_more' }}</mat-icon>
-          </button>
-          }
-        </div>
-      </div>
-    </div>
-    }
-  } @empty {
-    <p class="empty-events">Aucun événement pour ce filtre.</p>
+  @for (entry of filteredEvents; track entry.id; let i = $index) { @if (shouldShowPastSeparator(i)) {
+  <div class="timeline-separator">
+    <span class="separator-label">Événements passés</span>
+  </div>
+  } @if (!shouldShowEvent(entry, i)) { } @else {
+  <div>
+    <app-timeline-event-card
+      [entry]="entry"
+      [index]="i"
+      [isPast]="isPastEvent(entry)"
+      [isExpanded]="isEventExpanded(entry.id)"
+      [isNext]="isNextEvent(entry)"
+      [isExternal]="isExternalEvent(entry)"
+      [posterUrl]="entry.poster ? posterUrl(entry.poster) : null"
+      (preview)="openEventPreview($event)"
+      (share)="shareEvent($event)"
+      (openLink)="goToLink($event)"
+      (toggleDetails)="toggleEventDetails($event)"
+    ></app-timeline-event-card>
+  </div>
+  } } @empty {
+  <p class="empty-events">Aucun événement pour ce filtre.</p>
   }
 </div>
 
-} <!-- end @else -->
+}
+<!-- end @else -->

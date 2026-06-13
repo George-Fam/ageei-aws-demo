@@ -1,0 +1,49 @@
+<div class="container" [ngClass]="sideClass">
+  <div
+    class="content"
+    [id]="'event-' + entry.id"
+    [ngClass]="{ 'past-event': isPast, 'next-event': isNext, external: isExternal }"
+  >
+    <div class="title-container">
+      <div class="title">{{ entry.title }}</div>
+      <h3>{{ entry.start_date | date : "d MMMM yyyy 'à' HH'h'mm" }}</h3>
+    </div>
+    @if (!isPast || isExpanded) {
+    <div>
+      <p class="event-detail" [innerHTML]="formatDescription(entry.description)"></p>
+      <p>
+        <em>{{ entry.author_organizer }}</em>
+      </p>
+      <div class="event-actions">
+        <button mat-stroked-button class="event-button" (click)="preview.emit(entry)">
+          Détails
+          <mat-icon iconPositionEnd>open_in_new</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          matTooltip="Partager"
+          aria-label="Partager {{ entry.title }}"
+          (click)="share.emit(entry)"
+        >
+          <mat-icon>ios_share</mat-icon>
+        </button>
+      </div>
+      @if (entry.link_url && entry.link_label) {
+      <div>
+        <button class="event-button" color="primary" mat-raised-button (click)="openLink.emit(entry.link_url)">
+          {{ entry.link_label }}
+          <mat-icon iconPositionEnd>open_in_new</mat-icon>
+        </button>
+      </div>
+      } @if (posterUrl) {
+      <img class="image" [src]="posterUrl" alt="Illustration pour l'événement {{ entry.title }}" />
+      }
+    </div>
+    } @if (isPast) {
+    <button mat-stroked-button color="primary" class="toggle-details-button" (click)="toggleDetails.emit(entry.id)">
+      {{ isExpanded ? 'Cacher les détails' : 'Voir les détails' }}
+      <mat-icon iconPositionEnd>{{ isExpanded ? 'expand_less' : 'expand_more' }}</mat-icon>
+    </button>
+    }
+  </div>
+</div>

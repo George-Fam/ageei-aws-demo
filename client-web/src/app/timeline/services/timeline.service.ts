@@ -3,7 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { CmsEvent, CmsEventsResponse } from './timeline.interface';
+import { CmsEvent, CmsEventsResponse } from '../models/timeline.interface';
 
 @Injectable({
   providedIn: 'root',

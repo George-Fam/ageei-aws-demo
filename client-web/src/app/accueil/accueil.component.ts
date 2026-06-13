@@ -2,8 +2,8 @@ import { AfterViewChecked, Component, ElementRef, HostListener, OnInit, ViewChil
 import { Meta, Title } from '@angular/platform-browser';
 import { Post } from '../posts/posts.interface';
 import { PostsService } from '../posts/posts.service';
-import { TimelineService } from '../timeline/timeline.service';
-import { CmsEvent } from '../timeline/timeline.interface';
+import { TimelineService } from '../timeline/services/timeline.service';
+import { CmsEvent } from '../timeline/models/timeline.interface';
 import { environment } from 'src/environments/environment';
 
 @Component({

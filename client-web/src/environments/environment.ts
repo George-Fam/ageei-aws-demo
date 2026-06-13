@@ -13,8 +13,10 @@ export const environment = {
   documentsUrl: '/cms-api/items/documents',
   postsUrl: '/cms-api/items/posts',
   featuredPostUrl: '/cms-api/items/featured_post',
-  googleCalendarId: 'c_d7c8140170e380f8b85a8289cbb3ac4692134e5aa0bb89716a0ac60475edfc58@group.calendar.google.com',
-  googleCalendarTimeZone: 'America/Toronto',
+  googleCalendarUrl:
+    'https://calendar.google.com/calendar/embed?src=c_d7c8140170e380f8b85a8289cbb3ac4692134e5aa0bb89716a0ac60475edfc58%40group.calendar.google.com&ctz=America%2FToronto',
+  googleCalendarSubscribeUrl:
+    'https://calendar.google.com/calendar/u/0/r?cid=c_d7c8140170e380f8b85a8289cbb3ac4692134e5aa0bb89716a0ac60475edfc58%40group.calendar.google.com',
 };
 
 /*

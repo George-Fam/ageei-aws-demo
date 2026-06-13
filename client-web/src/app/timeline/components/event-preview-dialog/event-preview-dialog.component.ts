@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { CmsEvent } from './timeline.interface';
+import { CmsEvent } from '../../models/timeline.interface';
 
 export interface EventPreviewDialogData {
   event: CmsEvent;
