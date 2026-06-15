@@ -27,7 +27,18 @@
             "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets", "src/robots.txt", "src/sitemap.xml"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/robots.txt",
+              "src/sitemap.xml",
+              {
+                "glob": "**/*",
+                "input": "../sponsor-package",
+                "ignore": ["build/**", "build.sh", "scripts/**"],
+                "output": "sponsor-package"
+              }
+            ],
             "styles": ["./node_modules/@angular/material/prebuilt-themes/indigo-pink.css", "src/styles.scss"],
             "scripts": [],
             "browser": "src/main.ts"

@@ -32,6 +32,10 @@ const routes: Routes = [
     path: 'posts',
     loadChildren: () => import('./posts/posts.module').then((m) => m.PostsModule),
   },
+  {
+    path: 'sponsors',
+    loadChildren: () => import('./sponsors/sponsors.module').then((m) => m.SponsorsModule),
+  },
   { path: '**', loadChildren: () => import('./not-found/not-found.module').then((m) => m.NotFoundModule) },
 ];
 

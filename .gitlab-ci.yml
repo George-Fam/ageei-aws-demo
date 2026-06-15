@@ -3,6 +3,7 @@ stages:
   - lint
   - format
   - build
+  - sync
   - deploy
 
 variables:
@@ -81,6 +82,37 @@ build:
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+generate_sponsor_pdfs:
+  stage: build
+  image: node:22-bookworm-slim
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq chromium
+  script:
+    - cd sponsor-package
+    - ./build.sh
+  artifacts:
+    paths:
+      - sponsor-package/build/
+    expire_in: 1 day
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+
+sync_sponsor_pdfs:
+  stage: sync
+  image: python:3.12-slim
+  needs:
+    - job: generate_sponsor_pdfs
+      artifacts: true
+  variables:
+    DIRECTUS_URL: https://cms.ageei.org
+  before_script:
+    - pip install requests --quiet
+  script:
+    - cd sponsor-package
+    - python scripts/sync_sponsors.py
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 
 deploy:
   stage: deploy
