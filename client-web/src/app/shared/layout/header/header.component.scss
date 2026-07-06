@@ -5,12 +5,12 @@
   width: 100%;
   max-width: none;
   transition: transform 0.8s;
-  background: rgba(255, 247, 232, 0.92);
-  backdrop-filter: blur(12px);
+  background-color: rgba(247, 244, 239, 0.94);
+  backdrop-filter: blur(16px);
   z-index: 999;
   box-sizing: border-box;
   overflow: visible;
-  border-bottom: 3px solid var(--ink);
+  border-bottom: 1px solid var(--line);
 
   &.hidden {
     transform: translateY(-100%);
@@ -21,12 +21,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 0.9em;
-    gap: 20px;
+    padding-bottom: 0.85em;
 
     .logo {
       width: clamp(96px, 10vw, 150px);
-      transform: rotate(-1.5deg);
     }
 
     @media screen and (max-width: 959px) {
@@ -45,17 +43,13 @@
       gap: clamp(4px, 0.7vw, 12px);
 
       .link {
-        font: 800 clamp(0.72rem, 0.9vw, 1rem) / 1 var(--sans);
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
+        font: 700 clamp(0.72rem, 0.9vw, 1rem) / 1 var(--sans);
+        color: var(--muted);
         padding: 10px clamp(5px, 0.7vw, 12px);
-        border: 2px solid transparent;
         white-space: nowrap;
 
         &[aria-current='page'] {
-          border-color: var(--ink);
-          background: var(--accent-3);
-          box-shadow: 3px 3px 0 var(--ink);
+          color: var(--ink);
         }
       }
 
@@ -70,8 +64,7 @@
       }
 
       nav {
-        background: linear-gradient(rgba(23, 20, 18, 0.07) 1px, transparent 1px), var(--ink);
-        background-size: 24px 24px;
+        background-color: rgba(22, 26, 24, 0.94);
         position: fixed;
         top: 0;
         left: 0;
@@ -91,7 +84,7 @@
           top: 170px;
           width: min(82vw, 360px);
           background: rgba(7, 9, 10, 0.95);
-          border: 2px solid var(--paper);
+          border: 1px solid var(--surface);
           box-shadow: 10px 10px 0 #000;
           transition: all 0.3s ease-in-out;
           transform: translateX(-50%);
@@ -102,7 +95,7 @@
 
             a {
               display: block;
-              font: 800 clamp(1.45rem, 7vw, 2rem) / 1 var(--display);
+              font: 700 clamp(1.45rem, 7vw, 2rem) / 1 var(--display);
               text-decoration: none;
               padding: 18px 10px;
               text-align: center;
@@ -112,7 +105,7 @@
 
               &[aria-current='page'] {
                 color: var(--ink);
-                background: var(--accent-3);
+                background: var(--surface);
                 text-shadow: none;
               }
             }
@@ -144,7 +137,7 @@
 
         .toggle-btn {
           .bar {
-            background-color: red;
+            background-color: var(--accent-2);
 
             &:nth-child(2) {
               transform: translateX(50px);
@@ -176,7 +169,7 @@
         width: 40px;
         height: 4px;
         margin: 5px auto;
-        background-color: #131312;
+        background-color: var(--ink);
         transition: all 0.3s ease-in-out;
       }
     }
@@ -184,7 +177,7 @@
 }
 
 .height-keeper {
-  height: clamp(94px, 9vw, 126px);
+  height: clamp(92px, 9vw, 124px);
 }
 
 @media screen and (max-width: 959px) {
