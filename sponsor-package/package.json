@@ -1,0 +1,12 @@
+{
+  "name": "sponsor-package",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Dépendances de build pour générer les PDF du sponsor package AGEEI",
+  "scripts": {
+    "build": "./build.sh"
+  },
+  "dependencies": {
+    "puppeteer": "23.11.1"
+  }
+}

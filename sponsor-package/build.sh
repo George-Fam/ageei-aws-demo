@@ -2,7 +2,7 @@
 set -euo pipefail
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CHROME="${CHROME:-chromium}"
+CHROME="${CHROME:-$(node -e "console.log(require('puppeteer').executablePath())")}"
 
 pdf() {
     local name="$1"

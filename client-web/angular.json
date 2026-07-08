@@ -35,7 +35,14 @@
               {
                 "glob": "**/*",
                 "input": "../sponsor-package",
-                "ignore": ["build/**", "build.sh", "scripts/**"],
+                "ignore": [
+                  "build/**",
+                  "build.sh",
+                  "scripts/**",
+                  "node_modules/**",
+                  "package.json",
+                  "package-lock.json"
+                ],
                 "output": "sponsor-package"
               }
             ],

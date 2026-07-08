@@ -1,3 +1,4 @@
 .angular
 .idea
 sponsor-package/build/
+sponsor-package/node_modules/
