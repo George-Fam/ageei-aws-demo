@@ -1,45 +1,78 @@
 <div>
-  <div class="container" [class.hidden]="isHidden">
+  <div class="container" [class.hidden]="isHidden && !menuOpened">
     <div class="nav">
-      <a routerLink="/">
-        <img src="/assets/logo.png" class="logo" alt="Logo" />
+      <a routerLink="/" aria-label="Accueil AGEEI">
+        <img src="/assets/logo.png" class="logo" alt="AGEEI" />
       </a>
-      <div class="desktop-nav">
-        @for (link of router_links; track link) {
-          <a
-            class="link hover-underline-animation"
-            [routerLink]="link.url"
-            [attr.aria-current]="isActiveLink(link.url) ? 'page' : null"
-          >
-            {{ link.name }}
-          </a>
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        @for (link of primaryLinks; track link.url) {
+        <a
+          class="link hover-underline-animation"
+          [routerLink]="link.url"
+          [attr.aria-current]="isActiveLink(link.url) ? 'page' : null"
+        >
+          {{ link.name }}
+        </a>
         }
-      </div>
+        @for (group of navGroups; track group.name) {
+        <div class="nav-group" [class.active]="isActiveGroup(group)">
+          <button class="group-trigger" type="button" aria-haspopup="true">
+            {{ group.name }} <span aria-hidden="true">↓</span>
+          </button>
+          <div class="group-menu">
+            <p>{{ group.name }}</p>
+            @for (link of group.links; track link.url) {
+            <a [routerLink]="link.url" [attr.aria-current]="isActiveLink(link.url) ? 'page' : null">
+              <strong>{{ link.name }}</strong>
+              @if (link.note) { <span>{{ link.note }}</span> }
+            </a>
+            }
+          </div>
+        </div>
+        }
+      </nav>
       <div class="mobile-menu" [class.menu-opened]="menuOpened">
         <button
           class="toggle-btn"
           [class.toggle-btn__cross]="menuOpened"
-          (click)="menuOpened = !menuOpened"
+          (click)="toggleMenu()"
           [attr.aria-expanded]="menuOpened"
           aria-controls="mobile-nav-menu"
           aria-label="Menu de navigation"
         >
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </button>
         <nav id="mobile-nav-menu" [attr.aria-hidden]="!menuOpened">
-          <ul>
-            @for (link of router_links; track link) {
-              <li>
+          <div class="mobile-nav-panel">
+            <p class="mobile-nav-label">Navigation / AGEEI</p>
+            <div class="mobile-primary">
+              @for (link of primaryLinks; track link.url) {
+              <a
+                (click)="closeMenu()"
+                [routerLink]="link.url"
+                [attr.aria-current]="isActiveLink(link.url) ? 'page' : null"
+                >{{ link.name }}</a>
+              }
+            </div>
+            <div class="mobile-groups">
+              @for (group of navGroups; track group.name) {
+              <section>
+                <h2>{{ group.name }}</h2>
+                @for (link of group.links; track link.url) {
                 <a
-                  (click)="menuOpened = false"
+                  (click)="closeMenu()"
                   [routerLink]="link.url"
                   [attr.aria-current]="isActiveLink(link.url) ? 'page' : null"
-                >{{ link.name }}</a>
-              </li>
-            }
-          </ul>
+                >
+                  <span>{{ link.name }}</span><small>{{ link.note }}</small>
+                </a>
+                }
+              </section>
+              }
+            </div>
+          </div>
         </nav>
       </div>
     </div>

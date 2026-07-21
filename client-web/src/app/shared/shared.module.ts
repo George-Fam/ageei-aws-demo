@@ -8,8 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSelectModule } from '@angular/material/select';
-import { MatCardModule } from '@angular/material/card';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { FunnyWindowComponent } from './layout/funny-window/funny-window.component';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -20,6 +18,7 @@ import { LoadingStateComponent } from './layout/loading-state/loading-state.comp
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   imports: [
@@ -32,9 +31,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    MatSelectModule,
     ReactiveFormsModule,
-    MatCardModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
     MatDialogModule,
@@ -51,9 +48,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    MatSelectModule,
     ReactiveFormsModule,
-    MatCardModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
     MatDialogModule,
@@ -61,10 +56,17 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTooltipModule,
     NgxTypedJsModule,
     FunnyWindowComponent,
+    FooterComponent,
     ScrollToTopComponent,
     ErrorStateComponent,
     LoadingStateComponent,
   ],
-  declarations: [FunnyWindowComponent, ScrollToTopComponent, ErrorStateComponent, LoadingStateComponent],
+  declarations: [
+    FunnyWindowComponent,
+    FooterComponent,
+    ScrollToTopComponent,
+    ErrorStateComponent,
+    LoadingStateComponent,
+  ],
 })
 export class SharedModule {}
