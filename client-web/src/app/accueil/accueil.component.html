@@ -20,19 +20,24 @@
             <h1 class="typing"></h1>
           </ngx-typed-js>
         </div>
+        <p class="strapline">Regrouper, représenter et soutenir les étudiantes et étudiants en informatique de l’UQAM.</p>
       </div>
-      <div class="mission-container">
-        <app-funny-window class="mission-window window-shadow" windowTitle="NOTRE MISSION">
-          <div class="mission-content" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutAlign="space-between stretch" fxLayoutGap.gt-sm="24px">
-            <div class="mission-image-panel" fxFlex.gt-sm="26%" fxFlex.lt-md="100%">
-              <img class="mission-image-content" src="assets/accueil/accueil-1.jpg" alt="Membres de l'association" />
+      <div class="opeq-container">
+        <app-funny-window class="opeq-window window-shadow" windowTitle="CLIC-OPEQ / PORTABLES">
+          <section class="opeq-teaser" aria-labelledby="opeq-title">
+            <div class="opeq-copy">
+              <p class="opeq-kicker">Service aux membres</p>
+              <h2 id="opeq-title">Des portables remis à neuf à partir de 110&nbsp;$.</h2>
+              <p>
+                L’AGEEI aide les étudiant·e·s admissibles à comprendre la démarche CLIC-OPEQ et à préparer leur
+                appareil pour les études.
+              </p>
             </div>
-            <div class="mission-text" fxFlex>
-              L’association générale des étudiantes et étudiants en informatique a pour but de regrouper les étudiants en
-              informatique de l’Université du Québec à Montréal et d’assurer, dans le cadre des affaires universitaires, leur
-              bienêtre physique, moral, intellectuel, social et économique.
+            <div class="opeq-teaser-aside" aria-hidden="true"><strong>110 $</strong><span>Linux ready</span></div>
+            <div class="opeq-actions">
+              <a class="opeq-action" routerLink="/ordinateurs">Voir le service complet</a>
             </div>
-          </div>
+          </section>
         </app-funny-window>
       </div>
     </div>
@@ -109,6 +114,10 @@
             <p class="next-event-state">Aucun événement à venir pour le moment.</p>
           }
         </app-funny-window>
+      </div>
+
+      <div class="merch-embed-container">
+        <app-merch-embed></app-merch-embed>
       </div>
     </aside>
   </div>
