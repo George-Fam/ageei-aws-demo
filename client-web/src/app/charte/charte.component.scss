@@ -14,21 +14,21 @@
   transition: top 0.8s, max-height 0.8s;
   overflow-y: auto;
   scrollbar-width: none;
-  background-color: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1rem 0;
 
   &::-webkit-scrollbar {
     display: none;
   }
 }
 
+.toc-window {
+  display: block;
+}
+
 .toc-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem 0.75rem;
+  padding: 0.85rem 1rem 0.75rem;
   border-bottom: 1px solid #d9d0c8;
 }
 
@@ -53,6 +53,7 @@
 
 .toc-nav {
   padding-top: 0.4rem;
+  padding-bottom: 0.6rem;
 }
 
 .toc-list {
@@ -109,6 +110,10 @@
 .charte-content {
   flex: 1;
   min-width: 0;
+}
+
+.charte-window-inner {
+  padding: clamp(1.25rem, 2.5vw, 2.5rem);
 }
 
 ::ng-deep .charte-content {
@@ -258,12 +263,31 @@
     left: 1rem;
     width: auto;
     flex: none;
-    background: none;
-    border: none;
-    padding: 0;
     max-height: none;
     overflow-y: visible;
     z-index: 50;
+  }
+
+  .toc-window {
+    width: 2.75rem;
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    ::ng-deep .main-window {
+      overflow: visible;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    ::ng-deep .main-window > .top-bar {
+      display: none !important;
+    }
+
+    ::ng-deep .content {
+      overflow: visible;
+    }
   }
 
   .toc-header {
