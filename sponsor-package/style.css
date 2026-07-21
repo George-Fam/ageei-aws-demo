@@ -644,14 +644,6 @@ html[lang='fr'] .page-who .fact-grid {
   letter-spacing: 0;
   line-height: 1;
 }
-.stat .num .unit {
-  font-family: var(--sans);
-  font-size: 18px;
-  color: var(--ink-mute);
-  font-weight: 800;
-  margin-left: 4px;
-  letter-spacing: 0;
-}
 .stat .lbl {
   font-family: var(--mono);
   font-size: 9.5px;
@@ -764,82 +756,6 @@ html[lang='fr'] .page-who .fact-grid {
   max-width: 78ch;
 }
 
-.audience {
-  margin-top: 42px;
-  border-top: 3px solid var(--rule);
-  padding-top: 24px;
-}
-.audience h4 {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 900;
-  letter-spacing: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-.audience h4 .note {
-  font-family: var(--mono);
-  font-size: 9.5px;
-  letter-spacing: 0.18em;
-  color: var(--ink-mute);
-  text-transform: uppercase;
-  font-weight: 400;
-}
-.bars {
-  margin-top: 18px;
-  display: flex;
-  height: 80px;
-  background: var(--paper-edge);
-  border: 3px solid var(--ink);
-  box-shadow: 4px 4px 0 var(--ink);
-}
-.bar {
-  border-right: 3px solid var(--ink);
-  position: relative;
-  display: flex;
-  align-items: end;
-  justify-content: flex-start;
-  padding: 0 0 0 12px;
-}
-.bar:last-child {
-  border-right: none;
-}
-.bar .pct {
-  position: absolute;
-  top: 10px;
-  left: 12px;
-  font-family: var(--serif);
-  font-size: 28px;
-  letter-spacing: 0;
-  font-weight: 900;
-  color: var(--ink);
-}
-.bar .lbl {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  padding-bottom: 10px;
-}
-.bar.b1 {
-  flex: 22;
-  background: var(--accent-3);
-}
-.bar.b2 {
-  flex: 28;
-  background: var(--paper-edge);
-}
-.bar.b3 {
-  flex: 32;
-  background: var(--accent-tint);
-}
-.bar.b4 {
-  flex: 18;
-  background: rgba(0, 126, 120, 0.22);
-}
-
 /* === EVENTS === */
 .events {
   margin-top: 40px;
@@ -949,125 +865,6 @@ html[lang='fr'] .page-who .fact-grid {
 }
 
 /* === PRICING MATRIX === */
-.price-grid {
-  margin-top: 28px;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
-  border: 3px solid var(--ink);
-  background: var(--paper-card);
-  box-shadow: 5px 5px 0 var(--ink);
-  font-family: var(--sans);
-}
-.price-grid > * {
-  padding: 18px 14px;
-  border-bottom: 2px solid var(--ink);
-  border-right: 2px solid var(--ink);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.price-grid > *:nth-child(5n) {
-  border-right: none;
-}
-.price-grid .ph {
-  background: var(--accent-3);
-  padding: 14px;
-  border-bottom: 3px solid var(--ink);
-}
-.price-grid .ph .sym {
-  font-family: var(--mono);
-  font-size: 18px;
-  color: var(--accent);
-  letter-spacing: 0.04em;
-  line-height: 1;
-  margin-bottom: 8px;
-  font-weight: 900;
-}
-.price-grid .ph .tname {
-  font-family: var(--serif);
-  font-size: 22px;
-  color: var(--ink);
-  font-weight: 900;
-  letter-spacing: 0;
-  line-height: 1;
-}
-.price-grid .ph .tqual {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  color: var(--ink-mute);
-  text-transform: uppercase;
-  margin-top: 6px;
-}
-.price-grid .row-h {
-  background: rgba(0, 126, 120, 0.08);
-  border-bottom: 2px solid var(--ink);
-}
-.price-grid .row-h .ename {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: 0;
-  line-height: 1.05;
-}
-.price-grid .row-h .ecat {
-  font-family: var(--mono);
-  font-size: 8.5px;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  text-transform: uppercase;
-  margin-top: 6px;
-}
-.price-grid .cell {
-  background: transparent;
-}
-.price-grid .cell .amt {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 900;
-  letter-spacing: 0;
-  color: var(--ink);
-  line-height: 1;
-}
-.price-grid .cell .amt small {
-  font-family: var(--sans);
-  font-size: 11px;
-  color: var(--ink-mute);
-  margin-left: 3px;
-  letter-spacing: 0.04em;
-  font-weight: 800;
-}
-.price-grid .cell .note {
-  font-family: var(--mono);
-  font-size: 8.5px;
-  letter-spacing: 0.16em;
-  color: var(--ink-mute);
-  text-transform: uppercase;
-  margin-top: 6px;
-  line-height: 1.4;
-}
-.price-grid .cell.muted .amt {
-  color: var(--ink-mute);
-  font-style: italic;
-  font-size: 18px;
-}
-.price-grid .cell .dash {
-  font-family: var(--serif);
-  font-size: 24px;
-  color: var(--ink-faint);
-}
-.price-grid .cell.free .amt {
-  color: var(--accent-deep);
-}
-.price-grid .cell.title .amt {
-  color: var(--accent-deep);
-}
-.price-grid .ph:first-child {
-  border-right-color: var(--ink);
-}
-.price-grid > :nth-last-child(-n + 5) {
-  border-bottom: none;
-}
 
 .price-foot {
   margin-top: 14px;
@@ -1082,88 +879,6 @@ html[lang='fr'] .page-who .fact-grid {
   padding-top: 10px;
 }
 
-/* === BENEFITS MATRIX === */
-.ben-grid {
-  margin-top: 24px;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
-  border: 3px solid var(--ink);
-  background: var(--paper-card);
-  box-shadow: 5px 5px 0 var(--ink);
-  font-family: var(--sans);
-  font-size: 12px;
-}
-.ben-grid > * {
-  padding: 13px 12px;
-  border-bottom: 2px solid var(--rule-soft);
-  display: flex;
-  align-items: center;
-}
-.ben-grid .bh {
-  padding: 14px 12px;
-  background: var(--accent-3);
-  border-bottom: 3px solid var(--ink);
-  flex-direction: column;
-  align-items: flex-start;
-}
-.ben-grid .bh .sym {
-  font-family: var(--mono);
-  font-size: 14px;
-  color: var(--accent);
-  letter-spacing: 0.04em;
-  line-height: 1;
-  margin-bottom: 5px;
-  font-weight: 900;
-}
-.ben-grid .bh .tname {
-  font-family: var(--serif);
-  font-size: 17px;
-  color: var(--ink);
-  font-weight: 900;
-  letter-spacing: 0;
-}
-.ben-grid .bh .tqual {
-  font-family: var(--mono);
-  font-size: 8px;
-  letter-spacing: 0.08em;
-  color: var(--ink-mute);
-  text-transform: uppercase;
-  margin-top: 3px;
-}
-.ben-grid .cat {
-  grid-column: 1/-1;
-  padding: 14px 12px 8px;
-  background: rgba(0, 126, 120, 0.1);
-  border-bottom: 2px solid var(--ink);
-  font-family: var(--mono);
-  font-size: 9.5px;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  text-transform: uppercase;
-  font-weight: 900;
-}
-.ben-grid .lbl {
-  font-family: var(--sans);
-  font-size: 11.5px;
-  color: var(--ink);
-  font-weight: 800;
-  line-height: 1.35;
-}
-.ben-grid .v {
-  font-family: var(--sans);
-  font-size: 11.5px;
-  color: var(--ink-soft);
-}
-.ben-grid .v.yes {
-  color: var(--accent-deep);
-  font-weight: 800;
-}
-.ben-grid .v.no {
-  color: var(--ink-faint);
-  font-family: var(--serif);
-  font-size: 18px;
-}
-.ben-grid .check,
 .event-grid .check {
   display: inline-block;
   width: 12px;
@@ -1172,7 +887,6 @@ html[lang='fr'] .page-who .fact-grid {
   background: var(--accent);
   position: relative;
 }
-.ben-grid .check::after,
 .event-grid .check::after {
   content: '';
   position: absolute;
@@ -1183,9 +897,6 @@ html[lang='fr'] .page-who .fact-grid {
   border: solid var(--paper-card);
   border-width: 0 1.5px 1.5px 0;
   transform: rotate(45deg);
-}
-.ben-grid > :nth-last-child(-n + 5) {
-  border-bottom: none;
 }
 
 /* === PER-EVENT PRICE + BENEFITS TABLE === */
@@ -1405,55 +1116,6 @@ html[lang='fr'] .page-who .fact-grid {
   color: rgba(255, 250, 240, 0.72);
 }
 
-.addons {
-  margin-top: 34px;
-  border-top: 3px solid var(--ink);
-  padding-top: 18px;
-}
-.addons h3 {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 900;
-  letter-spacing: 0;
-  color: var(--ink);
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-.addons h3 .note {
-  font-family: var(--mono);
-  font-size: 9.5px;
-  letter-spacing: 0.18em;
-  color: var(--ink-mute);
-  text-transform: uppercase;
-  font-weight: 400;
-}
-.addon-grid {
-  margin-top: 14px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 36px;
-}
-.addon {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 14px;
-  padding: 11px 0;
-  border-bottom: 2px dotted var(--rule);
-  font-family: var(--sans);
-  font-size: 12.5px;
-  color: var(--ink);
-}
-.addon .price {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  color: var(--accent-deep);
-  font-weight: 900;
-  white-space: nowrap;
-}
-
 /* === CLOSING === */
 .close-grid {
   margin-top: 24px;
@@ -1571,11 +1233,6 @@ html[lang='fr'] .page-who .fact-grid {
 /* === UTILITIES === */
 .grow {
   flex: 1;
-}
-.row-baseline {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
 }
 .sect-head {
   margin-top: 30px;
