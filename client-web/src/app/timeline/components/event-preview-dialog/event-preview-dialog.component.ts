@@ -29,4 +29,8 @@ export class EventPreviewDialogComponent {
   share(): void {
     this.dialogRef.close({ action: 'share' });
   }
+
+  formatDescription(text: string): string {
+    return text.replace(/\n/g, '<br>');
+  }
 }

@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <p class="preview-description">{{ data.event.description }}</p>
+    <div class="preview-description" [innerHTML]="formatDescription(data.event.description)"></div>
   </mat-dialog-content>
 
   <mat-dialog-actions align="end">
