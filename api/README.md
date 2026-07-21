@@ -25,6 +25,7 @@ npm install -g azurite
 | `GOOGLE_CALENDAR_ID`         | L'identifiant du Google Calendar cible (ex. `abc123@group.calendar.google.com`) |
 | `GOOGLE_SERVICE_ACCOUNT_KEY` | Le JSON du compte de service Google, encodé en base64 (voir ci-dessous)         |
 | `GOOGLE_IMPERSONATED_USER`   | L'utilisateur Google Workspace à impersonifier (ex. `technologie@ageei.org`)    |
+| `DIRECTUS_URL`               | L'URL du CMS Directus (ex. `https://cms.ageei.org`)                             |
 | `WEBHOOK_SECRET`             | Le secret partagé entre Directus et cette fonction                              |
 
 
