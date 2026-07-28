@@ -1094,7 +1094,7 @@ html[lang='fr'] .page-who .fact-grid {
   border-top: 3px solid var(--rule);
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-end;
 }
 .pkg.champion .total {
   border-top-color: var(--ink);
@@ -1106,6 +1106,23 @@ html[lang='fr'] .page-who .fact-grid {
   color: var(--ink-mute);
   text-transform: uppercase;
 }
+.pkg .total .pricewrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+.pkg .total .pricerow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.pkg .total .pct {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--accent-deep);
+}
 .pkg .total .v {
   font-family: var(--serif);
   font-size: 30px;
@@ -1113,11 +1130,30 @@ html[lang='fr'] .page-who .fact-grid {
   font-weight: 900;
   letter-spacing: 0;
 }
+.pkg .total .list {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  color: var(--ink-mute);
+}
+.pkg .total .list s {
+  text-decoration: line-through;
+  text-decoration-color: var(--ink-faint);
+}
 .pkg.champion .total .v {
   color: var(--paper-card);
 }
 .pkg.champion .total .l {
   color: rgba(255, 250, 240, 0.72);
+}
+.pkg.champion .total .pct {
+  color: #ffd9cc;
+}
+.pkg.champion .total .list {
+  color: rgba(255, 250, 240, 0.72);
+}
+.pkg.champion .total .list s {
+  text-decoration-color: rgba(255, 250, 240, 0.5);
 }
 
 /* === CLOSING === */
@@ -1247,6 +1283,41 @@ html[lang='fr'] .page-who .fact-grid {
 }
 .sect-head .body {
   margin-top: 14px;
+}
+.photo-strip {
+  display: flex;
+  gap: 12px;
+  margin: 22px 0 4px;
+}
+.photo-strip figure {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  aspect-ratio: 4 / 3;
+}
+.photo-strip figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.95);
+}
+.photo-strip figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px 10px 7px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+  font-family: var(--mono);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
 }
 .eyebrow.muted {
   color: var(--ink-mute);
