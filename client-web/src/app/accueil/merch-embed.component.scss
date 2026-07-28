@@ -1,0 +1,67 @@
+:host {
+  display: block;
+}
+
+.merch-container {
+  animation: section-enter 0.45s ease both 0.12s;
+}
+
+::ng-deep .merch-window .content {
+  display: flex;
+}
+
+.merch-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px;
+  background-size: 18px 18px;
+  background: var(--accent-3);
+
+  h2 {
+    margin: 0;
+    font: 800 clamp(1.25rem, 2vw, 1.65rem) / 1.02 var(--display);
+  }
+}
+
+.merch-kicker {
+  width: fit-content;
+  margin: 0;
+  padding: 7px 10px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  font: 800 0.84rem var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.merch-action {
+  align-self: flex-start;
+  margin-top: 4px;
+  padding: 9px 13px;
+  border: 3px solid var(--ink);
+  background: var(--accent);
+  color: var(--paper);
+  font: 800 0.95rem var(--mono);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+
+  &:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--ink);
+  }
+}
+
+@keyframes section-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

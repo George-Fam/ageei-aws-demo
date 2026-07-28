@@ -1,0 +1,31 @@
+<footer class="site-footer" aria-label="Pied de page">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a routerLink="/" aria-label="Accueil AGEEI">
+        <img src="/assets/logo.png" alt="Logo AGEEI" />
+      </a>
+      <p>Association générale des étudiant·e·s en informatique de l'UQAM.</p>
+    </div>
+
+    <nav class="footer-section" aria-label="Liens essentiels">
+      <h2>Organisation</h2>
+      <div class="footer-links">
+        @for (link of essentialLinks; track link.url) {
+        <a [routerLink]="link.url">{{ link.name }}</a>
+        }
+      </div>
+    </nav>
+
+    <div class="footer-section">
+      <h2>Réseaux</h2>
+      <div class="social-links">
+        @for (social of socialLinks; track social.name) {
+        <a [href]="social.href" target="_blank" rel="noopener noreferrer" [attr.aria-label]="social.name">
+          <img [src]="social.icon" [alt]="social.name" />
+        </a>
+        }
+      </div>
+      <a class="footer-mail" href="mailto:executif@ageei.org">executif@ageei.org</a>
+    </div>
+  </div>
+</footer>

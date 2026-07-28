@@ -12,6 +12,8 @@ export const environment = {
   documentsReunionUrl: '/cms-api/items/documents_reunions',
   documentsUrl: '/cms-api/items/documents',
   postsUrl: '/cms-api/items/posts',
+  clubsUrl: '/cms-api/items/clubs',
+  finissantCohortesUrl: '/cms-api/items/finissant_cohortes',
   featuredPostUrl: '/cms-api/items/featured_post',
   googleCalendarUrl:
     'https://calendar.google.com/calendar/embed?src=c_d7c8140170e380f8b85a8289cbb3ac4692134e5aa0bb89716a0ac60475edfc58%40group.calendar.google.com&ctz=America%2FToronto',

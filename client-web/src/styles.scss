@@ -1,3 +1,39 @@
+@use '@angular/material' as mat;
+@use './theme-colors' as theme-colors;
+
+// Only the Material components actually imported in shared.module.ts get themed here,
+// instead of pulling in the full prebuilt theme (which ships CSS for every component).
+$ageei-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: theme-colors.$primary-palette,
+      tertiary: theme-colors.$tertiary-palette,
+    ),
+    typography: (
+      plain-family: 'Archivo, Roboto, sans-serif',
+      brand-family: 'Fraunces, Libre Baskerville, serif',
+    ),
+    density: (
+      scale: 0,
+    ),
+  )
+);
+
+html {
+  @include mat.core-theme($ageei-theme);
+  @include mat.button-theme($ageei-theme);
+  @include mat.dialog-theme($ageei-theme);
+  @include mat.divider-theme($ageei-theme);
+  @include mat.expansion-theme($ageei-theme);
+  @include mat.form-field-theme($ageei-theme);
+  @include mat.icon-theme($ageei-theme);
+  @include mat.input-theme($ageei-theme);
+  @include mat.progress-spinner-theme($ageei-theme);
+  @include mat.snack-bar-theme($ageei-theme);
+  @include mat.tooltip-theme($ageei-theme);
+}
+
 :root {
   --ink: #171412;
   --surface: #fff7e8;
@@ -29,8 +65,8 @@ html {
 
 body {
   margin: 0;
-  padding-bottom: 2em;
   min-height: 100vh;
+  min-height: 100dvh;
   background:
     linear-gradient(rgba(23, 20, 18, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(23, 20, 18, 0.025) 1px, transparent 1px),

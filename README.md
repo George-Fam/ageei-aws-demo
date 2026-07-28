@@ -13,13 +13,18 @@ L’application est organisée en modules/fonctionnalités sous
 `client-web/src/app` :
 
 - **Accueil** (`client-web/src/app/accueil`)
-- **Anciens examens** (`client-web/src/app/anciens-examens`)
 - **Charte** (`client-web/src/app/charte`)
   - Récupération du contenu de la charte via un service.
+- **Clubs** (`client-web/src/app/clubs`)
+- **Finissants** (`client-web/src/app/finissants`)
+- **Services aux membres / ordinateurs CLIC-OPEQ** (`client-web/src/app/member-services`)
+- **Documents** (`client-web/src/app/documents`)
+- **Publications** (`client-web/src/app/posts`)
 - **Contact** (`client-web/src/app/contact`)
 - **FAQ** (`client-web/src/app/faq`)
 - **Timeline** (`client-web/src/app/timeline`)
   - Modèles + service pour les données.
+- **Forfaits de commandite** (`client-web/src/app/sponsors` et `sponsor-package/`)
 - **Composants partagés / mise en page** (`client-web/src/app/shared`)
   - En-tête et composants UI réutilisés.
 
@@ -45,7 +50,7 @@ L’application est organisée en modules/fonctionnalités sous
 Contactez <technologie@ageei.org> si vous êtes intéressé(e) à contribuer !
 
 - **Développeurs front-end** : Angular, TypeScript, SCSS.
-- **Développeurs back-end** : Node.js, Express, Azure Functions.
+- **Développeurs back-end** : Java, Maven, Azure Functions et intégrations Google.
 - **Sécurité** : Audit de sécurité, tests d’intrusion, recommandations de
   durcissement.
 

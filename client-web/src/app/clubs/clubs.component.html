@@ -1,0 +1,61 @@
+<div class="container">
+  <section class="clubs-hero">
+    <div>
+      <h1>Clubs et collectifs</h1>
+    </div>
+    <p>
+      Une vitrine pour faire connaitre les groupes étudiants en informatique, leurs activités, leurs projets et les
+      façons de s'impliquer.
+    </p>
+  </section>
+
+  @if (isLoading) {
+    <app-loading-state></app-loading-state>
+  } @else if (hasError) {
+    <app-error-state (retry)="loadClubs()"></app-error-state>
+  } @else if (clubs.length === 0) {
+    <p class="empty-state">Aucun club n'est publié pour le moment.</p>
+  } @else {
+    <app-funny-window class="window-shadow" windowTitle="clubs.ageei">
+      <div class="clubs-grid">
+        @for (club of clubs; track club.id) {
+          <article class="club-card">
+            @if (club.coverImageUrl) {
+              <img class="club-cover" [src]="club.coverImageUrl" [alt]="club.name" />
+            }
+            <div class="club-card-header">
+              @if (club.logoUrl) {
+                <img class="club-logo" [src]="club.logoUrl" [alt]="''" />
+              }
+              <h2>{{ club.name }}</h2>
+              <span aria-hidden="true">#</span>
+            </div>
+            @if (club.summary) {
+              <p>{{ club.summary }}</p>
+            }
+            @if (club.meeting_info) {
+              <p class="club-meeting">{{ club.meeting_info }}</p>
+            }
+            @if (club.tags && club.tags.length > 0) {
+              <div class="club-tags" aria-label="Mots-clés">
+                @for (tag of club.tags; track tag) {
+                  <span>{{ tag }}</span>
+                }
+              </div>
+            }
+            <div class="club-actions">
+              @if (club.contact_url) {
+                <a class="club-action" [href]="club.contact_url">{{ club.contact_label || 'Nous joindre' }}</a>
+              }
+              @if (club.discord_url) {
+                <a class="club-action club-action-discord" [href]="club.discord_url" target="_blank" rel="noopener noreferrer">
+                  Discord
+                </a>
+              }
+            </div>
+          </article>
+        }
+      </div>
+    </app-funny-window>
+  }
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <section class="graduates-hero">
+    <h1>Finissant·e·s</h1>
+    <p>Photos, mosaïques et traces des cohortes qui ont marqué la communauté informatique de l'UQAM.</p>
+  </section>
+
+  @if (isLoading) {
+    <app-loading-state></app-loading-state>
+  } @else if (hasError) {
+    <app-error-state (retry)="loadCohortes()"></app-error-state>
+  } @else if (cohortes.length === 0) {
+    <p class="empty-state">Aucune cohorte n'est publiée pour le moment.</p>
+  } @else {
+    <div class="cohort-stack">
+      @for (cohorte of cohortes; track cohorte.id) {
+        <app-funny-window class="window-shadow cohort-window" [windowTitle]="'cohorte-' + (cohorte.name || cohorte.id) + '.jpg'">
+          <section class="cohort-panel">
+            <div class="cohort-copy">
+              <h2>{{ cohorte.name }}</h2>
+            </div>
+            @if (cohorte.mosaicImageUrl) {
+              <img class="mosaic-image" [src]="cohorte.mosaicImageUrl" [alt]="'Mosaïque de la cohorte ' + cohorte.name" />
+            } @else {
+              <div class="mosaic" aria-label="Mosaïque à venir">
+                @for (tile of [1, 2, 3, 4, 5, 6]; track tile) {
+                  <div class="photo-tile"><span>?</span></div>
+                }
+              </div>
+            }
+          </section>
+        </app-funny-window>
+      }
+    </div>
+  }
+</div>

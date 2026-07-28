@@ -8,6 +8,8 @@ export const environment = {
   documentsReunionUrl: 'https://cms.ageei.org/items/documents_reunions',
   documentsUrl: 'https://cms.ageei.org/items/documents',
   postsUrl: 'https://cms.ageei.org/items/posts',
+  clubsUrl: 'https://cms.ageei.org/items/clubs',
+  finissantCohortesUrl: 'https://cms.ageei.org/items/finissant_cohortes',
   featuredPostUrl: 'https://cms.ageei.org/items/featured_post',
   googleCalendarUrl:
     'https://calendar.google.com/calendar/embed?src=c_d7c8140170e380f8b85a8289cbb3ac4692134e5aa0bb89716a0ac60475edfc58%40group.calendar.google.com&ctz=America%2FToronto',
