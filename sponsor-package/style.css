@@ -114,6 +114,10 @@ a {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  /* zoom isn't supported on iOS Safari; using transform+margin for same effect. */
+  transform: scale(var(--zoom-scale, 1));
+  transform-origin: top center;
+  margin-bottom: calc(var(--page-h) * (var(--zoom-scale, 1) - 1));
 }
 
 @media screen and (max-width: 1000px) {
@@ -134,19 +138,19 @@ a {
   }
 
   .page {
-    zoom: 0.96;
+    --zoom-scale: 0.96;
   }
 }
 
 @media screen and (max-width: 800px) {
   .page {
-    zoom: 0.76;
+    --zoom-scale: 0.76;
   }
 }
 
 @media screen and (max-width: 620px) {
   .page {
-    zoom: 0.58;
+    --zoom-scale: 0.58;
   }
 }
 
@@ -173,7 +177,7 @@ a {
   }
 
   .page {
-    zoom: 0.37;
+    --zoom-scale: 0.37;
   }
 }
 
