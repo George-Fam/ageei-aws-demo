@@ -42,48 +42,48 @@
       </div>
     </div>
     <aside class="home-side-rail" aria-label="Actualités">
-      <div class="featured-container">
-        <app-funny-window class="featured-window window-shadow" windowTitle="PUBLICATION À LA UNE">
-          @if (isFeaturedLoading) {
-            <div class="featured-skeleton" aria-hidden="true">
-              <div class="featured-skeleton-image"></div>
-              <div class="featured-skeleton-copy">
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-            </div>
-          } @else if (hasFeaturedError) {
-            <p class="featured-state">
-              Impossible de charger la publication.
-              <button class="featured-inline-action" mat-button (click)="loadFeaturedPost()">Réessayer</button>
-            </p>
-          } @else if (featuredPost) {
-            <div class="featured-body">
-              @if (featuredPost.imageUrl) {
-                <div class="featured-image-panel">
-                  <img class="featured-image" [src]="featuredPost.imageUrl" [alt]="featuredPost.title" />
-                </div>
-              }
-              <div class="featured-text">
-                <h2>{{ featuredPost.title }}</h2>
-                <p class="featured-date">{{ featuredPost.date_created | date: 'longDate' }}</p>
-                <div #featuredExcerpt class="featured-excerpt" [class.overflows]="excerptOverflows" [innerHTML]="featuredPost.content"></div>
-                <div class="featured-actions">
-                  @if (featuredPost.link) {
-                    <a class="featured-action secondary" [href]="featuredPost.link" target="_blank" rel="noopener noreferrer">
-                      {{ featuredPost.link_label || 'Lien externe' }}
-                    </a>
-                  }
-                  <a class="featured-action" routerLink="/posts">Voir toutes les publications</a>
+      @if (isFeaturedLoading || hasFeaturedError || featuredPost) {
+        <div class="featured-container">
+          <app-funny-window class="featured-window window-shadow" windowTitle="PUBLICATION À LA UNE">
+            @if (isFeaturedLoading) {
+              <div class="featured-skeleton" aria-hidden="true">
+                <div class="featured-skeleton-image"></div>
+                <div class="featured-skeleton-copy">
+                  <div></div>
+                  <div></div>
+                  <div></div>
                 </div>
               </div>
-            </div>
-          } @else {
-            <p class="featured-state">Aucune publication en vedette pour le moment.</p>
-          }
-        </app-funny-window>
-      </div>
+            } @else if (hasFeaturedError) {
+              <p class="featured-state">
+                Impossible de charger la publication.
+                <button class="featured-inline-action" mat-button (click)="loadFeaturedPost()">Réessayer</button>
+              </p>
+            } @else if (featuredPost) {
+              <div class="featured-body">
+                @if (featuredPost.imageUrl) {
+                  <div class="featured-image-panel">
+                    <img class="featured-image" [src]="featuredPost.imageUrl" [alt]="featuredPost.title" />
+                  </div>
+                }
+                <div class="featured-text">
+                  <h2>{{ featuredPost.title }}</h2>
+                  <p class="featured-date">{{ featuredPost.date_created | date: 'longDate' }}</p>
+                  <div #featuredExcerpt class="featured-excerpt" [class.overflows]="excerptOverflows" [innerHTML]="featuredPost.content"></div>
+                  <div class="featured-actions">
+                    @if (featuredPost.link) {
+                      <a class="featured-action secondary" [href]="featuredPost.link" target="_blank" rel="noopener noreferrer">
+                        {{ featuredPost.link_label || 'Lien externe' }}
+                      </a>
+                    }
+                    <a class="featured-action" routerLink="/posts">Voir toutes les publications</a>
+                  </div>
+                </div>
+              </div>
+            }
+          </app-funny-window>
+        </div>
+      }
 
       <div class="next-event-container">
         <app-funny-window class="next-event-window window-shadow" windowTitle="PROCHAIN ÉVÉNEMENT">
