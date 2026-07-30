@@ -8,8 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "build-prod": "ng build",
     "lint": "ng lint",
-    "prettier-check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
-    "prettier-fix": "prettier --config ./.prettierrc -w \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\""
+    "prettier-check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets,design}/**/*{.ts,.js,.json,.css,.scss}\"",
+    "prettier-fix": "prettier --config ./.prettierrc -w \"src/{app,environments,assets,design}/**/*{.ts,.js,.json,.css,.scss}\""
   },
   "private": true,
   "dependencies": {

@@ -34,6 +34,11 @@
               "src/sitemap.xml",
               {
                 "glob": "**/*",
+                "input": "src/design",
+                "output": "design"
+              },
+              {
+                "glob": "**/*",
                 "input": "../sponsor-package",
                 "ignore": [
                   "build/**",
@@ -46,7 +51,7 @@
                 "output": "sponsor-package"
               }
             ],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/design/tokens.css", "src/styles.scss"],
             "scripts": [],
             "browser": "src/main.ts"
           },

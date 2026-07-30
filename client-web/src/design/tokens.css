@@ -1,0 +1,10 @@
+:root {
+  --ink: #171412;
+  --surface: #fff7e8;
+  --surface-2: #f0dfc4;
+  --muted: #6f6255;
+  --accent: #e84f2f;
+  --accent-2: #007e78;
+  --shadow: 7px 7px 0 var(--ink);
+  --radius: 3px;
+}
