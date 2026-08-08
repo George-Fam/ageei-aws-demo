@@ -59,6 +59,21 @@ body {
   margin: 0;
   min-height: 100vh;
   min-height: 100dvh;
+  color: var(--ink);
+  font-family: var(--sans);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+
+/* Même rendu qu'un `background-attachment: fixed`, mais sur une couche composée :
+   évite de repeindre tout le viewport à chaque image lors du défilement. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background:
     linear-gradient(rgba(23, 20, 18, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(23, 20, 18, 0.025) 1px, transparent 1px),
@@ -66,12 +81,6 @@ body {
     radial-gradient(circle at 88% 8%, rgba(0, 126, 120, 0.12), transparent 24rem),
     var(--paper);
   background-size: 28px 28px, 28px 28px, auto, auto, auto;
-  background-attachment: fixed;
-  color: var(--ink);
-  font-family: var(--sans);
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  overflow-y: scroll;
 }
 
 body::-webkit-scrollbar {
