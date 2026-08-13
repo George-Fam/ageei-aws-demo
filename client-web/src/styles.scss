@@ -38,9 +38,9 @@ html {
   --paper: var(--surface);
   --paper-deep: var(--surface-2);
   --paper-card: var(--surface);
-  --line: #171412;
+  --line: #111827;
   --accent-3: var(--accent);
-  --soft-shadow: 0 18px 45px rgba(23, 20, 18, 0.13);
+  --soft-shadow: 0 18px 45px rgba(17, 24, 39, 0.13);
   --display: 'Fraunces', 'Libre Baskerville', serif;
   --sans: 'Archivo', 'Roboto', sans-serif;
   --mono: 'Inconsolata', monospace;
@@ -77,8 +77,8 @@ body::before {
   background:
     linear-gradient(rgba(23, 20, 18, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(23, 20, 18, 0.025) 1px, transparent 1px),
-    radial-gradient(circle at 12% 18%, rgba(232, 79, 47, 0.14), transparent 26rem),
-    radial-gradient(circle at 88% 8%, rgba(0, 126, 120, 0.12), transparent 24rem),
+    radial-gradient(circle at 12% 18%, rgba(0, 87, 184, 0.10), transparent 26rem),
+    radial-gradient(circle at 88% 8%, rgba(0, 59, 122, 0.08), transparent 24rem),
     var(--paper);
   background-size: 28px 28px, 28px 28px, auto, auto, auto;
 }
