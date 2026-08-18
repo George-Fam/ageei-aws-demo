@@ -12,7 +12,9 @@ export class ClubsService {
 
   getClubs(): Observable<Club[]> {
     return this.http
-      .get<{ data: DirectusClub[] }>(`${environment.clubsUrl}?sort=sort,name&limit=-1`)
+      .get<{ data: DirectusClub[] }>(
+        `${environment.clubsUrl}?sort=sort,name&limit=-1&filter[status][_eq]=published`,
+      )
       .pipe(map(({ data }) => data.map((club) => this.toClub(club))));
   }
 
