@@ -65,6 +65,17 @@ body {
   overflow-y: scroll;
 }
 
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+app-root > router-outlet + * {
+  flex: 1 0 auto;
+}
+
 /* Même rendu qu'un `background-attachment: fixed`, mais sur une couche composée :
    évite de repeindre tout le viewport à chaque image lors du défilement. */
 body::before {
