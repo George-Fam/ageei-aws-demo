@@ -1,10 +1,11 @@
 :root {
   --ink: #111827;
-  --surface: #ffffff;
+  --surface: #f7fafd;
   --surface-2: #f4f8fc;
   --muted: #556984;
   --accent: #0967c9;
   --accent-2: #d611ac;
+  --accent-3: #1670c9;
   --shadow: 7px 7px 0 var(--ink);
   --radius: 3px;
 }

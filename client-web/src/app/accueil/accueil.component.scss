@@ -145,6 +145,7 @@ $mobile-break: 'screen and (max-width: 959px)';
   padding: 14px;
   border: 3px solid $dark;
   background: var(--accent-3);
+  color: $light;
   box-shadow: 4px 4px 0 $dark;
   text-align: center;
 
@@ -442,7 +443,7 @@ $mobile-break: 'screen and (max-width: 959px)';
   padding: 10px 16px;
   border: 3px solid $dark;
   background: var(--accent-3);
-  color: $dark;
+  color: $light;
   font: 800 0.95rem $mono;
   box-shadow: 4px 4px 0 $dark;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
