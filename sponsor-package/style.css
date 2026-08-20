@@ -1028,7 +1028,7 @@ html[lang='fr'] .page-who .fact-grid {
   box-shadow: 5px 5px 0 var(--ink);
 }
 .pkg.champion {
-  background: var(--accent-2);
+  background: var(--accent-deep);
   color: var(--paper-card);
   border-color: var(--ink);
 }
