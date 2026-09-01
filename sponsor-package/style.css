@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Inconsolata:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --paper: #fff7e8;
-  --paper-edge: #f0dfc4;
-  --paper-card: #fff7e8;
-  --ink: #171412;
-  --ink-soft: #443c34;
-  --ink-mute: #6f6255;
-  --ink-faint: #a89a89;
-  --rule: #171412;
-  --rule-soft: rgba(23, 20, 18, 0.18);
-  --accent: #e84f2f;
-  --accent-deep: #c23a1f;
-  --accent-2: #007e78;
-  --accent-3: #e84f2f;
-  --accent-tint: #f0dfc4;
+  --paper: #ffffff;
+  --paper-edge: #eaf5ff;
+  --paper-card: #ffffff;
+  --ink: #101828;
+  --ink-soft: #344054;
+  --ink-mute: #667085;
+  --ink-faint: #98a2b3;
+  --rule: #101828;
+  --rule-soft: rgba(16, 24, 40, 0.18);
+  --accent: #0077c8;
+  --accent-deep: #00549f;
+  --accent-2: #38bdf8;
+  --accent-3: #fee68e;
+  --accent-tint: #dff3ff;
   --shadow: 7px 7px 0 var(--ink);
-  --soft-shadow: 0 18px 45px rgba(23, 20, 18, 0.13);
+  --soft-shadow: 0 18px 45px rgba(16, 24, 40, 0.13);
   --page-w: 960px;
   --page-h: 1240px;
   --pad-x: 76px;
@@ -1028,7 +1028,7 @@ html[lang='fr'] .page-who .fact-grid {
   box-shadow: 5px 5px 0 var(--ink);
 }
 .pkg.champion {
-  background: var(--accent-2);
+  background: var(--accent-deep);
   color: var(--paper-card);
   border-color: var(--ink);
 }

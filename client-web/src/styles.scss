@@ -38,9 +38,8 @@ html {
   --paper: var(--surface);
   --paper-deep: var(--surface-2);
   --paper-card: var(--surface);
-  --line: #171412;
-  --accent-3: var(--accent);
-  --soft-shadow: 0 18px 45px rgba(23, 20, 18, 0.13);
+  --line: #111827;
+  --soft-shadow: 0 18px 45px rgba(17, 24, 39, 0.13);
   --display: 'Fraunces', 'Libre Baskerville', serif;
   --sans: 'Archivo', 'Roboto', sans-serif;
   --mono: 'Inconsolata', monospace;
@@ -66,6 +65,17 @@ body {
   overflow-y: scroll;
 }
 
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+app-root > router-outlet + * {
+  flex: 1 0 auto;
+}
+
 /* Même rendu qu'un `background-attachment: fixed`, mais sur une couche composée :
    évite de repeindre tout le viewport à chaque image lors du défilement. */
 body::before {
@@ -77,8 +87,8 @@ body::before {
   background:
     linear-gradient(rgba(23, 20, 18, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(23, 20, 18, 0.025) 1px, transparent 1px),
-    radial-gradient(circle at 12% 18%, rgba(232, 79, 47, 0.14), transparent 26rem),
-    radial-gradient(circle at 88% 8%, rgba(0, 126, 120, 0.12), transparent 24rem),
+    radial-gradient(circle at 12% 18%, rgba(0, 87, 184, 0.10), transparent 26rem),
+    radial-gradient(circle at 88% 8%, rgba(0, 59, 122, 0.08), transparent 24rem),
     var(--paper);
   background-size: 28px 28px, 28px 28px, auto, auto, auto;
 }
