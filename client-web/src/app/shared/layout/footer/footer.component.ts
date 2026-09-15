@@ -17,7 +17,7 @@ export class FooterComponent {
   readonly socialLinks = [
     {
       name: 'Facebook',
-      href: 'https://www.facebook.com/ageei.uqam',
+      href: 'https://www.facebook.com/ageei',
       icon: 'assets/contact/facebook.png',
     },
     {
